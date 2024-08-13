@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+
+<head>
+    <title>Zahlen addieren</title>
+    <style>
+
+        :root {
+            box-sizing: border-box;
+            --akzentfarbe1: #00a0a2;
+            --akzentfarbe2: #e2b847;
+            --highlight: #ff4d84;
+            font-family: sans-serif;
+            max-width: 300px;
+            max-height: 400px;
+
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+            padding-top: 4px;
+            border: none;
+            border-radius: 50%;
+            background-color: var(--akzentfarbe2);
+            color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.1s;
+            margin: 0 auto;
+        }
+
+        .icon {
+            fill: white;
+        }
+
+        button:hover {
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        button:active {
+            transform: scale(0.9);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .number {
+            display: inline-block;
+            width: 23px;
+            margin-right: 5px;
+            font-size: 40px;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        .carry {
+            font-size: 20px;
+            height: 12px;
+            padding-bottom: 5px;
+            color: var(--highlight)
+        }
+
+        .animation {
+            transition: transform 0.6s;
+        }
+
+        .animation.animate {
+            /*transform: scale(1.2);*/
+            color: var(--highlight);
+        }
+
+        @keyframes delayedFadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+
+        }
+
+        .sum,
+        .carry {
+            opacity: 0;
+        }
+
+        .sum.animation,
+        .carry.animation {
+            animation: delayedFadeIn 1s ease forwards;
+        }
+
+        .carry.animation {
+            animation: delayedFadeIn 1500ms ease forwards;
+        }
+
+
+        .line {
+            height: 2px;
+            background-color: var(--akzentfarbe1);
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        main {
+            width: 120px;
+            margin-left: 50px;
+        }
+
+
+        footer {
+            margin-top: 40px;
+            padding: 20px 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+        }
+
+        #wrapper {
+            background-color: #f8f8f8;
+            border: solid #dcdcdc 4px;
+            border-radius: 20px;
+            padding: 40px 20px 0px;
+        }
+    </style>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <main>
+            <div class="container" id="number_a">
+
+            </div>
+            <div class="container" id="number_b">
+            </div>
+            <div class="container" id="carry">
+            </div>
+            <div class="line"></div>
+            <div class="container" id="sum">
+            </div>
+        </main>
+
+
+        <footer>
+
+            <button onclick="playPauseRestart()"> <span id="playIcon"><svg class="icon"
+                        xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 0 384 512">
+                        <path
+                            d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
+                    </svg>
+                </span>
+                <span style="display: none;" id="pauseIcon"><svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                        height="30px" viewBox="0 0 320 512">
+                        <path
+                            d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z" />
+                    </svg></span>
+                <span style="display: none;" id="restartIcon"><svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                        height="30px" viewBox="0 0 320 512">
+                        <path
+                            d="M267.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29V96c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192 160L64 241V96c0-17.7-14.3-32-32-32S0 78.3 0 96V416c0 17.7 14.3 32 32 32s32-14.3 32-32V271l11.5 9.6 192 160z" />
+                    </svg></span></button>
+
+        </footer>
+    </div>
+
+    <script>
+        let animationRunning = false;
+        let animationFinished = false;
+        let anim_column = 0;
+        // 0 nothing, 1 highlight columns, 2 show result, 3 show carry
+        let anim_step = 0;
+        let playIcon = document.getElementById("playIcon");
+        let pauseIcon = document.getElementById("pauseIcon");
+        let restartIcon = document.getElementById("restartIcon");
+
+
+        const numberAContainer = document.getElementById('number_a');
+        const numberBContainer = document.getElementById('number_b');
+        const carryContainer = document.getElementById('carry');
+        const sumContainer = document.getElementById('sum');
+        let numberA;
+        let numberB;
+
+
+
+        let maxCols = (a, b) => {
+            return Math.max(a.toString().length, b.toString().length);
+        };
+
+        function sumHasCarry(a, b) {
+            let hasCarry = false
+            for (let i = 0; i < maxCols(a, b); i++) {
+                if (digitAt(a, i) + digitAt(b, i) > 10) {
+                    hasCarry = true;
+                }
+            }
+            return hasCarry;
+        }
+
+        function carries(a, b) {
+            let carry = 0;
+            let result = 0;
+
+            for (let i = 0; i < maxCols(a, b); i++) {
+                const sum = digitAt(a, i) + digitAt(b, i) + carry;
+                carry = Math.floor(sum / 10);
+                if (carry > 0) {
+                    result += Math.pow(10, i + 1) * carry;
+                }
+            }
+
+            return result;
+        }
+
+
+
+        function setup() {
+            do {
+                numberA = Math.floor(Math.random() * (4500 - 955 + 1)) + 955;
+                numberB = Math.floor(Math.random() * (999 - 90 + 1)) + 90;
+            } while (!sumHasCarry(numberA, numberB));
+
+            anim_column = 0;
+            anim_step = 0;
+            animationRunning = false;
+            animationFinished = false;
+            numberAContainer.innerHTML = displayNum(numberA, 4);
+            numberBContainer.innerHTML = displayNum(numberB, 4);
+            carryContainer.innerHTML = displayCarry(carries(numberA, numberB), 4);
+            sumContainer.innerHTML = displayNum(numberA + numberB, 4, "sum");
+        }
+
+        setup();
+
+        function digitAt(n, z) {
+
+            let divisor = Math.pow(10, z + 1);
+            let remainder = n % divisor;
+
+            if (z > 0) {
+                divisor = Math.pow(10, z);
+                remainder = remainder / divisor;
+            }
+
+            return Math.floor(remainder) % 10;
+        }
+
+        function displayCarry(c, width) {
+            let result = '';
+            carrylist = c.toString().padStart(4, "0").split("").map(char => (char === "0" ? "&nbsp;" : char));
+            console.log(carrylist)
+            result += `<div class="number carry col${2}">${carrylist[0]}</div>`;
+            result += `<div class="number carry col${1}">${carrylist[1]}</div>`;
+            result += `<div class="number carry col${0}">${carrylist[2]}</div>`;
+            result += `<div class="number carry">&nbsp;</div>`;
+            return result;
+        }
+
+        function displayNum(n, width, cssclass = "") {
+            const numString = n.toString();
+            let result = '';
+            let colCount = width - 1;
+
+            for (let i = 0; i < width - numString.length; i++) {
+                result += `<div class="number ${cssclass} col${colCount}">&nbsp;</div>`;
+                colCount--;
+            }
+
+            for (let i = 0; i < numString.length; i++) {
+                const digit = numString.charAt(i);
+                result += `<div class="number ${cssclass} col${colCount}">${digit}</div>`;
+                colCount--;
+            }
+
+            return result;
+        }
+
+
+
+
+        function animationStep() {
+            animationFinished = anim_column == maxCols(numberA, numberB);
+            animateColX(anim_column);
+            anim_column++;
+
+            if (animationRunning & !animationFinished) {
+                setTimeout(function () {
+                    if (animationRunning) {
+                        animationStep();
+                    }
+                }, 2000);
+            }
+            if (animationFinished) {
+                animationRunning = false;
+                setIconDisplay("restart");
+            }
+
+
+        }
+
+
+        function animateColX(x) {
+            const cols = document.querySelectorAll(`.col${x}`);
+            cols.forEach(col => {
+                col.classList.add('animation', 'animate');
+
+                // Reset animation after 1 second
+                setTimeout(function () {
+                    col.classList.remove('animate');
+                }, 1800);
+            });
+        }
+
+
+
+
+        function setIconDisplay(iconToShow) {
+            const icons = {
+                play: playIcon,
+                pause: pauseIcon,
+                restart: restartIcon
+            };
+
+            for (const icon in icons) {
+                const display = icon === iconToShow ? "inline" : "none";
+                icons[icon].style.display = display;
+            }
+        }
+
+        function playPauseRestart() {
+
+            if (!animationFinished && !animationRunning) {
+                animationRunning = true;
+                setIconDisplay("pause");
+                animationStep();
+            }
+            else {
+                animationRunning = false;
+                setIconDisplay("play");
+            }
+            if (animationFinished) {
+                setIconDisplay("play");
+                setup();
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>

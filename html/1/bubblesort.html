@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubblesort</title>
+    <style>
+        
+        :root {
+            --akzentfarbe1: #00a0a2;
+            --akzentfarbe2: #e2b847;
+            --highlight: #ff4d84;
+            font-family: sans-serif;
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+            padding-top: 4px;
+            border: none;
+            border-radius: 50%;
+            background-color: var(--akzentfarbe2);
+            color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.1s;
+            margin: 0 auto;
+        }
+
+        .icon {
+            fill: white;
+        }
+
+        button:hover {
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        button:active {
+            transform: scale(0.9);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .item {
+            width: 60px;
+            height: 60px;
+            background-color: var(--akzentfarbe1);
+            margin: 5px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background-color: var(--highlight);
+        }
+
+        footer {
+            margin-top: 10px;
+            padding: 20px 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+        }
+
+        #wrapper {
+            background-color: #f8f8f8;
+            border: solid #dcdcdc 4px;
+            border-radius: 20px;
+            padding: 40px 20px 0px;
+            max-width: 600px;
+            min-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <main>
+            <div class="container"></div>
+        </main>
+        <footer>
+            <button onclick="playPauseRestart()">
+                <span id="playIcon">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 0 384 512">
+                        <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
+                    </svg>
+                </span>
+                <span style="display: none;" id="pauseIcon">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 0 320 512">
+                        <path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z" />
+                    </svg>
+                </span>
+                <span style="display: none;" id="restartIcon">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 0 320 512">
+                        <path d="M267.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29V96c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192 160L64 241V96c0-17.7-14.3-32-32-32S0 78.3 0 96V416c0 17.7 14.3 32 32 32s32-14.3 32-32V271l11.5 9.6 192 160z" />
+                    </svg>
+                </span>
+            </button>
+        </footer>
+    </div>
+
+    <script>
+        let isPaused = false;
+        let isSorting = false;
+        let isSorted = false;
+        let currentTimeout;
+        let currentIndex = 0;
+        let passIndex = 0;
+
+        document.addEventListener("DOMContentLoaded", function () {
+            populateContainer();
+        });
+
+        function populateContainer() {
+            const container = document.querySelector('.container');
+            container.innerHTML = ''; // Clear existing items
+
+            const numbers = generateUniqueRandomNumbers(6, 1, 30);
+
+            numbers.forEach(number => {
+                const item = document.createElement('div');
+                item.classList.add('item');
+                item.textContent = number;
+                container.appendChild(item);
+            });
+
+            // Set the initial state to play icon and reset flags
+            showPlayIcon();
+            isSorting = false;
+            isSorted = false;
+        }
+
+        function generateUniqueRandomNumbers(count, min, max) {
+            const numbers = new Set();
+            while (numbers.size < count) {
+                const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+                numbers.add(randomNum);
+            }
+            return Array.from(numbers);
+        }
+
+        function swapWithRight(index) {
+            const items = document.querySelectorAll('.item');
+            const container = document.querySelector('.container');
+
+            if (index < 0 || index >= items.length - 1) {
+                console.warn('Invalid index or no right neighbor to swap with.');
+                return;
+            }
+
+            // Get the item and its right neighbor
+            const item1 = items[index];
+            const item2 = items[index + 1];
+
+            // Store the positions
+            const item1Rect = item1.getBoundingClientRect();
+            const item2Rect = item2.getBoundingClientRect();
+
+            // Calculate the translation distances
+            const distanceX = item2Rect.left - item1Rect.left;
+
+            // Apply the transition to the items
+            item1.style.transition = 'transform 0.5s ease';
+            item2.style.transition = 'transform 0.5s ease';
+
+            item1.style.transform = `translateX(${distanceX}px)`;
+            item2.style.transform = `translateX(${-distanceX}px)`;
+
+            // Wait for the transition to complete
+            setTimeout(() => {
+                // Swap the items in the DOM
+                container.insertBefore(item2, item1);
+                container.insertBefore(item1, item2.nextSibling);
+
+                // Reset the styles
+                item1.style.transition = '';
+                item1.style.transform = '';
+                item2.style.transition = '';
+                item2.style.transform = '';
+            }, 500); // Match the timeout to the transition duration
+        }
+
+        function bubbleSort() {
+            let sorted = false;
+
+            function bubbleSortStep() {
+                if (isPaused) return;
+
+                const items = document.querySelectorAll('.item');
+                sorted = true;
+
+                // Clear previous highlight
+                items.forEach(item => item.classList.remove('highlight'));
+
+                if (currentIndex < items.length - 1 - passIndex) {
+                    items[currentIndex].classList.add('highlight');
+                    items[currentIndex + 1].classList.add('highlight');
+
+                    if (parseInt(items[currentIndex].textContent) > parseInt(items[currentIndex + 1].textContent)) {
+                        swapWithRight(currentIndex);
+                        sorted = false;
+                    }
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                    passIndex++;
+                    sorted = false;
+                }
+
+                if (passIndex < items.length - 1) {
+                    currentTimeout = setTimeout(() => {
+                        bubbleSortStep();
+                    }, 600); // Wait for the swaps to complete before the next step
+                } else {
+                    isSorting = false;
+                    isSorted = true;
+                    showRestartIcon();
+                }
+            }
+
+            bubbleSortStep();
+        }
+
+        function playPauseRestart() {
+            if (isSorted) {
+                populateContainer();
+                currentIndex = 0;  // Reset current index
+                passIndex = 0;  // Reset pass index
+            } else if (!isSorting) {
+                isSorting = true;
+                isPaused = false;
+                showPauseIcon();
+                bubbleSort();
+            } else if (isPaused) {
+                isPaused = false;
+                showPauseIcon();
+                bubbleSort();
+            } else {
+                isPaused = true;
+                clearTimeout(currentTimeout);
+                showPlayIcon();
+            }
+        }
+
+        function showPlayIcon() {
+            document.getElementById('playIcon').style.display = 'inline';
+            document.getElementById('pauseIcon').style.display = 'none';
+            document.getElementById('restartIcon').style.display = 'none';
+        }
+
+        function showPauseIcon() {
+            document.getElementById('playIcon').style.display = 'none';
+            document.getElementById('pauseIcon').style.display = 'inline';
+            document.getElementById('restartIcon').style.display = 'none';
+        }
+
+        function showRestartIcon() {
+            document.getElementById('playIcon').style.display = 'none';
+            document.getElementById('pauseIcon').style.display = 'none';
+            document.getElementById('restartIcon').style.display = 'inline';
+        }
+    </script>
+</body>
+</html>
