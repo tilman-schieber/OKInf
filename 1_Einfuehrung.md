@@ -10,9 +10,13 @@ icon:     img/TU_Logo_kurz.png
 comment:  Oberkurs Informatik am Studienkolleg der
           Technischen Universität Berlin. <br> Teil 1 (Hallo Python)
 import:   https://raw.githubusercontent.com/LiaTemplates/Pyodide/master/README.md
-import:  https://raw.githubusercontent.com/liaScript/mermaid_template/master/README.md
+import:   https://raw.githubusercontent.com/liaScript/mermaid_template/master/README.md
+import:   ./macros.md
 link:     styles/main.css
+
 -->
+
+
 
 # Was ist Programmieren?
 
@@ -57,7 +61,8 @@ Ausführlich beschreiben kann ihn wie folgt:
 >    * Wenn die Summe 10 oder mehr ist, übertrage 1 zur nächsten linken Spalte.
 >    * Schreibe den Einerwert der Summe unter die aktuelle Spalte
 
-??[Addieralgorithmus](html/1/addieralgorithmus.html"Interaktiver Additionsalgorithmus (klicken sie auf den ▶️-Knopf)")<!--style = "border:none; height:390px;"-->
+
+@[embed(style="height: 380px; border: none")](html/1/addieralgorithmus.html)
 
 
 ### Algorithmen in der Mathematik
@@ -78,7 +83,7 @@ Die schriftliche Addition ist für uns Menschen ein sehr nützlicher Algorithmus
 
 Auch wenn die Studie der Algorithmen in der Mathematik ihren Anfang nahm, kommen Algorithmen nun in allen möglichen Bereichen zum Einsatz, so z.B. für 
 
-- das Sortieren von Zeilen in einer Excel-Tabelle
+- das Sortieren von `Zeilen` in einer Excel-Tabelle
 - das Verschlüsseln geheimer Daten beim Online Banking
 - das Berechnen des besten Wegs bei der Routenplanung
 - die Empfehlung des nächsten Youtube-Videos
@@ -96,9 +101,15 @@ Während einige dieser Probleme und die dazugehörigen Algorithmen sehr komplex 
 ### Bubble Sort
 Die am einfachsten zu beschreibende Sortiermethode ist das sogenannte *Bubble Sort*
 
+<div class="alert alert-yellow">
 Dabei wird der Reihe nach jede Karte mit ihrem Nachbar verglichen, sind sie nicht richtig sortiert werden sie getauscht.
 Ist man am Ende der Reihe angekommen beginnt man von vorne bis kein Tausch mehr nötig ist.
+</div>
 
+@example
+Dabei wird der Reihe nach jede Karte mit ihrem Nachbar verglichen, sind sie nicht richtig sortiert werden sie getauscht.
+Ist man am Ende der Reihe angekommen beginnt man von vorne bis kein Tausch mehr nötig ist.
+@end
 
 Ausführlich kann man den Algorithmus für eine Liste aus vergleichbaren Elementen so formulieren:
 
@@ -118,8 +129,8 @@ Ausführlich kann man den Algorithmus für eine Liste aus vergleichbaren Element
 
 Hier sehen Sie wir Bubble Sort mit einer zufälligen Liste funktioniert:
 
-??[Zahlen sortieren](html/1/bubblesort.html"Interaktiver Bubble Sort Algorithmus (klicken sie auf den ▶️-Knopf)")<!--style = "border:none; height:250px;"-->
 
+@[embed(style="height: 245px; width:670px; border: none")](html/1/bubblesort.html)
 
 #### Flussdiagramm: Bubble Sort
 
@@ -224,12 +235,13 @@ Insgesamt also drei!
 
 ## Vom Algorithmus zum Programm
 
-Direkt verstehen kann ein Computer nur die sogenannte Maschinensprache, die z.B. so aussehen kann:
+Direkt verstehen kann ein Computer nur die sogenannte Maschinensprache. Diese kann z.B. so aussehen:
 
 ```
 B8 01 00 BB 02 00 01 D8   
 ```
 
+Verschiedene Prozessoren verstehen unterschiedliche Arten von Maschinensprache, da sie sich in ihrer Hardwarearchitektur[^1] unterscheiden.
 Übersetzt man diesen Code in eine menschenlesbare Form sieht es so aus:
 
 ```asm
@@ -237,26 +249,22 @@ MOV AX, 0001h
 MOV BX, 0002h
 ADD AX, BX 
 ```
-Dieses Programm lädt 1 und 2 in Register[^1], addiert deren Inhalt und speichert das Ergebnis in AX.
+Dieses Programm lädt 1 und 2 in Register[^2], addiert deren Inhalt und speichert das Ergebnis in AX.
+Diese Darstellung ist eine direkte Vorstufe der Maschinensprache und wird *Assembler* genannt.
+Für die meisten praktischen Anwendungen bevorzugt man jedoch sogenannte höhere Programmiersprachen. Diese Sprachen sind leichter zu schreiben und zu verstehen, und ermöglichen es, komplexe Aufgaben ohne detailliertes Wissen über die zugrunde liegende Hardware zu lösen. Beispiele für höhere Programmiersprachen sind Python, Java, und C++.
 
-Außerdem muss man das Problem in einer Weise strukturieren und beschreiben, dass es überhaupt von einem Computer ausgeführt werden kann.<br><br>
-In der Informatik beschreiben sogenannte Algorithmen, wie ein bestimmtes Problem systematisch gelöst werden kann.
-
-
-
-
-
+In einer höheren Programmiersprache könnte das oben beschriebene Programm so aussehen:
 
 ```python
-import sys
-
-for i in range(3):
-	print("Hello", 'Python #', i)
-
+AX = 1
+BX = 2
+AX = AX + BX
 ```
-@Pyodide.eval
 
-[^1]: dabei handelt es sich um einen Speicherplatz direkt im Prozessor. AX,BX und CX sind Namen wichtiger Register.
+Diese höhere Sprache wird durch einen Compiler oder Interpreter in Maschinensprache übersetzt, die der Computer direkt ausführen kann. Der Vorteil dieser Sprachen liegt darin, dass sie es einfacher machen Algorithmen zu formulieren, ohne sich über die Details der zugrundeliegenden
+
+[^1]: So haben z.B. Smartphones, PCs oder Macs unterschiedliche Hardwarearchitekturen und verstehen nicht die selbe Maschinensprache.
+[^2]: dabei handelt es sich um einen Speicherplatz direkt im Prozessor. AX,BX und CX sind verschiedene Register.
 
 ## Überschrift 2
 

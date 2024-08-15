@@ -4,24 +4,42 @@ iframe {
     outline: none !important;
   }
 
-
 .alert {
-    --bs-alert-bg: transparent;
-    --bs-alert-padding-x: 1rem;
-    --bs-alert-padding-y: 1rem;
-    --bs-alert-margin-bottom: 1rem;
-    --bs-alert-color: inherit;
-    --bs-alert-border-color: transparent;
-    --bs-alert-border: 1px solid var(--bs-alert-border-color);
-    position: relative;
-    padding: 1rem 1rem;
-    margin-bottom: 1rem;
-    color: var(--bs-alert-color);
-    background-color: var(--bs-alert-bg);
-    border: var(--bs-alert-border);
-    border-radius: 0.25rem;
-    max-width: 80rem;
+  --bs-alert-bg: transparent;
+  --bs-alert-padding-x: 1rem;
+  --bs-alert-padding-y: 1rem;
+  --bs-alert-margin-bottom: 1rem;
+  --bs-alert-color: inherit;
+  --bs-alert-border-color: transparent;
+  --bs-alert-border: 1px solid var(--bs-alert-border-color);
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  color: var(--bs-alert-color);
+  background-color: var(--bs-alert-bg);
+  border: var(--bs-alert-border);
+  border-radius: 0.25rem;
+  max-width: 80rem;
 }
+
+
+.alert .lia-list--unordered {
+    list-style-type: disc;
+    color: var(--bs-alert-color);
+}
+  
+.alert .lia-list--unordered>li:before {
+    content: none !important;
+    position: static !important;  
+    color: inherit !important; 
+    font-family: inherit !important;
+}
+
+.alert .lia-list--ordered>li::marker {
+  color: var(--bs-alert-color);
+}
+
+
 
 .alert-green {
   --bs-alert-color: rgb(15, 81, 50);
@@ -60,3 +78,13 @@ iframe {
   --bs-alert-border-color: #d3d6d8;
 }
 
+/* change colors of flowcharts */
+#graphDiv_6_0 .node rect, #graphDiv_6_0 .node circle, #graphDiv_6_0 .node ellipse, #graphDiv_6_0 .node polygon, #graphDiv_6_0 .node path {
+  fill: #cfe2ff !important;
+  stroke: #084298 !important;
+
+}
+#graphDiv_6_0 .edgeLabel {
+  background-color: #cfe2ff !important;
+  text-align: center;
+}
