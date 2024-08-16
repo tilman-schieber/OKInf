@@ -3,13 +3,6 @@ author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
 
 
-@example: <div class="alert alert-yellow">
-  sds
-
-@end: </div>
-  sdsd
-
-
 @embed
 <script run-once modify="false">
 fetch("@1")

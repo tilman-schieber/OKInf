@@ -1,44 +1,70 @@
 /* main.css */
-iframe {
-    border: none !important;
-    outline: none !important;
+
+div.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+}
+
+div.center > * {
+  max-width: 600px; /* Sets the maximum width of the child elements */
+  width: 100%; /* Ensures the child elements take up the full available width up to the max-width */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+.flex-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Allows the items to wrap as needed */
+  align-items: stretch;
+  gap: 20px; /* Adds both horizontal and vertical spacing between items */
+}
+
+.flex-child { 
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .flex-child {
+      flex: 100%; /* Makes the child divs take up the full width on slim devices */
+      margin-right: 0; /* Removes the right margin */
   }
+}
+
+p.lead {
+  font-size: 1.3em;
+}
 
 .alert {
   --bs-alert-bg: transparent;
-  --bs-alert-padding-x: 1rem;
-  --bs-alert-padding-y: 1rem;
-  --bs-alert-margin-bottom: 1rem;
   --bs-alert-color: inherit;
   --bs-alert-border-color: transparent;
   --bs-alert-border: 1px solid var(--bs-alert-border-color);
   position: relative;
-  padding: 1rem 1rem;
-  margin-bottom: 1rem;
-  color: var(--bs-alert-color);
+  padding: 1em 1em;
+  margin-bottom: 1em;
+  color: rgb(var(--color-text));;
   background-color: var(--bs-alert-bg);
   border: var(--bs-alert-border);
-  border-radius: 0.25rem;
-  max-width: 80rem;
+  border-radius: 0.25em;
+  max-width: 80em;
 }
 
-
-.alert .lia-list--unordered {
-    list-style-type: disc;
-    color: var(--bs-alert-color);
+.alert>.lia-divider {
+  background-color: var(--bs-alert-border-color) !important;
+  height: 2px !important;
 }
+
   
 .alert .lia-list--unordered>li:before {
-    content: none !important;
-    position: static !important;  
-    color: inherit !important; 
-    font-family: inherit !important;
+  color: var(--bs-alert-color) !important;
 }
 
 .alert .lia-list--ordered>li::marker {
   color: var(--bs-alert-color);
 }
-
 
 
 .alert-green {
@@ -78,7 +104,7 @@ iframe {
   --bs-alert-border-color: #d3d6d8;
 }
 
-/* change colors of flowcharts */
+/* MERMAID: change colors of flowcharts */
 #graphDiv_6_0 .node rect, #graphDiv_6_0 .node circle, #graphDiv_6_0 .node ellipse, #graphDiv_6_0 .node polygon, #graphDiv_6_0 .node path {
   fill: #cfe2ff !important;
   stroke: #084298 !important;
@@ -86,5 +112,16 @@ iframe {
 }
 #graphDiv_6_0 .edgeLabel {
   background-color: #cfe2ff !important;
-  text-align: center;
 }
+
+/* ACE EDITOR: hide cursor when defocused */
+.ace_hidden-cursors .ace_cursor {
+  opacity: 0 !important;
+}
+
+
+/* ACE EDITOR: hide print margin */
+.ace-dreamweaver .ace_print-margin {
+  display: none !important;
+}
+
