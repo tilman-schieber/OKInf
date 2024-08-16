@@ -111,6 +111,8 @@ Dabei wird der Reihe nach jede Karte mit ihrem Nachbar verglichen, sind sie nich
 Ist man am Ende der Reihe angekommen beginnt man von vorne bis kein Tausch mehr nötig ist.
 @end
 
+!?[Bubblesort](https://youtu.be/zeujn6wrnKc)
+
 Ausführlich kann man den Algorithmus für eine Liste aus vergleichbaren Elementen so formulieren:
 
 > **Algorithmus Bubble Sort**
@@ -128,7 +130,6 @@ Ausführlich kann man den Algorithmus für eine Liste aus vergleichbaren Element
 
 
 Hier sehen Sie wir Bubble Sort mit einer zufälligen Liste funktioniert:
-
 
 @[embed(style="height: 245px; width:670px; border: none")](html/1/bubblesort.html)
 
