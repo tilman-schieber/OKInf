@@ -5,7 +5,7 @@ version:  0.0.1
 date:     2024
 language: de
 narrator: Deutsch Female
-logo:     img/oberkurs_logo.png
+logo:     img/1/classroom2.png
 icon:     img/TU_Logo_kurz.png
 comment:  Was bedeutet es einen Computer zu programmieren und 
           wie lernt man es?
@@ -18,7 +18,7 @@ link:     styles/main.css
 
 
 
-# 1. Einführung: Was ist Programmieren?
+# 1. Was ist Programmieren?
 
 
                   {{|> US English Male}}

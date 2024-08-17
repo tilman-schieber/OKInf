@@ -5,7 +5,7 @@ version:  0.0.1
 date:     2024
 language: de
 narrator: Deutsch Female
-logo:     img/oberkurs_logo.png
+logo:     img/2/datastorage.png
 icon:     img/TU_Logo_kurz.png
 comment:  Nutzen Sie Python, um mit Werten zu rechnen und die Ergebnisse
           der Berechnungen in Variablen zu speichern.
