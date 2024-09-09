@@ -13,7 +13,7 @@ link:     styles/main.css
 -->
 
 # Eine kurze Einführung in Linux
-@[asciinema(`{rows:5,}`)](cast/test.cast)
+@[asciinema](cast/test.cast)
 
 ## Was ist ein Betriebssystem?
 

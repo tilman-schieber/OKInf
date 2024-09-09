@@ -4,12 +4,12 @@ email:    tilman.schieber@tu-berlin.de
 script:   https://cdn.jsdelivr.net/npm/asciinema-player@3.8.0/dist/bundle/asciinema-player.min.js
 link:     https://cdn.jsdelivr.net/npm/asciinema-player@3.8.0/dist/bundle/asciinema-player.min.css
 
-@asciinema: @asciinema_helper(@uid,@0,@1)
+@asciinema: @asciinema_helper(@uid,@0)
 
 @asciinema_helper
 <div id="id_@0"></div>
 <script run-once modify="false">
-  var _=AsciinemaPlayer.create('@2', document.getElementById('id_@0'),@1);
+  var _=AsciinemaPlayer.create('@1', document.getElementById('id_@0'), {rows:8,});
 </script>
 @end
 
