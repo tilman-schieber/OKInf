@@ -1,4 +1,4 @@
-{"version": 2, "width": 80, "height": 25, "timestamp": 1725554437, "idle_time_limit": 1.0, "env": {"SHELL": "/opt/homebrew/bin/fish", "TERM": "xterm-256color"}}
+{"version": 2, "width": 80, "height": 25, "timestamp": 1725554437, "idle_time_limit": 0.2, "env": {"SHELL": "/opt/homebrew/bin/fish", "TERM": "xterm-256color"}}
 [0.007856, "o", "\u001b[?1034h\u001b[1;32mtilman@Linux:\u001b[1;34m~\u001b[0m$ "]
 [12.647267, "o", "c"]
 [12.749747, "o", "d"]
