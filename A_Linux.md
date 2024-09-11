@@ -13,7 +13,7 @@ link:     styles/main.css
 -->
 
 # Eine kurze Einführung in Linux
-@[asciinema](cast/test.cast)
+@[asciinema](cast/demo.cast)
 
 ## Was ist ein Betriebssystem?
 
@@ -191,18 +191,19 @@ Installation von WSL
    - Klicken Sie auf **Windows-Features aktivieren oder deaktivieren**.
    - Aktivieren Sie die Kästchen für:
      - **Windows-Subsystem für Linux**
-     - **Virtuelle Maschinen-Plattform** (für WSL 2 erforderlich)
-     - **Hyper-V** (optional, für WSL 2)
-   - Klicken Sie auf **OK** und starten Sie den Computer neu.
+     - **Virtuelle Maschinen-Plattform**
+     - **Hyper-V**
+   - Klicken Sie auf **OK** und starten Sie den Computer neu[^1].
 
 3. **Linux-Distribution aus dem Microsoft Store installieren**:
    - Öffnen Sie den **Microsoft Store**.
    - Suchen Sie nach Ihrer gewünschten Linux-Distribution (z.B. Ubuntu) und klicken Sie auf **Installieren**.
-   - Aktuell[^1] kann ich [Ubuntu 24.04 LTS](https://apps.microsoft.com/detail/9nz3klhxdjp5) empfehlen.
+   - Aktuell[^2] kann ich [Ubuntu 24.04 LTS](https://apps.microsoft.com/detail/9nz3klhxdjp5) empfehlen.
 
 Nun können Sie ein Linux-Terminal über das Startmenü starten.
 
-[^1]: Stand September 2024. Diese Version wurde im April 2024 veröffentlicht und ist eine LTS-Version, das bedeutet, dass sie mit langfristigem Support (Long-Term Support) für mindestens 5 Jahre, also bis 2029, versorgt wird. LTS-Versionen sind besonders stabil und werden für den Einsatz in produktiven Umgebungen empfohlen.
+[^1]: Bei manchen Computern muss die für WSL benötigte Virtualisierung im BIOS aktiviert werden. Falls Sie eine entsprechende Fehlermeldung erhalten, finden Sie bei [support.microsoft.com](https://support.microsoft.com/de-de/windows/aktivieren-der-virtualisierung-unter-windows-c5578302-6e43-4b4b-a449-8ced115f58e1) mehr Informationen.
+[^2]: Stand September 2024. Diese Version wurde im April 2024 veröffentlicht und ist eine LTS-Version, das bedeutet, dass sie mit langfristigem Support (Long-Term Support) für mindestens 5 Jahre, also bis 2029, versorgt wird. LTS-Versionen sind besonders stabil und werden für den Einsatz in produktiven Umgebungen empfohlen.
 
 ### MacOS
 
@@ -211,3 +212,159 @@ Nun können Sie ein Linux-Terminal über das Startmenü starten.
 Haben Sie keinen PC sondern einen Mac nutzen Sie bereits ein Betriebssystem, dessen Grundlage auf Unix basiert. MacOS basiert auf BSD, einer Unix-Variante. Sie können auf jedem Mac einfach ein Terminal starten und die meisten Linux-Kommandos verwenden[^1].Um mehr Befehle und Programme zu installieren können Sie [Homebrew](https://brew.sh/) verwenden, ein Paketmanager für MacOS.
 
 [^1]: Eine Einführung gibt es auf [support.apple.com](https://support.apple.com/de-de/guide/terminal/apdb66b5242-0d18-49fc-9c47-a2498b7c91d5/mac)
+
+## Erste Schritte im Terminal
+![Terminal](https://upload.wikimedia.org/wikipedia/commons/9/99/DEC_VT100_terminal.jpg "Ein Unix Terminal, Modell VT100" )
+
+### Wer bin ich und wo bin ich?
+
+Egal ob Sie Linux auf ihrem Rechner installiert haben oder WSL bzw. MacOS nutzen: Wir beginnen damit, ein Terminal zu starten[^1] und werden von einer sogenannten *Eingabeaufforderung* begrüßt, die in etwa so aussieht[^2]:
+
+```bash
+tilman@Linux:~$
+```
+Meistens gibt Ihnen diese Eingabeaufforderung ein paar grundlegende Informationen.
+Hier in der Form:
+
+```bash
+Benutzername@Hostname:Verzeichnis$
+```
+
+* **Benutzername** der Name unter dem sie gerade im System angemeldet sind. 
+* **Hostname** ist der Name des Computers auf dem das Terminal läuft. Zwar ist das normalerweise einfach der Name ihres Rechners, doch sie können auch Terminals auf entfernten Servern ausführen.
+* **Verzeichnis** Hier wird angezeigt, in welchem Verzeichnis Sie sich befinden. Das Kürzel `~` steht dabei für ihr *home*-Verzeichnis (Sie werden gleich lernen, was das bedeutet).
+
+Das Terminal wartet nun darauf, dass sie Befehle eingeben und diese mit <kbd>Enter</kbd> bestätigen.
+
+Manche Befehle lesen sich wie normales Englisch, andere sind Abkürzungen.
+
+So gibt der Befehl `whoami` den aktuellen Benutzernamen aus
+
+`pwd` steht für *print working directory* und gibt an, wo im Dateisystem wir uns gerade befinden.
+
+Hier sehen Sie ein Beispiel *(drücken Sie den Play-Knopf)*:
+@[asciinema](cast/whoami.cast)
+
+<!--  class="alert alert-red" -->
+**Vorsicht root:**
+In jedem Linux gibt es den Benutzer *root*, den sogenannten *superuser*. Dieser hat alle Berechtigungen im System und kann deshalb großen Schaden anrichten. Achten Sie darauf, nicht als *root* sondern mit ihrem Benutzernamen angemeldet zu sein.
+
+Vorhin haben wir erwähnt, dass das Symbol `~` eine Abkürzung für das *home*-Verzeichnis ihres Benutzers ist. Diese Abkürzung steht also in diesem Fall für den Pfad `home/tilman`, im Ordner `/home` gibt es also für jeden Benutzer einen gleichlautenden persönlichen Ordner[^3]. 
+
+
+
+[^1]: Das Terminal finden Sie in den meisten Linux Distributionen und in MacOS unter dem Namen *Terminal* oder so ähnlich. Oft können Sie es auch mit dem Shortcut <kbd>Strg+Alt+T</kbd> starten
+[^2]: lassen Sie sich nicht irritieren, wenn ihre Eingabeaufforderung etwas anders aussieht. Ihre Befehle werden von einer sogenannten *shell* entgegengenommen. Ich gehe hier davon aus dass sie die verbreitete shell *bash* verwenden. Verwenden Sie eine andere *shell* kann es etwas anders aussehen.
+[^3]: MacOS verwendet den Namen `/Users` statt `/home`.
+
+### Verzeichnisse wechseln
+
+Wie in den meisten Betriebssystemen benutzt auch das Dateisystem in Linux eine hierarchische Ordnerstruktur.
+Auf der obersten Ebene ist *root*, das Wurzelverzeichnis. \
+Ein Teil einer solchen Struktur sieht wie folgt aus:
+
+<div class="flex-container">
+
+<!-- class="flex-child" style="width: 200px" -->
+```ascii
+/
+|
++--home
+|    |
+|    +--tilman
+|    |
+|    +--sreekanth
+|
++--bin
+|
++--etc
+|
++--var
+|   |
+|   +--log
+|
++--dev
+
+```
+
+<div class="flex-child">
+Die hier gezeigten Verzeichnisse finden Sie auf jedem Linux oder Unix-System.
+
+- `home` kennen Sie bereits, hier enthält es die persönlichen Ordner zweier Nutzer.
+- `bin` enthält installierte Programme
+- `etc` enthält Konfigurationsdateien
+- `var` enthält zum Beispiel Protokolle (Logs) unter `var/log`.
+- `dev` enthält keine Dateien im eigentlichen Sinn, sondern erlaubt direkten Zugriff auf Geräte (*devices*) wie Festplatten oder auf Funktionalitäten wie einen Zufallszahlengenerator.
+
+Um sich in dieser Verzeichnishierarchie zu bewegen, können Sie den Befehl `cd` für *change directory* verwenden.
+
+So bewegen Sie sich mit `cd var` in den Ordner *var*. Beachten Sie, dass ein solcher Pfad relativ zum aktuellen Verzeichnis interpretiert wird. Gibt es unter dem aktuellen Verzeichnis keinen Ordner namens *var* schlägt der Befehl fehl.\
+Mit `cd \var` hingegen welchseln Sie direkt von überall her in das Verzeichnis `/var` direkt unter dem Wurzelverzeichnis. Das nennt man einen absoluten Pfad.
+
+</div>
+</div>
+
+Auch die schon bekannte Abkürzung `~` können Sie mit dem Befehl `cd` verwenden. Allerdings wechselt auch der Befehl `cd` ohne Angabe eines Verzeichnisses immer in ihren persönlichen Ordner.
+
+```bash
+tilman@Linux:/var/log$ cd
+tilman@Linux:~$
+```
+
+Ebenfalls nützlich ist die Abkürzung `..` für das Verzeichnis eine Ebene über dem aktuellen. Im Verzeichnis `/var/log` wechselt der Befehl `cd ..` also in das Verzeichnis `/var`
+
+```bash
+tilman@Linux:/var/log$ cd ..
+tilman@Linux:/var$
+```
+
+Hier sehen Sie wie man sich mit `cd` durch die Verzeichnisse bewegen kann.
+@[asciinema](cast/cd_pwd.cast)
+
+### Verzeichnisse erstellen, auflisten und löschen
+
+`mkdir` ist eine Abkürzung für *make directory*  mit dem Befehl
+
+```bash
+tilman@Linux:~$ mkdir projekte
+```
+
+legen wir ein Verzeichnis mit dem Namen *projekte* an. Da wir nun das Dateisystem verändert haben[^1], wollen wir das Ergebnis auch sehen. Dafür ist der Befehl `ls` -- kurz für *list* -- nützlich. Der Inhalt des aktuellen Verzeichnisses wird angezeigt.
+
+```bash
+tilman@Linux:~$ ls
+projekte notizen.txt
+```
+Hier sehen wir nun das soeben erstellte Verzeichnis *projekte* aber auch eine Datei `notizen.txt` die ebenfalls im persönlichen Ordner des Nutzers liegt.
+
+Wollen wir das soeben erstellte Verzeichnis wieder löschen, geht das mit `rmdir` oder *remove directory*. Allerdings lassen sich damit nur leere Verzeichnisse löschen.
+
+Sowohl mkdir als auch rmdir akzeptieren mehrere, durch Leerzeichen getrennte Verzeichnisnamen um gleichzeitig mehrere Verzeichnisse zu erstellen oder zu löschen.
+
+Hier sehen Sie ein Beispiel:
+@[asciinema](cast/mkdir_rmdir.cast)
+
+
+
+[^1]: Um das Dateisystem zu verändern brauchen Sie Schreibrechte. Als normaler Nutzer haben sie meistens nur Schreibrechte in ihrem persönlichen Ordner und können beispielsweise kein Verzeichnis unter `/bin` erstellen.
+
+### Dateien erstellen, editieren und anzeigen
+
+Natürlich gibt es viele Arten von Dateien die mit einer Vielzahl von Anwendungsprogrammen erstellt werden können.
+Eine einfache Textdatei lässt sich jedoch auch ohne weiteres im Terminal erstellen.
+
+So wie `mkdir` ein leeres Verzeichnis erstellt, kann mit dem Befehl `touch` eine leere Datei erstellt werden.
+
+Hier erstellen wir in einem bisher leeren Verzeichnis eine Datei `rezepte.txt`:
+
+```bash
+tilman@Linux:~/neu$ ls
+tilman@Linux:~/neu$ touch rezepte.txt
+tilman@Linux:~/neu$ ls
+rezepte.txt
+```
+
+Da eine leere Datei wenig nützt können wir sie nun mit einem Texteditor bearbeiten.
+Die meisten Linux-Distributionen enthalten `nano`, einen minimalistischen Editor, in dem Sie interaktiv eine Datei bearbeiten können. mit <kbd>Strg+O</kbd>[^1] speichern Sie die Datei, mit <kbd>Strg+X</kbd> verlassen Sie den Editor.
+
+[^1]: Die Taste <kbd>Strg</kbd> heißt auf englischen Tastaturen <kbd>Ctrl</kbd> und auf einem Mac <kbd>Control</kbd>
