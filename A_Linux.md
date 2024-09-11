@@ -190,12 +190,15 @@ Installation von WSL
    - Gehen Sie zu **Programme > Programme und Features**.
    - Klicken Sie auf **Windows-Features aktivieren oder deaktivieren**.
    - Aktivieren Sie die Kästchen für:
+
      - **Windows-Subsystem für Linux**
      - **Virtuelle Maschinen-Plattform**
      - **Hyper-V**
+
    - Klicken Sie auf **OK** und starten Sie den Computer neu[^1].
 
 3. **Linux-Distribution aus dem Microsoft Store installieren**:
+
    - Öffnen Sie den **Microsoft Store**.
    - Suchen Sie nach Ihrer gewünschten Linux-Distribution (z.B. Ubuntu) und klicken Sie auf **Installieren**.
    - Aktuell[^2] kann ich [Ubuntu 24.04 LTS](https://apps.microsoft.com/detail/9nz3klhxdjp5) empfehlen.
@@ -249,7 +252,8 @@ Hier sehen Sie ein Beispiel *(drücken Sie den Play-Knopf)*:
 **Vorsicht root:**
 In jedem Linux gibt es den Benutzer *root*, den sogenannten *superuser*. Dieser hat alle Berechtigungen im System und kann deshalb großen Schaden anrichten. Achten Sie darauf, nicht als *root* sondern mit ihrem Benutzernamen angemeldet zu sein.
 
-Vorhin haben wir erwähnt, dass das Symbol `~` eine Abkürzung für das *home*-Verzeichnis ihres Benutzers ist. Diese Abkürzung steht also in diesem Fall für den Pfad `home/tilman`, im Ordner `/home` gibt es also für jeden Benutzer einen gleichlautenden persönlichen Ordner[^3]. 
+Vorhin haben wir erwähnt, dass das Symbol `~` eine Abkürzung für das *home*-Verzeichnis ihres Benutzers ist.\
+Diese Abkürzung steht also in diesem Fall für den Pfad `home/tilman`, im Ordner `/home` gibt es also für jeden Benutzer einen gleichlautenden persönlichen Ordner[^3]. 
 
 
 
@@ -329,7 +333,7 @@ Hier sehen Sie wie man sich mit `cd` durch die Verzeichnisse bewegen kann.
 tilman@Linux:~$ mkdir projekte
 ```
 
-legen wir ein Verzeichnis mit dem Namen *projekte* an. Da wir nun das Dateisystem verändert haben[^1], wollen wir das Ergebnis auch sehen. Dafür ist der Befehl `ls` -- kurz für *list* -- nützlich. Der Inhalt des aktuellen Verzeichnisses wird angezeigt.
+legen wir ein Verzeichnis mit dem Namen *projekte* an. Da wir nun das Dateisystem verändert haben[^1], wollen wir das Ergebnis auch sehen. Dafür ist der Befehl `ls` – kurz für *list* – nützlich. Der Inhalt des aktuellen Verzeichnisses wird angezeigt.
 
 ```bash
 tilman@Linux:~$ ls
@@ -372,25 +376,58 @@ rezepte.txt
 ```
 
 Da eine leere Datei wenig nützt können wir sie nun mit einem Texteditor bearbeiten.
-Die meisten Linux-Distributionen enthalten `nano`, einen minimalistischen Editor, in dem Sie interaktiv eine Datei bearbeiten können. mit <kbd>Strg+O</kbd>[^1] speichern Sie die Datei, mit <kbd>Strg+X</kbd> verlassen Sie den Editor.
+
+Die meisten Linux-Distributionen enthalten `nano`, einen minimalistischen Editor, in dem Sie interaktiv eine Datei bearbeiten können. Mit <kbd>Strg+O</kbd>[^1] speichern Sie die Datei, mit <kbd>Strg+X</kbd> verlassen Sie den Editor.
+
+Mit `cat` von *concatenate* können Sie sich dann den Inhalt der Datei anzeigen lassen.
+
+Hier sehen sie, wie man mit nano eine Textdatei bearbeiten und den Inhalt dann mit `cat` ausgeben kann:
+
+@[asciinema](cast/nano.cast)
+
 
 [^1]: Die Taste <kbd>Strg</kbd> heißt auf englischen Tastaturen <kbd>Ctrl</kbd> und auf einem Mac <kbd>Control</kbd>
 
 
-### Bewegen und Kopieren
+### Bewegen, Kopieren und Löschen
 
 Mit dem Befehl `mv`, kurz für `move` können Sie Dateien und Verzeichnisse "bewegen". Das kann man auf zweierlei Weise einsetzen: Erstens können Sie etwas von einem Ort zu einem anderen verschieben, und zweitens können Sie etwas umbenennen, indem Sie den alten Namen durch einen neuen ersetzen, ohne den Speicherort zu ändern.
 
 So benennen wir hier den falsch geschriebenen Ordner "porjekte" in "projekte" um:
+
 ```bash
 tilman@Linux:~$ mkdir porjekte
 tilman@Linux:~$ mv porjekte projekte
 ```
 
 Hier verschieben wir die Datei `hello_world.py` aus *home* in den Ordner projekte
+
 ```bash
 tilman@Linux:~$ touch hello_world.py
 tilman@Linux:~$ mv hello_world.py projekte
 tilman@Linux:~$ ls projekte
 hello_world.py
 ```
+
+Ähnlich funktioniert der Befehl cp, kurz für copy. es wird jedoch eine Kopie der Datei oder des Verzeichnisses erstellt, anstatt es zu verschieben. Das Original bleibt am ursprünglichen Ort erhalten.
+
+So kopieren wir zum Beispiel die Datei hello_world.py in das Verzeichnis "backup", während die Originaldatei im Home-Verzeichnis bleibt:
+
+```bash
+tilman@Linux:~$ cp hello_world.py backup
+tilman@Linux:~$ ls backup
+hello_world.py
+tilman@Linux:~$ ls
+backup hello_world.py
+```
+
+Der Befehl `rm`, kurz für *remove*, wird verwendet, um Dateien und Verzeichnisse zu löschen. Wenn Sie eine Datei auf diese Weise löschen, wird sie vollständig entfernt und kann nicht wiederhergestellt werden.
+
+So können wir so die zuvor erstellte Kopie von `hello_world.py` löschen:
+
+```bash
+tilman@Linux:~$ rm backup/hello_world.py
+tilman@Linux:~$ ls backup
+```
+
+
