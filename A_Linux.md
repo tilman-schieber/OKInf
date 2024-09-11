@@ -337,6 +337,13 @@ projekte notizen.txt
 ```
 Hier sehen wir nun das soeben erstellte Verzeichnis *projekte* aber auch eine Datei `notizen.txt` die ebenfalls im persönlichen Ordner des Nutzers liegt.
 
+`ls` kann beliebige Verzeichnisse anzeigen, so können Sie sich zum Beispiel auch das Wurzelverzeichnis anzeigen lassen:
+
+```bash
+tilman@Linux:~$ ls /
+var bin dev opt home ...
+```
+
 Wollen wir das soeben erstellte Verzeichnis wieder löschen, geht das mit `rmdir` oder *remove directory*. Allerdings lassen sich damit nur leere Verzeichnisse löschen.
 
 Sowohl mkdir als auch rmdir akzeptieren mehrere, durch Leerzeichen getrennte Verzeichnisnamen um gleichzeitig mehrere Verzeichnisse zu erstellen oder zu löschen.
@@ -368,3 +375,22 @@ Da eine leere Datei wenig nützt können wir sie nun mit einem Texteditor bearbe
 Die meisten Linux-Distributionen enthalten `nano`, einen minimalistischen Editor, in dem Sie interaktiv eine Datei bearbeiten können. mit <kbd>Strg+O</kbd>[^1] speichern Sie die Datei, mit <kbd>Strg+X</kbd> verlassen Sie den Editor.
 
 [^1]: Die Taste <kbd>Strg</kbd> heißt auf englischen Tastaturen <kbd>Ctrl</kbd> und auf einem Mac <kbd>Control</kbd>
+
+
+### Bewegen und Kopieren
+
+Mit dem Befehl `mv`, kurz für `move` können Sie Dateien und Verzeichnisse "bewegen". Das kann man auf zweierlei Weise einsetzen: Erstens können Sie etwas von einem Ort zu einem anderen verschieben, und zweitens können Sie etwas umbenennen, indem Sie den alten Namen durch einen neuen ersetzen, ohne den Speicherort zu ändern.
+
+So benennen wir hier den falsch geschriebenen Ordner "porjekte" in "projekte" um:
+```bash
+tilman@Linux:~$ mkdir porjekte
+tilman@Linux:~$ mv porjekte projekte
+```
+
+Hier verschieben wir die Datei `hello_world.py` aus *home* in den Ordner projekte
+```bash
+tilman@Linux:~$ touch hello_world.py
+tilman@Linux:~$ mv hello_world.py projekte
+tilman@Linux:~$ ls projekte
+hello_world.py
+```
