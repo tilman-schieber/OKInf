@@ -132,7 +132,7 @@ Betriebssysteme vermitteln also zwischen der Hardware und der Software. Sie abst
 +--------+
 ```
 <div class="flex-child">
-Die Geschichte der Betriebssysteme begann in den 1960er Jahren mit den ersten Betriebssystemen für Großrechner. In den 1970er Jahren wurde UNIX entwickelt, dessen Nutzerverwaltung, Dateisystem und Aufbau immer noch die Grundlage für heutige Betriebssysteme sind. Aus UNIX gingen in den späten 1970er Jahren BSD (Berkeley Software Distribution) und später Linux (1991) hervor. Bei beiden handelt es sich um UNIX-Varianten die aber frei und quelloffen (*open source*) waren[^1]. Linux ist bis heute weit verbreitet und bildet die Basis für Android (2008) bildet.
+Die Geschichte der Betriebssysteme begann in den 1960er Jahren mit den ersten Betriebssystemen für Großrechner. In den 1970er Jahren wurde UNIX entwickelt, dessen Nutzerverwaltung, Dateisystem und Aufbau immer noch die Grundlage für heutige Betriebssysteme sind. Aus UNIX gingen in den späten 1970er Jahren BSD (Berkeley Software Distribution) und später Linux (1991) hervor. Bei beiden handelt es sich um UNIX-Varianten die aber frei und quelloffen (*open source*) waren[^1]. Linux ist bis heute weit verbreitet und bildet die Basis für Android (2008).
 
 Parallel dazu entstand in den 1980er Jahren mit DOS ein einfaches Betriebssystem für Personal Computer, aus dem Windows (ab 1985) hervorging. Windows NT (1993) war ein wichtiger Schritt, da es eine neue, stabile Architektur einführte, die die Basis für alle modernen Windows-Versionen wie Windows 10 und Windows 11 bildet.
 
