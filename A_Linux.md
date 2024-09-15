@@ -13,7 +13,7 @@ link:     styles/main.css
 -->
 
 # Eine kurze Einführung in Linux
-@[asciinema](cast/demo.cast)
+@[asciinema2(`speed: 2, autoPlay:true, rows: 10`)](cast/demo.cast)
 
 ## Was ist ein Betriebssystem?
 
@@ -246,7 +246,7 @@ So gibt der Befehl `whoami` den aktuellen Benutzernamen aus
 `pwd` steht für *print working directory* und gibt an, wo im Dateisystem wir uns gerade befinden.
 
 Hier sehen Sie ein Beispiel *(drücken Sie den Play-Knopf)*:
-@[asciinema](cast/whoami.cast)
+@[asciinema2(`rows: 5`)](cast/whoami.cast)
 
 <!--  class="alert alert-red" -->
 **Vorsicht root:**
@@ -323,7 +323,7 @@ tilman@Linux:/var$
 ```
 
 Hier sehen Sie wie man sich mit `cd` durch die Verzeichnisse bewegen kann.
-@[asciinema](cast/cd_pwd.cast)
+@[asciinema2(`rows: 10`)](cast/cd_pwd.cast)
 
 ### Verzeichnisse erstellen, auflisten und löschen
 
@@ -353,7 +353,7 @@ Wollen wir das soeben erstellte Verzeichnis wieder löschen, geht das mit `rmdir
 Sowohl mkdir als auch rmdir akzeptieren mehrere, durch Leerzeichen getrennte Verzeichnisnamen um gleichzeitig mehrere Verzeichnisse zu erstellen oder zu löschen.
 
 Hier sehen Sie ein Beispiel:
-@[asciinema](cast/mkdir_rmdir.cast)
+@[asciinema2(`rows: 8`)](cast/mkdir_rmdir.cast)
 
 
 
