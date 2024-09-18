@@ -152,16 +152,16 @@ In diesem Kurs lernen wir die Grundlagen der Bedienung von Linux, da Grundkenntn
 ### Linux als Betriebssystem
 
 <!--  style="margin:2em; display:inline-block; width: 150px" -->
-![Ubuntu](https://upload.wikimedia.org/wikipedia/commons/7/76/Ubuntu-logo-2022.svg)
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Ubuntu-logo-2022.svg">
 
 <!--  style="margin:2em; display:inline-block; width: 110px" -->
-![Debian](https://upload.wikimedia.org/wikipedia/commons/4/4a/Debian-OpenLogo.svg)
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Debian-OpenLogo.svg">
 
 <!--  style="margin:2em; display:inline-block; width: 220px" -->
-![Archlinux](https://upload.wikimedia.org/wikipedia/commons/e/e8/Archlinux-logo-standard-version.png)
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Archlinux-logo-standard-version.png">
 
 <!--  style="margin:2em; display:inline-block; width: 150px" -->
-![Fedora](https://upload.wikimedia.org/wikipedia/commons/0/09/Fedora_logo_and_wordmark.svg)
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Fedora_logo_and_wordmark.svg">
 
 Linux ist eigentlich der Name des Betriebssystemkerns (englisch *Kernel*), also des grundlegenden Teils des Systems, der die Hardware steuert und die Ausführung von Programmen ermöglicht. Für sich allein genommen ist der Kernel jedoch kein vollständiges Betriebssystem. Das erhält man erst durch die Kombination mit einer Vielzahl von Programmen, Tools und Benutzeroberflächen. Diese Gesamtpakete, die den Kernel und all diese zusätzlichen Komponenten enthalten, werden als Distributionen bezeichnet. Bekannte Beispiele dafür sind [Ubuntu](https://ubuntu.com/), [Debian](https://www.debian.org/), [Archlinux](https://archlinux.org/), oder [Fedora](https://getfedora.org/).
 
@@ -209,7 +209,6 @@ Nun können Sie ein Linux-Terminal über das Startmenü starten.
 [^2]: Stand September 2024. Diese Version wurde im April 2024 veröffentlicht und ist eine LTS-Version, das bedeutet, dass sie mit langfristigem Support (Long-Term Support) für mindestens 5 Jahre, also bis 2029, versorgt wird. LTS-Versionen sind besonders stabil und werden für den Einsatz in produktiven Umgebungen empfohlen.
 
 ### MacOS
-
 
 ![Apple](https://upload.wikimedia.org/wikipedia/commons/1/1b/Apple_logo_grey.svg)<!--  style="margin-right:1em; width: 60px" -->
 Haben Sie keinen PC sondern einen Mac nutzen Sie bereits ein Betriebssystem, dessen Grundlage auf Unix basiert. MacOS basiert auf BSD, einer Unix-Variante. Sie können auf jedem Mac einfach ein Terminal starten und die meisten Linux-Kommandos verwenden[^1].Um mehr Befehle und Programme zu installieren können Sie [Homebrew](https://brew.sh/) verwenden, ein Paketmanager für MacOS.
@@ -430,4 +429,79 @@ tilman@Linux:~$ rm backup/hello_world.py
 tilman@Linux:~$ ls backup
 ```
 
+### Optionen, Optionen, Optionen
 
+Die Befehle die sie bis jetzt kennengelernt haben, decken bereits einen großen Teil der täglichen Arbeit im Terminal ab. Mit ein paar zusätzlichen Tricks können diese aber noch vielseitiger eingesetzt werden.
+
+So haben wir gesehen, dass `rmdir` nur leere Verzeichnisse löschen kann. Wenn sie aber den Befehl `rm` mit `rm -r` aufrufen, können Sie auch Verzeichnisse mit Inhalt löschen. `-r` steht für *recursive* und bedeutet, und ist eine Option, die besagt, dass der Befehl rekursiv alle Dateien und Unterverzeichnisse löschen soll. 
+
+<div class="alert alert-red">
+**Vorsicht!** \
+`rm -r` ist einer der gefährlichsten Befehle im Linux Terminal.
+Ohne Nachfrage werden alle Dateien und Unterverzeichnisse unwiderruflich gelöscht. Vor allem wenn Sie als *root* angemeldet sind, können Sie so das gesamte System löschen. Überlegen Sie also immer zweimal bevor sie <kbd>Enter</kbd> drücken.
+
+</div>
+
+Der Parameter `-r` ist ein Beispiel für eine Option. Optionen sind zusätzliche Argumente, die das Verhalten eines Befehls ändern. Sie werden durch einen Bindestrich und einen Buchstaben oder zwei Bindestriche und ein Wort angegeben[^1].\ 
+
+Hier ein paar Beispiele für Optionen der Ihnen bereits bekannten Befehle:
+
+- `ls -l` zeigt zusätzliche Informationen zu den Dateien an (`-l` steht für *long*)
+- `rm -i` fragt vor dem Löschen jeder Datei nach, ob Sie sicher sind (`-i` steht für *interactive*)
+- `cp -r` kopiert rekursiv alle Dateien und Unterverzeichnisse (Die Bedeutung von `-r` kennen Sie bereits)	
+- `mkdir -p` erstellt das angegebene Verzeichnis, auch wenn die übergeordneten Verzeichnisse im Pfad fehlen. (`-p` steht für *parents*)
+- `rm --help` zeigt die Hilfe des Befehls `rm` an. Diese Option funktioniert mit allen Befehlen. Probieren Sie es aus![^2]
+
+
+[^1]: Man kann so statt `rm -r` auch `rm --recursive` schreiben. Meistens verwendet man aber die Kurzform. Es gibt aber auch Optionen ohne Kurzform, wie zum Beispiel `--help`.
+[^2]: Neben dieser eingebauten Hilfe gibt es auch umfangreiche Handbücher für die meisten Befehle. Diese können Sie mit dem Befehl `man` für *manual* aufrufen. So zeigt `man rm` die Hilfe für den Befehl `rm` an.
+
+<div class="alert alert-green">
+**Tipps und Tricks** \
+Wir haben bisher nur die Grundlagen der Arbeit im Terminal kennengelernt. 
+Hier sind ein paar hilfreiche weiterführende Tipps:
+
+- **Tabulator-Taste <kbd>TAB</kbd>**: Drücken Sie die Tabulator-Taste um Dateinamen und Befehle automatisch vervollständigen zu lassen.
+- **Pfeiltasten <kbd>↑</kbd> und <kbd>↓</kbd>**: So können Sie sich durch die zuletzt eingegebenen Befehle bewegen.
+- **Platzhalter `*`**: Mit `ls *.txt` können Sie sich alle Dateien mit der Endung `.txt` anzeigen lassen. `rm test*` löscht alle Dateien die mit `test` beginnen.
+- **<kbd>Strg</kbd>+<kbd>C</kbd>**: Unterbricht die Ausführung eines Befehls.
+
+</div>
+
+
+### ❓Fragen
+
+Sicherungskopie
+----------------
+
+Das Verzeichnis `projekte` enthält 4 Unterverzeichnisse mit vielen Dateien. Sie wollen eine Sicherungskopie namens namens `backup` erstellen.\
+Welcher der folgenden Befehle ist korrekt?
+
+- [(X)] `cp -r projekte backup`
+- [( )] `cp -r backup projekte`
+- [( )] `cp projekte backup`
+- [( )] `mv projekte backup`
+
+Heimatverzeichnis
+------------------
+
+Sie sind angemeldet als Nutzer `erwin`. Welche der folgenden Befehle bringen Sie in Ihr Heimatverzeichnis?
+
+- [[X]] `cd`
+- [[ ]] `cd /`
+- [[X]] `cd ~`
+- [[X]] `cd /home/erwin`
+- [[ ]] `cd /home`
+- [[ ]] `cd /erwin`
+
+Verzeichnis löschen
+--------------------
+In ihrem Heimatverzeichnis befindet sich das leere Verzeichnis `bilder` und das leere Verzeichnis `musik`. \
+Welche der folgenden Befehle löschen beide Verzeichnisse?
+
+- [[ ]] `rm bilder musik`
+- [[X]] `rm -r bilder musik`
+- [[X]] `rmdir bilder musik`
+- [[ ]] `rmdir /bilder /musik`
+- [[ ]] `rmdir -r bilder musik`
+- [[ ]] `rm bilder rm musik`
