@@ -471,6 +471,8 @@ Hier sind ein paar hilfreiche weiterführende Tipps:
 
 ### ❓Fragen
 
+<div class="alert alert-yellow">
+
 Sicherungskopie
 ----------------
 
@@ -481,6 +483,9 @@ Welcher der folgenden Befehle ist korrekt?
 - [( )] `cp -r backup projekte`
 - [( )] `cp projekte backup`
 - [( )] `mv projekte backup`
+
+</div>
+<div class="alert alert-yellow">
 
 Heimatverzeichnis
 ------------------
@@ -494,6 +499,9 @@ Sie sind angemeldet als Nutzer `erwin`. Welche der folgenden Befehle bringen Sie
 - [[ ]] `cd /home`
 - [[ ]] `cd /erwin`
 
+</div>
+<div class="alert alert-yellow">
+
 Verzeichnis löschen
 --------------------
 In ihrem Heimatverzeichnis befindet sich das leere Verzeichnis `bilder` und das leere Verzeichnis `musik`. \
@@ -505,3 +513,5 @@ Welche der folgenden Befehle löschen beide Verzeichnisse?
 - [[ ]] `rmdir /bilder /musik`
 - [[ ]] `rmdir -r bilder musik`
 - [[ ]] `rm bilder rm musik`
+
+</div>

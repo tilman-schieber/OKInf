@@ -277,16 +277,17 @@ ADD AX, BX
 ```
 Dieses Programm lädt 1 und 2 in Register[^2], addiert deren Inhalt und speichert das Ergebnis in AX.
 Diese Darstellung ist eine direkte Vorstufe der Maschinensprache und wird *Assembler* genannt.
-Für die meisten praktischen Anwendungen bevorzugt man jedoch sogenannte höhere Programmiersprachen. Diese Sprachen sind leichter zu schreiben und zu verstehen, und ermöglichen es, komplexe Aufgaben ohne detailliertes Wissen über die zugrundeliegende Hardware zu lösen. Beispiele für höhere Programmiersprachen sind Python, Java, und C++.
+Für die meisten praktischen Anwendungen bevorzugt man jedoch sogenannte höhere Programmiersprachen. Diese Sprachen sind leichter zu schreiben und zu verstehen, und ermöglichen es, komplexe Aufgaben ohne detailliertes Wissen über die zugrundeliegende Hardware zu lösen. Beispiele für höhere Programmiersprachen sind Python[^3], Java[^4], und C++[^5].
 
 In einer höheren Programmiersprache könnte das oben beschriebene Programm so aussehen:
 
 ```python
-AX = 1
-BX = 2
-AX = AX + BX
+a = 1
+b = 2
+a = a + b
 ```
 
+Man kann in fast jeder Programmiersprache fast alles programmieren, aber manche Sprachen sind besser für bestimmte Aufgaben geeignet als andere. 
 
 
 [^1]: So haben z.B. Smartphones, PCs oder Macs unterschiedliche Hardwarearchitekturen und verstehen nicht die selbe Maschinensprache.
@@ -301,7 +302,26 @@ Die *Backends* (Server-Systeme) des sozialen Netzwerks *Instagram*, des Musikstr
 
 ## Hallo Python!
 
+Es gibt eine unüberschaubare Menge an Programmiersprachen, die für unterschiedliche Anwendungen und Zwecke entwickelt wurden. In diesem Kurs werden wir uns auf Python konzentrieren, eine der beliebtesten und am weitesten verbreiteten Programmiersprachen der Welt.
+
+<details>
+
+<summary>Versuchen Sie doch einfach direkt mit Python zu kommunizieren... *(klicken Sie für Tipps)*</summary>
+
+- Was ist 374+244?
+- Wie viele Sekunden hat ein Jahr? Benutzen Sie `*` für die Multiplikation.
+- Tippen Sie einmal `0b1010` und `0xff` ein. Was passiert?
+
+</details>
+
 @[embed(style="height: 400px; width:700px; border: none")](html/1/console.html)
 
+<div class="alert alert-blue">
+Tipp: die REPL
+--------------
+
+was sie hier sehen ist eine sogenannte *REPL* oder *Read-Eval-Print-Loop*. Auf Deutsch: Lesen-Auswerten-Ausgeben-Schleife. Das bedeutet, dass sie Zeile für Zeile Python-Code eingeben können und Python diese sofort ausführt und das Ergebnis ausgibt. So können sie schnell und einfach Python-Code ausprobieren und lernen.
+
+</div>
 
 
