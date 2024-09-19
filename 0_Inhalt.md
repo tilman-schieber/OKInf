@@ -38,12 +38,13 @@ Willkommen beim Oberkurs Informatik am Studienkolleg der Technischen Universitä
 
 ---
 
-<div style="display:none">
 
 Python Programmierkurs
 ======================
-
 [preview-lia](1_Einfuehrung.md)
+
+<div style="display:none">
+
 [preview-lia](2_Werte&Variablen.md)
 [preview-lia](3_Entscheidungen.md)
 [preview-lia](4_Wiederholung.md)
