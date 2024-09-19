@@ -105,21 +105,20 @@ Auch wenn die Studie der Algorithmen in der Mathematik ihren Anfang nahm, kommen
 
 Während einige dieser Probleme und die dazugehörigen Algorithmen sehr komplex sind, ist das erste Beispiel, das Sortieren, eine alltägliche Aufgabe und kann mit einem einfachen Algorithmus gelöst werden.
 
-> Stellen Sie sich vor, sie haben einen Stapel unsortierter Spielkarten und sie sollen diese aufsteigend nach ihrem Wert sortieren.
-> Wie würden Sie das machen?
-> 
->    [[___ ___ ___ ___]]
+<div class="alert alert-yellow">
 
+Stellen Sie sich vor, sie haben einen Stapel unsortierter Spielkarten und sie sollen diese aufsteigend nach ihrem Wert sortieren.
+Wie würden Sie das machen?
 
+   [[___ ___ ___ ___]]
+
+</div>
 
 ### Bubble Sort
 Die am einfachsten zu beschreibende Sortiermethode ist das sogenannte *Bubble Sort*
 
-<div class="alert alert-yellow">
-Dabei wird der Reihe nach jede Karte mit ihrem Nachbar verglichen, sind sie nicht richtig sortiert, werden sie getauscht.
-Ist man am Ende der Reihe angekommen beginnt man von vorne bis kein Tausch mehr nötig ist.
-</div>
-
+<!--class="center"-->
+![Spielkarten](img/1/spielkarten.jpg "Sortierte Spielkarten")
 
 Dabei wird der Reihe nach jede Karte mit ihrem Nachbar verglichen, sind sie nicht richtig sortiert werden sie getauscht.
 Ist man am Ende der Reihe angekommen beginnt man von vorne bis kein Tausch mehr nötig ist.
@@ -324,4 +323,55 @@ was sie hier sehen ist eine sogenannte *REPL* oder *Read-Eval-Print-Loop*. Auf D
 
 </div>
 
+## Python installieren
 
+
+<div class="flex-container">
+<!-- class="flex-child center" -->
+![Python Logo](https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg)
+
+<div class="flex-child-4">
+Python kann auf der offiziellen Webseite [python.org](https://www.python.org/downloads/) für ihr Betriebssystem heruntergeladen und installiert werden.
+Für Windows ist das der einfachste Weg an eine funktionierende Python Installation zu kommen.
+
+Wenn Sie Linux oder MacOS benutzen, ist Python meistens schon installiert. Versuchen Sie im Terminal das Kommando `python´oder ´python3´ auszuführen.
+
+Sonst können Sie  Python über einen Paketmanager zu installieren. In MacOS ist [Homebrew](https://brew.sh/) empfehlenswert, bei Linux verwenden Sie den Paketmanager ihrer Distribution[^1].
+
+</div>
+</div>
+
+Wenn auf Ihrem System python installiert ist, können Sie mit dem Befehl
+
+```bash
+python programm.py
+```
+
+oder
+
+```bash
+python3 programm.py
+```
+
+den in der Datei `programm.py`[^2] enthaltenen Programmcode ausführen.
+Geben Sie `python` bzw. `python3` ohne Parameter ein, wird Python interaktiv ausgeführt. Sie können dann direkt Python-Code eingeben und ausführen[^3].
+
+Nun können Sie also mit dem Programmieren anfangen!
+
+
+Die Wahl des Editors
+--------------------
+Sie können mit jedem beliebigen Programm, das Textdateien editieren kann, auch Python programmieren. Im Regelfall verwendet man aber einen spezialisierten Editor. Dabei reicht die Bandbreite von universellen Texteditoren bis hin zu hochspezialisierten Entwicklungsumgebungen speziell für Python.
+
+Am besten probieren Sie selbst aus, was für Sie am besten funktioniert. Hier eine kleine Auswahl:
+
+* [**IDLE**](https://docs.python.org/3/library/idle.html) ist ein einfacher Editor der im Lieferumfang von Python enthalten ist. Um die ersten einfachen Programme zu schreiben reicht es völlig aus.
+* [**vim**](www.vim.org)[^4] ist ein Texteditor der inzwischen <script format="relativetime" unit="year">-Math.floor((new Date() - new Date('1991-11-02')) / (1000 * 60 * 60 * 24 * 365.25));
+</script> veröffentlich wurde. Er ist relativ schwer zu erlernen aber flexibel konfigurier- und erweiterbar.
+* [**Visual Studio Code**](https://code.visualstudio.com/) ist ein Texteditor, der durch zahlreiche Erweiterungen sehr komfortables Programmieren in Python erlaubt.
+* Wenn Ihnen diese Optionen zu kompliziert erscheinen, ist [**Thonny**](https://thonny.org/) eine speziell für Einsteiger entwickelte Entwicklungsumgebung.
+
+[^1]: z.B. *aptitude* für Ubuntu und Linux Mint und *pacman* für Archlinux.
+[^2]: Python Programmcode wird in Textdateien mit der Endung `.py` gespeichert.
+[^3]: mit <kbd>Strg</kbd>+<kbd>D</kbd> verlassen Sie den interaktiven Modus wieder.
+[^4]: Empfehlenswert ist auch die relativ junge Neuimplementierung [neovim](https://neovim.io/).

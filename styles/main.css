@@ -1,6 +1,15 @@
 /* main.css */
 
 
+w-50 {
+  width: 50%;
+}
+
+w-30 {
+  width: 30%;
+}
+
+
 kbd {
   font-size: 1.2rem;
   line-height: 1.2rem;
@@ -30,6 +39,18 @@ div.center > * {
 
 .flex-child { 
   flex: 1;
+}
+
+.flex-child-2 { 
+  flex: 2;
+}
+
+.flex-child-3 { 
+  flex: 3;
+}
+
+.flex-child-4 { 
+  flex: 4;
 }
 
 @media (max-width: 600px) {
