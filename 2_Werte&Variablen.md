@@ -19,13 +19,27 @@ link:     styles/main.css
 
 ## Grundrechenarten in Python
 
-Wie der Name Computer – oder auf Deutsch Rechner – zeigt, ist das Beantworten arithmetischer Fragestellungen eine Grundfunktion aller Computer. So kann auch Python Rechenaufgaben für uns lösen. Geben Sie in die Python-Konsole folgende Aufgabe ein und drücken Sie `ENTER`:
+Wie der Name Computer – oder auf Deutsch Rechner – zeigt, ist das Beantworten arithmetischer Fragestellungen eine Grundfunktion aller Computer. So kann auch Python Rechenaufgaben für uns lösen. 
+
+Hier stellen wir Python die Rechenaufgabe $2+12\cdot2$:
 
 ```python
 2+12*2
-[1,2,3]
 ```
 @Pyodide.eval
+
+<div class="alert alert-blue">
+
+Interaktives Python
+-------------------
+
+Den Python Code in diesem Kurs können Sie direkt in ihrem Browser ausführen, in dem Sie auf den mit `</>` beschrifteten Knopf drücken. Die "Antwort" von Python erscheint dann direkt darunter.\
+Sie können den Code auch verändern, korrigieren oder damit herumexperimentieren.
+Rechts unten haben Sie die Möglichkeit, mit den Pfeilen zu den vorherigen Versionen des Codes zurückzukehren.
+
+Probieren Sie:
+- Was passiert wenn Sie Unsinn eingeben?
+</div>
 
 So erhalten wir das Ergebnis für $2+12\cdot 2$.
 
