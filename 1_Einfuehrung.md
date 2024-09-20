@@ -9,9 +9,8 @@ logo:     img/1/classroom2.png
 icon:     img/TU_Logo_kurz.png
 comment:  Was bedeutet es einen Computer zu programmieren und 
           wie lernt man es?
-import:   https://raw.githubusercontent.com/LiaTemplates/Pyodide/master/README.md
 import:   https://raw.githubusercontent.com/liaScript/mermaid_template/master/README.md
-import:   ./macros.md
+import:   macros/macros.md
 link:     styles/main.css
 
 -->
@@ -107,12 +106,17 @@ Während einige dieser Probleme und die dazugehörigen Algorithmen sehr komplex 
 
 <div class="alert alert-yellow">
 
-Stellen Sie sich vor, sie haben einen Stapel unsortierter Spielkarten und sie sollen diese aufsteigend nach ihrem Wert sortieren.
-Wie würden Sie das machen?
+Übung ✍️[^1]
+--------
 
-   [[___ ___ ___ ___]]
+Stellen Sie sich vor, sie haben einen Stapel unsortierter Spielkarten und sie sollen diese aufsteigend nach ihrem Wert sortieren.
+
+Wie würden Sie das machen?\
+Skizzieren Sie ihre Vorgehensweise!
 
 </div>
+
+[^1]: Übungen die mit ✍️ markiert sind, werden nicht online korrigiert. 
 
 ### Bubble Sort
 Die am einfachsten zu beschreibende Sortiermethode ist das sogenannte *Bubble Sort*
@@ -156,6 +160,7 @@ Ausführlich kann man den Algorithmus für eine Liste aus vergleichbaren Element
 Hier sehen Sie wie Bubble Sort mit einer zufälligen Liste funktioniert:
 
 @[embed(style="height: 245px; width:670px; border: none")](html/1/bubblesort.html)
+
 
 #### Flussdiagramm: Bubble Sort
 

@@ -11,7 +11,7 @@ comment:  Setzen Sie Logik ein, um den Fluss eines Programmes zu steuern
           und so Entscheidungen zu treffen. 
 import:   https://raw.githubusercontent.com/LiaTemplates/Pyodide/master/README.md
 import:   https://raw.githubusercontent.com/liaScript/mermaid_template/master/README.md
-import:   ./macros.md
+import:   macros/macros.md
 link:     styles/main.css
 
 -->

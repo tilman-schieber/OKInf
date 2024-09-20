@@ -9,13 +9,16 @@ logo:     img/2/datastorage.png
 icon:     img/TU_Logo_kurz.png
 comment:  Nutzen Sie Python, um mit Werten zu rechnen und die Ergebnisse
           der Berechnungen in Variablen zu speichern.
-import:   ./macros.md
-import:   ./pyodide.md
+import:   macros/macros.md
+import:   macros/pyodide.md
 link:     styles/main.css
 
 -->
 
 # 2. Werte und Variablen
+
+<!-- class="lead" -->
+In diesem Kapitel lernen Sie,
 
 ## Grundrechenarten in Python
 
@@ -30,38 +33,39 @@ Hier stellen wir Python die Rechenaufgabe $2+12\cdot2$:
 
 <div class="alert alert-blue">
 
+
 Interaktives Python
--------------------
+--------------------
 
 Den Python Code in diesem Kurs können Sie direkt in ihrem Browser ausführen, in dem Sie auf den mit `</>` beschrifteten Knopf drücken. Die "Antwort" von Python erscheint dann direkt darunter.\
 Sie können den Code auch verändern, korrigieren oder damit herumexperimentieren.
 Rechts unten haben Sie die Möglichkeit, mit den Pfeilen zu den vorherigen Versionen des Codes zurückzukehren.
 
-Probieren Sie:
-- Was passiert wenn Sie Unsinn eingeben?
 </div>
 
-So erhalten wir das Ergebnis für $2+12\cdot 2$.
+Dieser Code gibt uns das Ergebnis für $2+12\cdot 2$, also $26$.
 
 Man bezeichnet nun `2+12*2` als einen *Ausdruck* der Programmiersprache *Python*. Das bedeutet, dass Python es interpretieren und auswerten kann. 
 
-Wie man sieht, verwendet Python *Operatoren*, spezielle Symbole für die Grundrechenarten. In diesem Beispiel steht der Operator `+` für die Addition und der Operator`*` für die Multiplikation. 
-
+Wie man sieht, verwendet Python *Operatoren*, spezielle Symbole für die Grundrechenarten. In diesem Beispiel steht der Operator `+` für die Addition und der Operator `*` für die Multiplikation. 
 
 In Python gilt wie in der Mathematik, dass Multiplikation und Division Vorrang vor Addition und Substraktion haben. Deshalb erhalten wir hier $26$ und nicht $28$ als Ergebnis.
 Wollen wir die Auswertungsreihenfolge ändern, können wir die Addition in Klammern setzen:
 
 ```python
 (2+12)*2
-#28
 ```
+@Pyodide.eval
+
 
 Dieser Ausdruck entspricht nun $(2+12)\cdot 2 = 28$ 
 
+Natürlich können wir auch subtrahieren und dividieren:
+
 ```python
 5-4/2
-#3.0
 ```
+@Pyodide.eval
 
 Hier steht `-` für die Substraktion und `/` für die Division. Warum aber gibt *Python* hier `3.0` anstatt einfach `3` an?
 Um das zu verstehen müssen Sie zunächst lernen, was ein Datentyp ist.

@@ -8,7 +8,8 @@ narrator: Deutsch Female
 logo:     img/A/linux.png
 icon:     img/TU_Logo_kurz.png
 comment:  Eine kurze Einführung in Linux
-import:   ./macros.md
+import:   macros/macros.md
+import:   macros/asciinema.md
 link:     styles/main.css
 -->
 
@@ -291,7 +292,7 @@ Ein Teil einer solchen Struktur sieht wie folgt aus:
 ```
 
 <div class="flex-child">
-Die hier gezeigten Verzeichnisse finden Sie auf jedem Linux oder Unix-System.
+Die hier gezeigten Verzeichnisse finden Sie auf jedem Linux oder Unix-System[^1].
 
 - `home` kennen Sie bereits, hier enthält es die persönlichen Ordner zweier Nutzer.
 - `bin` enthält installierte Programme

@@ -8,8 +8,6 @@ logo:     img/oberkurs_logo.png
 icon:     img/TU_Logo_kurz.png
 comment:  Oberkurs Informatik am Studienkolleg der
           Technischen Universität Berlin.
-import:   https://raw.githubusercontent.com/LiaTemplates/Pyodide/master/README.md
-import:   https://raw.githubusercontent.com/liaScript/mermaid_template/master/README.md
 link:     styles/main.css
 
 @style
