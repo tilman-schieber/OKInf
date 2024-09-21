@@ -318,7 +318,7 @@ Es gibt eine unüberschaubare Menge an Programmiersprachen, die für unterschied
 
 </details>
 
-@[embed(style="height: 400px; width:700px; border: none")](html/1/console.html)
+@[embed(style="height: 400px; width:700px; border: none")](html/console.html)
 
 <div class="alert alert-blue">
 Tipp: die REPL

@@ -10,7 +10,7 @@ icon:     img/TU_Logo_kurz.png
 comment:  Nutzen Sie Python, um mit Werten zu rechnen und die Ergebnisse
           der Berechnungen in Variablen zu speichern.
 import:   macros/macros.md
-import:   macros/pyodide.md
+import:   https://raw.githubusercontent.com/LiaTemplates/Pyodide/master/README.md
 link:     styles/main.css
 
 -->
@@ -71,37 +71,34 @@ Hier steht `-` für die Substraktion und `/` für die Division. Warum aber gibt 
 Um das zu verstehen müssen Sie zunächst lernen, was ein Datentyp ist.
 
 ## Datentypen in Python
-Verschiedene Typen von Daten werden in einem Computer unterschiedlich gespeichert. Während man in sogenannten *statischen Programmiersprachen* den jeweiligen Datentyp als Programmierer selbst festlegt, wählt *Python* als *dynamische Programmiersprache* einen passenden Typ selbst aus.
+
+Verschiedene Typen von Daten werden in einem Computer unterschiedlich gespeichert. Während man in sogenannten *statischen Programmiersprachen* den jeweiligen Datentyp als Programmierer selbst festlegt, wählt *Python* als *dynamische Programmiersprache*[^1] einen passenden Typ selbst aus.
 
 Welchen *Datentyp* ein *Ausdruck* hat, lässt sich durch die *Funktion* `type()` herausfinden. Wir erhalten als Antwort den Datentyp des Ausdrucks, der sich zwischen den Klammern befindet.
 
-`type()` ist eine in Python eingebaute *Funktion*. Wir übergeben ihr einen Ausdruck und erhalten dann einen Rückgabewert. In Lerneinheit 5 werden Sie Funktionen genauer kennenlernen. 
+`type()` ist eine in Python eingebaute *Funktion* [^2]. Wir übergeben ihr einen Ausdruck und erhalten dann einen Rückgabewert.  
 
 
 ```python
 type(20)
-# <class 'int'>
-
-type(2+12*2)
-# <class 'int'>
 ```
+@Pyodide.eval
 
-Diese Werte haben die *Klasse* `int`, das steht für Englisch *integer*, also ganze Zahlen.
+Der Wert `20` hat die *Klasse* `int`, das steht für Englisch *integer*, also ganze Zahlen.
 
 Das Ergebnis einer Division ist nicht unbedingt eine ganze Zahl, weshalb auch das Resultat einer Division in Python von einem anderen Typ ist:
 
 ```python
-5-4/2
-#3.0
-
 type(5-4/2)
-# <class 'float'>
 ```
+@Pyodide.eval
 
 Das erklärt, weshalb das Ergebnis der Division uns mit Nachkommastelle als $3.0$ angegeben wurde: Es ist von der *Klasse* `float`; kurz für *Fließkommazahl*. 
-Was es genau damit auf sich hat, lernen Sie später in dieser Lerneinheit wenn wir die *digitale* *Kodierung* von Zahlen erklären.
 Selbst wenn das Ergebnis als `int` dargestellt werden könnte, erhalten wir hier eine solche Fließkommazahl zurück.
 
+[^1]: Java, C, C++ und Pascal sind Beispiele für statische Programmiersprachen. Python, Javascript, PHP und Lua sind dynamisch. 
+
+[^2]: Später werden Sie auch lernen, eigene Funktionen zu programmieren.
 
 ## Weitere Operatoren in Python
 
@@ -110,40 +107,73 @@ So ist $2^8$:
 
 ```python
 2**8
-#256
 ```
+@Pyodide.eval
 
 Das Potenzieren hat Vorrang vor den Grundrechenarten, so erhalten wir:
 
 ```python
 2**3*2
-#16
 ```
+@Pyodide.eval
 
 Also korrekt $2^3 \cdot 2 = 16$
 
-Für viele *Algorithmen*, so auch bei der zuvor vorgestellten Umwandlung von Dezimalzahlen zu Zahlen zur Basis $b$, ist die Ganzzahldivision mit Rest wichtig.
-
-Dividieren wir ganze Zahlen durcheinander, können wir das Ergebnis immer als einen ganzzahligen Quotient und einen ganzzahligen Rest schreiben.
+Dividieren wir ganze Zahlen, können wir das Ergebnis immer als einen ganzzahligen Quotient und einen ganzzahligen Rest schreiben.
 
 Zum Beispiel ist bei $10 : 3$ der ganzzahlige Quotient $3$ und der Rest $1$.
 
 In Python erhalten wir den ganzzahligen Quotienten mit dem *Operator* `//`:
+
 ```python
 10 // 3
-# 3
-
-type(10 // 3)
-# <class 'int'>
 ```
-Wir überprüfen mit der Funktion `type()`, dass es sich tatsächlich um ein ganzzahliges Ergebnis (vom Typ `int`) handelt.
+@Pyodide.eval
+
+Wir überprüfen mit der Funktion `type()`, dass es sich tatsächlich um ein ganzzahliges Ergebnis (vom Typ `int`) handelt:
+
+```python
+type(10 // 3)
+```
+@Pyodide.eval
+
 
 Den Rest bei der ganzzahligen Division erhält man mit dem *Modulo*-*Operator* `%`: 
 
 ```python
 10 % 3
-# 1
 ```
+@Pyodide.eval
+
+### Übung: Assymetrische Verschlüsselung
+
+Assymetrische Verschlüsselung benutzt eine öffentlichen Schlüssel um Nachrichten an eine Person zu verschlüsseln, die diese dann mit einem privaten Schlüssel entschlüsseln kann.\
+
+Als einfaches Beispiel kann man $$priv=17$$ als privaten und $$pub=2753$$ als öffentlichen Schlüssel verwenden.\
+Verschlüsselt wird dann nach der Formel 
+
+$$m^{priv}\!\!\mod 3233$$ und entschlüsselt nach $$c^{pub}\!\!\mod 3233$$. **mod** steht für den Modulo-Operator, den Sie in Python ja bereits kennengelernt haben.
+
+Verwenden Sie Python um die folgenden Aufgaben zu lösen. Sie können ihre lokale Python-Installation oder die [Python Konsole](#python-konsole) am Ende dieser Lerneinheit benutzen.
+
+<div class="alert alert-yellow">
+
+
+Verschlüsseln Sie die Nachricht $m=123$:
+
+  [[855]]
+
+</div>
+
+
+<div class="alert alert-yellow">
+
+Entschlüsseln Sie die codierte Nachricht $c=2573$:
+
+  [[377]]
+
+
+</div>
 
 ## Zahlensysteme in Python
 
@@ -153,29 +183,37 @@ Beginnt man eine Zahl mit den Zeichen `0b`, wird sie von *Python* als Binärzahl
 
 ```python
 0b10101
-# 21
-0b101+0b1
-# 6
 ```
+@Pyodide.eval
 
 Das Ergebnis erhalten wir immer als Dezimalzahl. Die Funktion `bin()` gibt  eine Zahl als Binärzahl zurück. 
-So kann man auch das Ergebnis dieser Rechnung als Binärzahl ausgeben:
+So kann man auch das Ergebnis der Rechnung $$ 11011_2 + 101_2$$ als Binärzahl ausgeben:
 
 ```python
-bin(0b101+0b1)
-#'0b110'
+bin(0b11011+0b101)
 ```
+@Pyodide.eval
 
 Auf gleiche Weise kann man in Python auch mit Oktalzahlen und Hexadezimalzahlen rechnen.
 Eine Oktalzahl beginnt mit den Zeichen `0o` und die Funktion `oct()` stellt einen Ausdruck als Oktalzahl dar. 
 Hexadezimalzahlen beginnen mit den Zeichen `0x` und die dazugehörige Funktion ist `hex()`
 
-So können Sie nun die Aufgaben dieser Lerneinheit mit Python lösen.
-Wollen wir zum Beispiel eine Oktal- oder Hexadezimazahl in eine Binärzahl umwandeln, schreiben wir:
+<div class="alert alert-yellow">
 
-```python
-bin(0o16)
-# '0b1110'
-bin(0xfa)
-# '0b11111010'
-```
+Aufgabe
+-------
+
+Was ist Summe der Oktalzahl $7141_8$ und der Hexadezimalzahl $\text{C24}_{16}$?
+
+  [[6789]]
+
+@pyconsole
+
+</div>
+
+
+
+
+# *Python-Konsole*
+
+@[embed(style="height: 400px; width:700px; border: none")](html/console.html)

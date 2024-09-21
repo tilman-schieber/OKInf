@@ -2,6 +2,11 @@
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
 
+
+@pyconsole 
+<a target="_blank" role="button" href="https://tilman-schieber.github.io/console"><button class="lia-btn lia-btn--outline">Python Konsole</button></a>
+@end
+
 @embed
 <script run-once modify="false">
 fetch("@1")
