@@ -147,14 +147,14 @@ Den Rest bei der ganzzahligen Division erhält man mit dem *Modulo*-*Operator* `
 
 ### Übung: Assymetrische Verschlüsselung
 
-Assymetrische Verschlüsselung benutzt eine öffentlichen Schlüssel um Nachrichten an eine Person zu verschlüsseln, die diese dann mit einem privaten Schlüssel entschlüsseln kann.\
+Assymetrische Verschlüsselung benutzt eine öffentlichen Schlüssel um Nachrichten an eine Person zu verschlüsseln, die diese dann mit einem privaten Schlüssel entschlüsseln kann.
 
 Als einfaches Beispiel kann man $$priv=17$$ als privaten und $$pub=2753$$ als öffentlichen Schlüssel verwenden.\
 Verschlüsselt wird dann nach der Formel 
 
 $$m^{priv}\!\!\mod 3233$$ und entschlüsselt nach $$c^{pub}\!\!\mod 3233$$. **mod** steht für den Modulo-Operator, den Sie in Python ja bereits kennengelernt haben.
 
-Verwenden Sie Python um die folgenden Aufgaben zu lösen. Sie können ihre lokale Python-Installation oder die [Python Konsole](#python-konsole) am Ende dieser Lerneinheit benutzen.
+Verwenden Sie Python um die folgenden Aufgaben zu lösen:
 
 <div class="alert alert-yellow">
 
@@ -162,6 +162,7 @@ Verwenden Sie Python um die folgenden Aufgaben zu lösen. Sie können ihre lokal
 Verschlüsseln Sie die Nachricht $m=123$:
 
   [[855]]
+
 
 </div>
 
@@ -172,8 +173,11 @@ Entschlüsseln Sie die codierte Nachricht $c=2573$:
 
   [[377]]
 
+@pyconsole [^1]
 
 </div>
+
+[^1]: Dieser Knopf öffnet ein neues Fenster mit einer browserbasierten Python-Konsole. Sie können es im Hintergrund immer offen lassen um Aufgaben zu lösen oder die Lerninhalte nachzuvollziehen.
 
 ## Zahlensysteme in Python
 
@@ -211,9 +215,3 @@ Was ist Summe der Oktalzahl $7141_8$ und der Hexadezimalzahl $\text{C24}_{16}$?
 
 </div>
 
-
-
-
-# *Python-Konsole*
-
-@[embed(style="height: 400px; width:700px; border: none")](html/console.html)
