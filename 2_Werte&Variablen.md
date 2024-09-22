@@ -54,7 +54,7 @@ Hier stellen wir Python die Rechenaufgabe $2+12\cdot2$:
 Interaktives Python
 --------------------
 
-Den Python Code in diesem Kurs können Sie direkt in ihrem Browser ausführen, in dem Sie auf den mit `</>` beschrifteten Knopf drücken. Die "Antwort" von Python erscheint dann direkt darunter.\
+Den Python Code in diesem Kurs können Sie direkt in Ihrem Browser ausführen, in dem Sie auf den mit `</>` beschrifteten Knopf drücken. Die "Antwort" von Python erscheint dann direkt darunter.\
 Sie können den Code auch verändern, korrigieren oder damit herumexperimentieren.
 Rechts unten haben Sie die Möglichkeit, mit den Pfeilen zu den vorherigen Versionen des Codes zurückzukehren.
 
@@ -66,7 +66,7 @@ Man bezeichnet nun `2+12*2` als einen *Ausdruck* der Programmiersprache *Python*
 
 Wie man sieht, verwendet Python *Operatoren*, spezielle Symbole für die Grundrechenarten. In diesem Beispiel steht der Operator `+` für die Addition und der Operator `*` für die Multiplikation. 
 
-In Python gilt wie in der Mathematik, dass Multiplikation und Division Vorrang vor Addition und Substraktion haben. Deshalb erhalten wir hier $26$ und nicht $28$ als Ergebnis.
+In Python gilt wie in der Mathematik, dass Multiplikation und Division Vorrang vor Addition und Subtraktion haben. Deshalb erhalten wir hier $26$ und nicht $28$ als Ergebnis.
 Wollen wir die Auswertungsreihenfolge ändern, können wir die Addition in Klammern setzen:
 
 ```python
@@ -146,7 +146,7 @@ a|   \c
 
 <div class="flex-child-4">
 
-Links sehen sie die Skizze eines rechtwinkligen Dreiecks mit den Seiten $a,b,c$.
+Links sehen Sie die Skizze eines rechtwinkligen Dreiecks mit den Seiten $a,b,c$.
 
 Ein rechtwinkliges Dreieck hat die Kathetenlängen $$a=900\qquad b=945 $$
 Berechnen Sie mit Python die Länge der Hypotenuse $c$?
@@ -315,9 +315,9 @@ Den Rest bei der ganzzahligen Division erhält man mit dem *Modulo*-*Operator* `
 ```
 @Pyodide.eval
 
-### Übung: Assymetrische Verschlüsselung
+### Übung: Asymmetrische Verschlüsselung
 
-Assymetrische Verschlüsselung benutzt eine öffentlichen Schlüssel um Nachrichten an eine Person zu verschlüsseln, die diese dann mit einem privaten Schlüssel entschlüsseln kann.
+Asymmetrische Verschlüsselung benutzt einen öffentlichen Schlüssel um Nachrichten an eine Person zu verschlüsseln, die diese dann mit einem privaten Schlüssel entschlüsseln kann.
 
 Als einfaches Beispiel kann man $$priv=17$$ als privaten und $$pub=2753$$ als öffentlichen Schlüssel verwenden.\
 Verschlüsselt wird dann nach der Formel 
@@ -398,7 +398,7 @@ Hexadezimalzahlen beginnen mit den Zeichen `0x` und die dazugehörige Funktion i
 Aufgabe
 -------
 
-Was ist Summe der Oktalzahl $7141_8$ und der Hexadezimalzahl $\text{C24}_{16}$?
+Was ist die Summe der Oktalzahl $7141_8$ und der Hexadezimalzahl $\text{C24}_{16}$?
 
   [[6789]]
 
@@ -497,14 +497,14 @@ print("Hallo", name)
 @Pyodide.eval[^1]
 
 Der Befehl `input()` wartet auf eine Eingabe des Benutzers und gibt diese als Zeichenkette zurück. 
-Diese Der Befehl `print()` gibt die Argumente auf dem Bildschirm aus.
+Der Befehl `print()` gibt die Argumente auf dem Bildschirm aus.
 
 <div class="alert alert-blue">
 
 Zeichenketten oder *strings*
 ----------------------------
 
-In Python werden Zeichenketten oder *strings*[^2] in Anführungszeichen geschrieben. Man kann enweder einfache Anführungszeichen `'` oder doppelte Anführungszeichen `"` verwenden. Strings die von drei Anführungszeichen begrenzt werden, können auch Zeilenumbrüche enthalten.
+In Python werden Zeichenketten oder *strings*[^2] in Anführungszeichen geschrieben. Man kann entweder einfache Anführungszeichen `'` oder doppelte Anführungszeichen `"` verwenden. Strings die von drei Anführungszeichen begrenzt werden, können auch Zeilenumbrüche enthalten.
 Aber auch in normalen Zeichenketten kann man durch die Sequenz[^3] `\n` einen Zeilenumbruch erzeugen.
 
 Hier ein paar Beispiele für gültige Strings:
@@ -524,8 +524,6 @@ Es gibt noch zahlreiche spezielle Schreibweisen für Strings, die Sie später ke
 
 </div>
 
-
-
 Im letzten Abschnitt haben wir Euro in Dollar umgerechnet, sehr viel mehr Sinn macht ein Programm, das den Benutzer nach dem Betrag in Euro fragt und dann den Betrag in Dollar ausgibt.
 
 ```python	
@@ -537,7 +535,7 @@ print("Der Betrag in Dollar ist:", betrag_dollar)
 ```
 @Pyodide.eval
 
-Dieses Codebeispiel verwendet die Bereits bekannten Befehle `input()` und `print()` für die Ein- und Ausgabe.
+Dieses Codebeispiel verwendet die bereits bekannten Befehle `input()` und `print()` für die Ein- und Ausgabe.
 `float()` verwenden wir hier um den eingegebenen Wert in eine Fließkommazahl umzuwandeln[^4]. Da `input()` immer eine Zeichenkette zurückgibt, müssen wir den Wert umwandeln, um damit rechnen zu können.\
 Auch runden wir das Ergebnis auf zwei Dezimalstellen, wie das bei Währungen üblich ist.
 
