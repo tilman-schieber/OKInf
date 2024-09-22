@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  0.0.1
+version:  1.0.0
 date:     2024
 language: de
 narrator: Deutsch Female
@@ -17,14 +17,25 @@ link:     styles/main.css
 
 # 2. Werte und Variablen
 
-<!-- class="lead" -->
-In diesem Kapitel lernen Sie, mit Python einfache mathematische Fragestellungen zu beantworten.\
+<div class="alert alert-green">
+
+<h4>Lernziele</h4>
+
+
+In diesem Kapitel lernen Sie, mit Python einfache mathematische Fragestellungen zu beantworten und die Ergebnisse in Variablen zu speichern.
+Außerdem lernen wir einige weitere Grundlagen kennen.
+
 Am Ende können Sie:
 
 1. Grundrechenarten, Potenzieren und Ganzzahldivision in Python anwenden.
 2. Zahlen in andere Zahlensysteme umrechnen.
 3. Die Grundlagen von Datentypen in Python verstehen.
 4. Ergebnisse in Variablen speichern.
+5. Eingaben vom Benutzer entgegennehmen und Ausgaben auf dem Bildschirm ausgeben.
+
+</div>
+
+
 
 ## Grundrechenarten in Python
 
@@ -74,6 +85,91 @@ Natürlich können wir auch subtrahieren und dividieren:
 @Pyodide.eval
 
 Hier steht `-` für die Substraktion und `/` für die Division.
+
+### Übung: Temperaturumrechnung
+
+<div class="alert alert-yellow">	
+
+Sie lesen den Wetterbericht für New York:
+
+![74 Grad Fahrenheit](img/2/fahrenheit.png)<!-- style="width: 250px"-->
+
+In den USA wird die Temperatur in Fahrenheit gemessen. Man rechnet von Celsius nach Fahrenheit mit folgender Formel um: $$F = \frac{9}{5} \cdot C + 32$$
+
+Setzen Sie diese Formel in Python um, und berechnen Sie so, wie warm es in New York ist:
+
+
+
+  [[68]]
+*************************************
+
+```python
+9/5*20+32
+```
+
+
+*************************************
+
+
+@pyconsole
+
+</div>
+
+
+
+### Übung: Pythagoras
+
+<div class="alert alert-yellow">	
+
+<div class="flex-container">
+
+<div class="flex-child">
+
+<!--style="
+  max-width: 115px;
+  display: inline-block;
+  stroke: green;" -->
+```ascii
+
+ +
+ |\
+ | \
+ |  \ 
+a|   \c
+ |    \
+ +-----+
+    b
+```
+
+
+</div>
+
+<div class="flex-child-4">
+
+Links sehen sie die Skizze eines rechtwinkligen Dreiecks mit den Seiten $a,b,c$.
+
+Ein rechtwinkliges Dreieck hat die Kathetenlängen $$a=900\qquad b=945 $$
+Berechnen Sie mit Python die Länge der Hypotenuse $c$?
+
+  [[1305]]
+  [[?]] Der Satz des Pythagoras ist $a^2 + b^2 = c^2$.
+  [[?]] Die Wurzel einer Zahl $x$ ist $x^{0.5}$.
+*************************************
+eine einzeilige Lösung in Python könnte so aussehen:
+
+```python
+(900**2 + 945**2)**0.5
+```
+
+*************************************
+
+
+@pyconsole
+
+</div>
+</div>
+</div>
+
 
 ## Datentypen in Python
 
@@ -135,17 +231,44 @@ Rechnen wir mit Fließkommazahlen, können überraschende Ergebnisse auftreten:
 
 Auch wenn hier nur eine kleine Abweichung vom richtigen Ergebnis 0.3 auftritt, können solche Fehler zu Problemen führen. Bei der Nutzung von Fließkommazahlen sollten ihre Beschränkungen immer mit bedacht werden.
 
-Python erlaubt es auch, Fließkommazahlen in wissenschaftlicher Notation zur Basis 10 anzugeben. Um zum Beispiel ein Mol oder das Gewicht eines Elektrons zu notieren, schreibt man das in Python wie folgt:
+Eine nützliche Funktion in Python ist `round()`, die eine Fließkommazahl auf eine bestimmte Anzahl von Dezimalstellen rundet:
+
+```python
+round(0.1 + 0.2, 2)
+```
+@Pyodide.eval
+
+Wir übergeben hier zuerst die Fließkommazahl, die wir runden wollen und dann die Anzahl der Dezimalstellen, auf die gerundet werden soll.
+Diese Funktion nimmt also zwei Argumente, die durch Komma getrennt werden.
+
+
+<div class="alert alert-yellow">	
+
+Frage
+------
+
+Was passiert wenn Sie die Funktion `round` mit nur einem Argument aufrufen?
+
+- [[ ]] Sie rundet auf die nächste ganze Zahl ab.
+- [[X]] Sie rundet auf die nächste ganze Zahl auf oder ab.
+- [[ ]] Sie rundet auf die nächste ganze Zahl auf.
+- [[ ]] Es gibt einen Fehler.
+  
+
+</div>
+
+
+Python erlaubt es auch, Fließkommazahlen in wissenschaftlicher Notation zur Basis 10 anzugeben. Die Avogadro-Konstante[^1] $6.02214076 \cdot 10^{23}$ und das Gewicht eines Elektrons $9\cdot 10^{-31}$ kg schreibt man in Python wie folgt:
 
 ```python
 6.02214076e23
 9e-31
 ```
 
-Man schreibt also zunächst die Mantisse[^1], dann ein e gefolgt vom Exponenten zur Basis 10.
+Man schreibt also zunächst die sogenannte Mantisse[^2], dann ein e gefolgt vom Exponenten zur Basis 10.
 
-
-
+[^1]: Die [Avogadro-Konstante](https://de.wikipedia.org/wiki/Avogadro-Konstante) gibt die Anzahl der Atome oder Moleküle in einem Mol einer Substanz an.
+[^2]: Die Mantisse ist der Teil einer Zahl, der die signifikanten Stellen enthält. 
 
 ## Weitere Operatoren in Python
 
@@ -199,17 +322,28 @@ Assymetrische Verschlüsselung benutzt eine öffentlichen Schlüssel um Nachrich
 Als einfaches Beispiel kann man $$priv=17$$ als privaten und $$pub=2753$$ als öffentlichen Schlüssel verwenden.\
 Verschlüsselt wird dann nach der Formel 
 
-$$m^{priv}\!\!\mod 3233$$ und entschlüsselt nach $$c^{pub}\!\!\mod 3233$$. **mod** steht für den Modulo-Operator, den Sie in Python ja bereits kennengelernt haben.
+$$m^{priv}\!\!\mod 3233$$ und entschlüsselt nach $$c^{pub}\!\!\mod 3233$$
+**mod** steht für den Modulo-Operator, den Sie in Python ja bereits kennengelernt haben.
 
 Verwenden Sie Python um die folgenden Aufgaben zu lösen:
 
 <div class="alert alert-yellow">
 
 
-Verschlüsseln Sie die Nachricht $m=123$:
+Verschlüsseln Sie die Nachricht $m=123$:[^1]
 
   [[855]]
+  [[?]] Versuchen Sie die obige Formel in Python umzusetzen.
+  [[?]] Der Modulo-Operator in Python ist `%`.
+*************************************
+nach der obigen Formel setzen wir einfach ein:
 
+```python
+123**17 % 3233
+```
+so erhalten wir $855$.
+
+*************************************
 
 </div>
 
@@ -219,12 +353,22 @@ Verschlüsseln Sie die Nachricht $m=123$:
 Entschlüsseln Sie die codierte Nachricht $c=2573$:
 
   [[377]]
+*************************************
+wir setzen ein:
 
-@pyconsole [^1]
+```python
+2573**2753 % 3233
+```
+so erhalten wir $377$.
+
+*************************************
+
+@pyconsole [^2]
 
 </div>
 
-[^1]: Dieser Knopf öffnet ein neues Fenster mit einer browserbasierten Python-Konsole. Sie können es im Hintergrund immer offen lassen um Aufgaben zu lösen oder die Lerninhalte nachzuvollziehen.
+[^1]: Klicken Sie auf den 💡-Knopf neben der Aufgabe um Hinweise zu erhalten. Der ✔-Knopf zeigt die Lösung".
+[^2]: Dieser Knopf öffnet ein neues Fenster mit einer browserbasierten Python-Konsole. Sie können es im Hintergrund immer offen lassen um Aufgaben zu lösen oder die Lerninhalte nachzuvollziehen.
 
 ## Zahlensysteme in Python
 
@@ -262,3 +406,227 @@ Was ist Summe der Oktalzahl $7141_8$ und der Hexadezimalzahl $\text{C24}_{16}$?
 
 </div>
 
+## Variablen
+
+So wie wir in der Mathematik Variablen nutzen, denen wir Werte zuweisen können, verwendet auch ein Computerprogramm Variablen. Variablen sind in der Informatik nichts anderes als benannte Speicherplätze für Werte. Mit dem Operator = für die sogenannte Zuweisung können wir eine neue Variable einführen:
+
+```python
+x = 5
+x + 2
+```
+@Pyodide.eval
+
+Variablennamen können Zahlen, Buchstaben und den Unterstrich _ enthalten. Sie dürfen aber nicht mit einer Zahl beginnen.
+
+Folgende Variablennamen sind gültig:
+
+```python 
+vorname
+vorname2
+mein_Alter
+WARNUNGSTEXT
+_temp
+```
+
+Folgende Variablennamen sind aber ungültig:
+
+```python 
+27_feld
+WARNUNG!
+name-2
+$alter
+```
+
+<div class="alert alert-yellow" style="">
+
+Aufgabe
+-------
+
+Welche der folgenden Variablennamen sind gültig?
+
+[[x]] `__intern__`
+[[ ]] `20%discount`
+[[x]] `Größe`
+[[x]] `_`
+[[x]] `m5L2K3`
+[[ ]] `first.name`
+
+</div>
+
+Ab Python Version 3.0 ist es möglich, Schriftzeichen nicht-englischer Sprachen zu verwenden. So kann 姓名, радиус oder π als Variable verwendet werden.
+
+Auch wenn kurze Variablennamen praktisch sein können, sollte man als Programmierer darauf achten, dass die Variablennamen informativ sind.
+
+Diese beiden Codebeispiele machen das gleiche, das auf der linken Seite ist aber für einen Menschen leichter zu verstehen:
+
+<div class="flex-container">
+
+<div class="flex-child">
+
+```python	
+betrag_euro = 20
+wechselkurs = 1.1
+betrag_dollar = betrag_euro * wechselkurs
+```
+
+</div>
+
+<div class="flex-child">
+
+```python	
+e = 20
+k = 1.1
+d = e * k
+```
+
+</div>
+</div>
+
+
+## Ein- und Ausgabe
+In allen bisherigen Beispielen haben wir Python direkt die Ausdrücke gegeben, die es auswerten sollte. Im Normalfall schreibt man aber Programme, die mit dem Benutzer interagieren. 
+
+Dafür müssen wir Python dazu bringen, Eingaben vom Benutzer entgegenzunehmen und Ausgaben auf dem Bildschirm auszugeben.
+
+Wir beginnen mit einem einfachen Beispiel, das den Benutzer nach seinem Namen fragt und ihn dann begrüßt:
+
+```python
+name = input()
+print("Hallo", name)
+```
+@Pyodide.eval[^1]
+
+Der Befehl `input()` wartet auf eine Eingabe des Benutzers und gibt diese als Zeichenkette zurück. 
+Diese Der Befehl `print()` gibt die Argumente auf dem Bildschirm aus.
+
+<div class="alert alert-blue">
+
+Zeichenketten oder *strings*
+----------------------------
+
+In Python werden Zeichenketten oder *strings*[^2] in Anführungszeichen geschrieben. Man kann enweder einfache Anführungszeichen `'` oder doppelte Anführungszeichen `"` verwenden. Strings die von drei Anführungszeichen begrenzt werden, können auch Zeilenumbrüche enthalten.
+Aber auch in normalen Zeichenketten kann man durch die Sequenz[^3] `\n` einen Zeilenumbruch erzeugen.
+
+Hier ein paar Beispiele für gültige Strings:
+
+```python
+"Das ist ein String"
+'Das ist auch ein String'
+'Man kann die jeweils "anderen" Anführungszeichen in einem String verwenden'
+"""Das ist ein String, der
+über mehrere
+Zeilen
+geht"""
+"Auch dieser String\nenthält einen Zeilenumbruch"
+```
+
+Es gibt noch zahlreiche spezielle Schreibweisen für Strings, die Sie später kennenlernen werden. Für einfache Ein- und Ausgabe reichen diese aus.
+
+</div>
+
+
+
+Im letzten Abschnitt haben wir Euro in Dollar umgerechnet, sehr viel mehr Sinn macht ein Programm, das den Benutzer nach dem Betrag in Euro fragt und dann den Betrag in Dollar ausgibt.
+
+```python	
+eingabe = input()
+betrag_euro = float(eingabe)
+wechselkurs = 1.1
+betrag_dollar = round(betrag_euro * wechselkurs, 2)
+print("Der Betrag in Dollar ist:", betrag_dollar)
+```
+@Pyodide.eval
+
+Dieses Codebeispiel verwendet die Bereits bekannten Befehle `input()` und `print()` für die Ein- und Ausgabe.
+`float()` verwenden wir hier um den eingegebenen Wert in eine Fließkommazahl umzuwandeln[^4]. Da `input()` immer eine Zeichenkette zurückgibt, müssen wir den Wert umwandeln, um damit rechnen zu können.\
+Auch runden wir das Ergebnis auf zwei Dezimalstellen, wie das bei Währungen üblich ist.
+
+
+[^1]: Wenn Sie dieses Programm im Browser ausführen, erscheint normalerweise ein Eingabefeld, in das Sie Eingaben machen können. Führen Sie das Programm auf ihrem Rechner aus, wird die Eingabe in der Konsole erwartet.
+[^2]: Der Typ von Zeichenketten wird in Python mit `str` abgekürzt. Das können Sie z.B. mit `type("Hallo")` überprüfen.
+[^3]: Man spricht von einer *Escape-Sequenz*. Es gibt noch weitere, wie `\t` für einen Tabulator. Da `\` damit eine besondere Bedeutung hat, muss in einem String `\\` geschrieben werden wenn man einen einfachen Backslash haben möchte.
+[^4]: auf ähnliche Weise können Sie auch `int()` verwenden, um eine Zeichenkette in eine ganze Zahl umzuwandeln, oder umgekehrt mit `str()` eine Zahl in eine Zeichenkette.
+
+## Kommentare
+
+Jede Zeile in Python, die mit einem `#` beginnt, wird von Python ignoriert. Diese Zeilen werden als *Kommentare* bezeichnet und dienen dazu, den Code zu dokumentieren. 
+
+Das Programm aus dem [letzten Abschnitt](#ein-und-ausgabe) könnte auch so aussehen:
+
+```python	
+# lese die Eingabe des Benutzers als String ein
+eingabe = input()
+# konvertiere den String in eine Fließkommazahl
+betrag_euro = float(eingabe)
+# setze den Wechselkurs
+wechselkurs = 1.1
+# berechne den Betrag in Dollar und runde auf zwei Stellen
+betrag_dollar = round(betrag_euro * wechselkurs, 2)
+# gebe den Betrag in Dollar aus
+print("Der Betrag in Dollar ist:", betrag_dollar)
+```
+
+Der Code ist für Python völlig gleichwertig zu der Version ohne Kommentare, aber die Kommentare sind nützlich, um den Code zu dokumentieren und ihn damit anderen Programmierern zu erklären.
+
+Dennoch ist Code, der so verständlich ist, dass er sich selbst erklärt, besser als Code, der viele Kommentare benötigt. Bevorzugen Sie im Zweifelsfall also immer sprechende Variablennamen und klare Strukturen. 
+
+
+## ❓Aufgaben
+
+<div class="alert alert-yellow">
+
+Python-Ausdrücke
+----------------
+
+Wie lautet das Ergebnis der folgenden Ausdrücke und von welchem Typ ist das Ergebnis?
+
+- `(13 % 3) * 2` ergibt [[0|1|(2)|4]] und ist vom Typ [[(int)|float]]
+- `2 * 0b100` ergibt [[1|2|4|(8)|200]] und ist vom Typ [[(int)|float]]
+- `4 * float("2.5")` ergibt [[0|4|(10)|20]] und ist vom Typ [[int|(float)]]
+- `1 + 2 * 3/2` ergibt [[2|(4)|4.5|9]] und ist vom Typ [[int|(float)]]
+
+
+</div>
+
+---
+
+<div class="alert alert-yellow">
+
+Variablenzuweisung
+------------------
+
+```python
+x = 2
+y = x * 2
+z = 1
+z = z + 1
+x = y + z
+print (x+y)
+```
+
+Welchen Wert gibt das Programm aus? *(versuchen Sie die Aufgabe im Kopf zu lösen!)*
+
+[[6|7|8|9|(10)]]
+**************************
+Am Ende des Programms ist `x=6`, `y=4` und `z=2`. Das Programm gibt also $6+4=10$ aus.
+
+**************************
+
+
+</div>
+
+<div class="alert alert-yellow">
+
+Titrationsrechner✍[^1]
+------------------------
+Bei einer Titration wird die Konzentration einer unbekannten Lösung bestimmt, indem man eine Lösung bekannter Konzentration (Titrant) in kleinen Mengen zu der unbekannten Lösung gibt, bis z.B. ein Indikator umschlägt.	
+
+Es gilt die Formel $$c_1 \cdot V_1 = c_2 \cdot V_2$$ wobei $c_1$ die Konzentration des Titranten, $V_1$ das Volumen des Titranten, $c_2$ die Konzentration der unbekannten Lösung und $V_2$ das Volumen der unbekannten Lösung ist.
+
+Schreiben Sie ein Programm, das die Konzentration der unbekannten Lösung berechnet.
+
+Volumen der unbekannten Lösung, sowie Konzentration und Volumen des Titranten sollen vom Benutzer eingegeben werden. 
+
+</div>
+
+[^1]: Aufgaben mit diesem Symbol werden nicht online korrigiert und sind für die Vertiefung des Stoffes gedacht. Sie können die Aufgaben in einer Python-Umgebung Ihrer Wahl lösen.

@@ -18,13 +18,31 @@ link:     styles/main.css
 
 
 # 1. Was ist Programmieren?
-
-
                   {{|> US English Male}}
 > “Everybody should learn to program a computer because it teaches you how to think.”
 >
 > -- Steve Jobs
- 
+
+
+<div class="alert alert-green">
+
+<h4>Lernziele</h4>
+
+
+In diesem Kapitel lernen Sie, wie Probleme strukturiert mit der Hilfe von Algorithmen gelöst werden können und wie eine Programmiersprache verwendet werden kann um diese Algorithmen einem Computer beizubringen.\
+
+Am Ende können Sie:
+
+1. Verstehen, was ein Algorithmus ist und wie er verwendet wird.
+2. Bubble Sort, einen einfachen Sortieralgorithmus, verstehen und anwenden.
+3. Die Unterschiede zwischen Maschinen- und höheren Programmiersprachen erklären.
+4. Python auf ihrem Computer installieren und ausführen.
+
+
+</div>
+
+
+## Was ist Programmieren?
 Programmieren ist der Prozess, Anweisungen so zu formulieren, dass ein Computer sie verstehen und ausführen kann. Zunächst muss das Problem in einer Weise strukturiert und beschrieben werden, dass es von einem Computer Schritt für Schritt gelöst werden kann. Diese strukturierten Anweisungen werden als Algorithmus bezeichnet. Anschließend wird der Algorithmus in eine Programmiersprache übersetzt, die der Computer versteht. Das Ergebnis ist ein Programm, das vom Computer ausgeführt werden kann.
 
 ![Vom Algorithmus zum Programm](img\1\inf-le01-11c-grafik-algorithmus.png "Abbildung 1: vom Algorithmus zum Programm")
@@ -190,7 +208,9 @@ flowchart TD
 
 ```
 
-### ❓Fragen
+### ❓Aufgaben
+
+<div class="alert alert-yellow">
 
 Welche der folgenden Aussagen sind wahr?
 ------------------------------------------
@@ -205,7 +225,11 @@ Welche der folgenden Aussagen sind wahr?
 * Das Wort Algorithmus leitet sich vom Namen des persischen Mathematikers Al-Chwarizmi ab.
 *********************************************
 
+</div>
+
 ---
+
+<div class="alert alert-yellow">
 
 Woher kommt der Name Bubble Sort?
 ----------------------------------------
@@ -215,7 +239,11 @@ Woher kommt der Name Bubble Sort?
 - [( )] Der Algorithmus wurde von einem Programmierer in einem Sprudelbad erfunden.
 - [(X)] unsortierte Elemente bewegen sich wie aufsteigende Luftblase ans Ende der Liste.
 
+</div>
+
 ---
+
+<div class="alert alert-yellow">
 
 Sortieren Sie diese Liste mit Bubble Sort. Wie viele Vertauschungen sind nötig?
 -------------------------------------------------------------------------------
@@ -257,7 +285,8 @@ im zweiten Durchgang *eine* Vertauschung:
 Insgesamt also drei!
   
 *********************************************
----
+
+</div>
 
 
 
@@ -325,6 +354,14 @@ Tipp: die REPL
 --------------
 
 was sie hier sehen ist eine sogenannte *REPL* oder *Read-Eval-Print-Loop*. Auf Deutsch: Lesen-Auswerten-Ausgeben-Schleife. Das bedeutet, dass sie Zeile für Zeile Python-Code eingeben können und Python diese sofort ausführt und das Ergebnis ausgibt. So können sie schnell und einfach Python-Code ausprobieren und lernen.
+
+Immer wieder wird im Kurs der folgende Knopf auftauchen. Klicken Sie darauf um die Python-Konsole in einem neuen Fenster zu starten:
+
+@pyconsole
+
+
+
+
 
 </div>
 

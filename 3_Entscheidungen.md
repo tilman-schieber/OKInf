@@ -18,3 +18,18 @@ link:     styles/main.css
 
 # 3. Entscheidungen
 
+<div class="alert alert-green">
+
+<h4>Lernziele</h4>
+
+
+In diesem Kapitel lernen Sie, mit Python einfache mathematische Fragestellungen zu beantworten.\
+Am Ende können Sie:
+
+1. Grundrechenarten, Potenzieren und Ganzzahldivision in Python anwenden.
+2. Zahlen in andere Zahlensysteme umrechnen.
+3. Die Grundlagen von Datentypen in Python verstehen.
+4. Ergebnisse in Variablen speichern.
+
+
+</div>

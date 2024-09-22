@@ -152,3 +152,7 @@ p.lead {
   display: none !important;
 }
 
+.lia-code--inline {
+  border-color: lightgray !important;
+  color: rgb(var(--color-text)) !important;
+}
