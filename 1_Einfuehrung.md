@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  1.0.0
+version:  1.0.1
 date:     2024
 language: de
 narrator: Deutsch Female
@@ -45,11 +45,11 @@ Am Ende können Sie:
 ## Was ist Programmieren?
 Programmieren ist der Prozess, Anweisungen so zu formulieren, dass ein Computer sie verstehen und ausführen kann. Zunächst muss das Problem in einer Weise strukturiert und beschrieben werden, dass es von einem Computer Schritt für Schritt gelöst werden kann. Diese strukturierten Anweisungen werden als Algorithmus bezeichnet. Anschließend wird der Algorithmus in eine Programmiersprache übersetzt, die der Computer versteht. Das Ergebnis ist ein Programm, das vom Computer ausgeführt werden kann.
 
-![Vom Algorithmus zum Programm](img\1\inf-le01-11c-grafik-algorithmus.png "Abbildung 1: vom Algorithmus zum Programm")
+![Vom Algorithmus zum Programm](img\1\inf-le01-11c-grafik-algorithmus.png "vom Algorithmus zum Programm")
 
 
 ## Von der Idee zum Algorithmus
-![al-Khwarizmi](img\1\alkhwarizmi.png "Abbildung 2: ein Portrait von al-Khwarizmi")<!--style = "width: 200px;"-->
+![al-Khwarizmi](img\1\alkhwarizmi.png "ein Portrait von al-Khwarizmi")<!--style = "width: 200px;"-->
 
 Das Wort Algorithmus leitet sich vom Namen eines persischen Mathematikers, *al-Chwarizmi*[^1] (خوارزمی), ab, der Lösungswege für zahlreiche mathematische Probleme entwickelte und mit seinem Buch über Algebra einen großen Einfluss auf die Entwicklung der Mathematik hatte.
 

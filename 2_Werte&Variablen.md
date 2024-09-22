@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  1.0.0
+version:  1.0.1
 date:     2024
 language: de
 narrator: Deutsch Female
@@ -149,7 +149,7 @@ a|   \c
 Links sehen Sie die Skizze eines rechtwinkligen Dreiecks mit den Seiten $a,b,c$.
 
 Ein rechtwinkliges Dreieck hat die Kathetenlängen $$a=900\qquad b=945 $$
-Berechnen Sie mit Python die Länge der Hypotenuse $c$?
+Berechnen Sie mit Python die Länge der Hypotenuse $c$!
 
   [[1305]]
   [[?]] Der Satz des Pythagoras ist $a^2 + b^2 = c^2$.
