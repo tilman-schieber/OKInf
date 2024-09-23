@@ -496,15 +496,15 @@ print("Hallo", name)
 ```
 @Pyodide.eval[^1]
 
-Der Befehl `input()` wartet auf eine Eingabe des Benutzers und gibt diese als Zeichenkette zurück. 
-Der Befehl `print()` gibt die Argumente auf dem Bildschirm aus.
+Der Befehl `input()` wartet auf eine Eingabe des Benutzers und gibt diese als Zeichenkette zurück. Optional kann als Argument auch ein Text angegeben werden, der als Eingabeaufforderung angezeigt wird.
+Der Befehl `print()` gibt die Argumente auf dem Bildschirm aus. Er nimmt beliebig viele Argumente und gibt diese durch Leerzeichen getrennt aus.
 
 <div class="alert alert-blue">
 
-Zeichenketten oder *strings*
+Zeichenketten oder *Strings*
 ----------------------------
 
-In Python werden Zeichenketten oder *strings*[^2] in Anführungszeichen geschrieben. Man kann entweder einfache Anführungszeichen `'` oder doppelte Anführungszeichen `"` verwenden. Strings die von drei Anführungszeichen begrenzt werden, können auch Zeilenumbrüche enthalten.
+In Python werden Zeichenketten oder *Strings*[^2] in Anführungszeichen geschrieben. Man kann entweder einfache Anführungszeichen `'` oder doppelte Anführungszeichen `"` verwenden. Strings die von drei Anführungszeichen begrenzt werden, können auch Zeilenumbrüche enthalten.
 Aber auch in normalen Zeichenketten kann man durch die Sequenz[^3] `\n` einen Zeilenumbruch erzeugen.
 
 Hier ein paar Beispiele für gültige Strings:
@@ -626,5 +626,21 @@ Schreiben Sie ein Programm, das die Konzentration der unbekannten Lösung berech
 Volumen der unbekannten Lösung, sowie Konzentration und Volumen des Titranten sollen vom Benutzer eingegeben werden. 
 
 </div>
+
+
+<div class="alert alert-yellow">
+
+Quadratische Gleichungen✍
+--------------------------
+
+Eine Gleichung der Form $ax^2 + bx + c = 0$ lässt sich mit der *quadratischen Formel* lösen:
+
+$$x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+Schreiben Sie ein Programm, das die Lösungen einer quadratischen Gleichung berechnet. Die Koeffizienten $a$, $b$ und $c$ sollen vom Benutzer eingegeben werden. Und dann die Nullstellen $x_1$ und $x_2$ ausgegeben werden.
+
+</div>
+
+
 
 [^1]: Aufgaben mit diesem Symbol werden nicht online korrigiert und sind für die Vertiefung des Stoffes gedacht. Sie können die Aufgaben in einer Python-Umgebung Ihrer Wahl lösen.
