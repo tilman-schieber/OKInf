@@ -31,8 +31,9 @@ Hier finden Sie die Lösungen zu den Vertiefungsaufgaben (mit dem Symbol ✍).
 
 ## 1: Einführung in Python
 
-Übung ✍️
---------
+### Spielkarten sortieren
+
+<div class="alert alert-yellow">
 
 Stellen Sie sich vor, sie haben einen Stapel unsortierter Spielkarten und sie sollen diese aufsteigend nach ihrem Wert sortieren.
 
@@ -53,11 +54,10 @@ Man kann auch die niedrigste Karte aussuchen, sie ganz nach links legen und dann
 
 ## 2: Werte und Variablen
 
+### Titrationsrechner
 
 <div class="alert alert-yellow">
 
-Titrationsrechner✍
-------------------------
 Bei einer Titration wird die Konzentration einer unbekannten Lösung bestimmt, indem man eine Lösung bekannter Konzentration (Titrant) in kleinen Mengen zu der unbekannten Lösung gibt, bis z.B. ein Indikator umschlägt.	
 
 Es gilt die Formel $$c_1 \cdot V_1 = c_2 \cdot V_2$$ wobei $c_1$ die Konzentration des Titranten, $V_1$ das Volumen des Titranten, $c_2$ die Konzentration der unbekannten Lösung und $V_2$ das Volumen der unbekannten Lösung ist.
@@ -80,10 +80,11 @@ print("Konzentration der unbekannten Lösung:", round(c2,2), "mol/l")
 ```
 
 
-<div class="alert alert-yellow">
 
-Quadratische Gleichungen✍
---------------------------
+
+### Quadratische Gleichungen
+
+<div class="alert alert-yellow">
 
 Eine Gleichung der Form $ax^2 + bx + c = 0$ lässt sich mit der *quadratischen Formel* lösen:
 
@@ -109,3 +110,93 @@ print("x2 =", x2)
 ```
 
 
+## 2: Werte und Variablen
+
+### Schaltjahre
+
+* Ein [Schaltjahr](https://de.wikipedia.org/wiki/Schaltjahr)  ist ein Jahr, das durch vier teilbar ist
+* *Aber:* Durch 100 teilbare Jahre sind keine Schaltjahre
+* *Aber:* Durch 400 teilbare Jahre sind Schaltjahre
+
+
+<div class="alert alert-yellow my-4">
+
+Schreiben Sie ein Programm, das prüft, ob ein gegebenes Jahr ein Schaltjahr ist:
+
+1. Lesen Sie ein Jahr vom Benutzer ein.
+2. Wandeln Sie es in eine Ganzzahl um.
+3. Überprüfen Sie, ob das Jahr ein Schaltjahr ist.
+4. Geben Sie die Anzahl der Tage aus, die das Jahr hat (365 für normale Jahre, 366 für Schaltjahre).
+
+</div>
+
+Musterlösung:
+-------------
+
+Um den Entscheidungsprozess direkt in Code zu übersetzen können wir folgenden Code schreiben:
+
+```python
+jahr = int(input())
+if jahr % 4 == 0:
+    if jahr % 100 == 0:
+        if jahr % 400 == 0:
+            tage = 366
+        else:
+            tage = 365
+    else:
+        tage = 366
+else:
+    tage = 365
+
+print(tage)
+```
+@Pyodide.eval
+
+Es ist auch möglich das mit einem einzigen if-else-Statement zu lösen. Können sie herausfinden wie? 
+
+<details>
+<summary>*klicken Sie für die Lösung*</summary>
+
+```python
+if jahr % 4 == 0 and (jahr % 100 != 0 or jahr % 400 == 0):
+    tage = 366
+else:
+    tage = 365
+``` 
+</details>
+
+### Aufgabe: Ammoniak
+
+
+
+
+<div class="alert alert-yellow my-4">
+
+Schreiben Sie ein Programm, das
+
+1. die aktuelle Temperatur des Ammoniaks einliest
+2. Mit einem oder mehreren if-statements den Aggregatzustand ermittelt
+3. den aktuellen Aggregatzustand des Ammoniaks ausgibt, entweder "fest", "flüssig" oder "gasförmig"
+
+</div>
+
+Musterlösung:
+-------------
+
+Der Schmelzpunkt von Ammoniak liegt bei −77,7 °C, der - Siedepunkt bei −33 °C
+
+```python
+t = float(input())
+
+aggregatzustand = "unbekannt"
+
+if t < -77.7:
+    aggregatzustand="fest"
+elif t < -33:
+    aggregatzustand="flüssig"
+else:
+    aggregatzustand="gasförmig"
+
+print(aggregatzustand)
+```
+@Pyodide.eval
