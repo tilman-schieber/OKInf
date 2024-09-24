@@ -277,6 +277,100 @@ Probieren Sie doch mal `fehler=False` zu setzen und entfernen Sie eine oder mehr
 
 [^1]: Laut den [offiziellen Empfehlungen](https://peps.python.org/pep-0008/#code-lay-out) sollte eine Einrückung aus vier Leerzeichen bestehen und eine Zeile sollte unter 80 Zeichen lang sein. Je mehr Einrückungen Sie verwenden, desto schneller wird die Zeile zu lang.
 
+
+### Übungen
+
+<div class="alert alert-yellow">
+
+Lückentext
+-----------
+
+``` python
+if ____:
+    print("x ist ungerade und positiv")
+
+```
+
+Welcher Ausdruck fehlt in der Lücke nach `if`?
+
+- [( )] `x % 2 != 1 and x > 0`
+- [( )] `not x%2==0 and x >= 0`
+- [(X)] `not x%2==0 and x > 0`
+- [( )] `not (x%2==0 and x >= 0)`
+*************************************
+Da 0 keine positive Zahl ist, ist `x > 0` wahr für positive Zahlen.\
+Gerade Zahlen sind durch 2 teilbar, also ist `x % 2 == 0` wahr für gerade Zahlen. Damit ist die Negation `not x % 2 == 0` wahr für ungerade Zahlen.\
+Damit ist `not x%2==0 and x > 0` hier die einzig richtige Antwort.
+*************************************
+
+</div>
+
+<div class="alert alert-yellow">
+
+Fehlersuche
+-----------
+
+Welche Fehler hat der folgende Python-Code?
+
+<!-- data-showGutter="true" -->
+``` python
+if x=>1900 and x<2000
+    print("Das Jahr liegt im 20. Jahrhundert")
+elseif x>=2000 and x<2100:
+    print("Das Jahr liegt im 21. Jahrhundert")
+else:
+    print("Das Jahr liegt vor 1900")
+```
+
+- [[ ]] In Zeile 1 fehlen Klammern um die Bedingung.
+- [[X]] Es fehlt ein Doppelpunkt nach der ersten Bedingung.
+- [[X]] `elseif` muss durch `elif` ersetzt werden.
+- [[ ]] Wenn es ein `elseif` Statement gibt darf kein `else` Statement folgen. 
+- [[X]] in Zeile 1 muss `>=` statt `=>` stehen.
+*************************************
+Korrigiert sieht der Code so aus:
+
+<!-- data-showGutter="true" -->
+``` python
+if x>=1900 and x<2000:
+    print("Das Jahr liegt im 20. Jahrhundert")
+elif x>=2000 and x<2100:
+    print("Das Jahr liegt im 21. Jahrhundert")
+else:
+    print("Das Jahr liegt vor 1900")
+```
+*************************************
+
+
+
+</div>
+
+<div class="alert alert-yellow">
+
+Einrückung
+-----------
+
+Bei diesem Quellcode sind alle Einrückungen verloren gegangen.\
+Fügen Sie Leerzeichen hinzu bis es ohne Fehler funktioniert:
+
+<!-- data-showGutter="true" -->
+``` python
+x = 24
+if x % 2 == 0:
+if x > 100:
+print("x ist eine gerade Zahl größer als 100")
+else:
+print("x ist eine gerade Zahl kleiner als 100")
+else:
+print("x ist ungerade")
+```
+@Pyodide.eval
+
+
+</div>
+
+
+
 ## Komplexere Entscheidungen
 
 Durch das Verschachteln von if-Anweisungen können mehrere Bedingungen geprüft werden:
@@ -330,39 +424,6 @@ Auch wenn es in einigen Fällen die Lesbarkeit verbessern kann, werden Sie es in
 
 </div>
 
-### Aufgabe: Schaltjahre
-
-* Ein [Schaltjahr](https://de.wikipedia.org/wiki/Schaltjahr)  ist ein Jahr, das durch vier teilbar ist
-* *Aber:* Durch 100 teilbare Jahre sind keine Schaltjahre
-* *Aber:* Durch 400 teilbare Jahre sind Schaltjahre
-
-Dieses Diagramm veranschaulicht den Entscheidungsprozess:
-
-```mermaid @mermaid
-flowchart LR
-    B{durch 4 teilbar?}
-    B -- Ja --> C{durch 100 teilbar?}
-    B -- Nein --> T[365 Tage]
-    C -- Ja --> D{durch 400 teilbar?}
-    C -- Nein --> U[366 Tage]
-    D -- Ja --> U[366 Tage]
-    D -- Nein --> T[365 Tage]
-
-```
-
-<div class="alert alert-yellow my-4">
-
-Aufgabe ✍️
-----------
-
-Schreiben Sie ein Programm, das prüft, ob ein gegebenes Jahr ein Schaltjahr ist:
-
-1. Lesen Sie ein Jahr vom Benutzer ein.
-2. Wandeln Sie es in eine Ganzzahl um.
-3. Überprüfen Sie, ob das Jahr ein Schaltjahr ist.
-4. Geben Sie die Anzahl der Tage aus, die das Jahr hat (365 für normale Jahre, 366 für Schaltjahre).
-
-</div>
 
 ### Aufgabe: Ammoniak
 
@@ -401,3 +462,38 @@ Schreiben Sie ein Programm, das
 
 [^1]: Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Hermann_L%C3%BCtge_-_Ammoniaksyntheseapparat_aus_Die_BASF_HZ_1_1952_S._26.jpg)
 
+
+
+### Aufgabe: Schaltjahre
+
+* Ein [Schaltjahr](https://de.wikipedia.org/wiki/Schaltjahr)  ist ein Jahr, das durch vier teilbar ist
+* *Aber:* Durch 100 teilbare Jahre sind keine Schaltjahre
+* *Aber:* Durch 400 teilbare Jahre sind Schaltjahre
+
+Dieses Diagramm veranschaulicht den Entscheidungsprozess:
+
+```mermaid @mermaid
+flowchart LR
+    B{durch 4 teilbar?}
+    B -- Ja --> C{durch 100 teilbar?}
+    B -- Nein --> T[365 Tage]
+    C -- Ja --> D{durch 400 teilbar?}
+    C -- Nein --> U[366 Tage]
+    D -- Ja --> U[366 Tage]
+    D -- Nein --> T[365 Tage]
+
+```
+
+<div class="alert alert-yellow my-4">
+
+Aufgabe ✍️
+----------
+
+Schreiben Sie ein Programm, das prüft, ob ein gegebenes Jahr ein Schaltjahr ist:
+
+1. Lesen Sie ein Jahr vom Benutzer ein.
+2. Wandeln Sie es in eine Ganzzahl um.
+3. Überprüfen Sie, ob das Jahr ein Schaltjahr ist.
+4. Geben Sie die Anzahl der Tage aus, die das Jahr hat (365 für normale Jahre, 366 für Schaltjahre).
+
+</div>

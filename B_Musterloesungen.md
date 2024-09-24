@@ -112,6 +112,40 @@ print("x2 =", x2)
 
 ## 2: Werte und Variablen
 
+### Aufgabe: Ammoniak
+
+<div class="alert alert-yellow my-4">
+
+Schreiben Sie ein Programm, das
+
+1. die aktuelle Temperatur des Ammoniaks einliest
+2. Mit einem oder mehreren if-statements den Aggregatzustand ermittelt
+3. den aktuellen Aggregatzustand des Ammoniaks ausgibt, entweder "fest", "flüssig" oder "gasförmig"
+
+</div>
+
+Musterlösung:
+-------------
+
+Der Schmelzpunkt von Ammoniak liegt bei −77,7 °C, der - Siedepunkt bei −33 °C
+
+```python
+t = float(input())
+
+aggregatzustand = "unbekannt"
+
+if t < -77.7:
+    aggregatzustand="fest"
+elif t < -33:
+    aggregatzustand="flüssig"
+else:
+    aggregatzustand="gasförmig"
+
+print(aggregatzustand)
+```
+@Pyodide.eval
+
+
 ### Schaltjahre
 
 * Ein [Schaltjahr](https://de.wikipedia.org/wiki/Schaltjahr)  ist ein Jahr, das durch vier teilbar ist
@@ -164,39 +198,3 @@ else:
     tage = 365
 ``` 
 </details>
-
-### Aufgabe: Ammoniak
-
-
-
-
-<div class="alert alert-yellow my-4">
-
-Schreiben Sie ein Programm, das
-
-1. die aktuelle Temperatur des Ammoniaks einliest
-2. Mit einem oder mehreren if-statements den Aggregatzustand ermittelt
-3. den aktuellen Aggregatzustand des Ammoniaks ausgibt, entweder "fest", "flüssig" oder "gasförmig"
-
-</div>
-
-Musterlösung:
--------------
-
-Der Schmelzpunkt von Ammoniak liegt bei −77,7 °C, der - Siedepunkt bei −33 °C
-
-```python
-t = float(input())
-
-aggregatzustand = "unbekannt"
-
-if t < -77.7:
-    aggregatzustand="fest"
-elif t < -33:
-    aggregatzustand="flüssig"
-else:
-    aggregatzustand="gasförmig"
-
-print(aggregatzustand)
-```
-@Pyodide.eval
