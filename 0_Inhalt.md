@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  1.1.0
+version:  1.2.0
 date:     2024
 language: de
 logo:     img/oberkurs_logo.png
@@ -41,10 +41,11 @@ Python Programmierkurs
 ======================
 [preview-lia](1_Einfuehrung.md)
 [preview-lia](2_Werte&Variablen.md)
+[preview-lia](3_Entscheidungen.md)
+
 
 <div style="display:none">
 
-[preview-lia](3_Entscheidungen.md)
 [preview-lia](4_Wiederholung.md)
 
 </div>
