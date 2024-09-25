@@ -94,19 +94,19 @@ Sie lesen den Wetterbericht für New York:
 
 ![74 Grad Fahrenheit](img/2/fahrenheit.png)<!-- style="width: 250px"-->
 
-In den USA wird die Temperatur in Fahrenheit gemessen. Man rechnet von Celsius nach Fahrenheit mit folgender Formel um: $$F = \frac{9}{5} \cdot C + 32$$
+In den USA wird die Temperatur in Fahrenheit gemessen. Man rechnet von Celsius nach Fahrenheit mit folgender Formel um: $$C = \frac{5}{9} \cdot (F - 32)$$
 
-Setzen Sie diese Formel in Python um, und berechnen Sie so, wie warm es in New York ist:
+Setzen Sie diese Formel in Python um, und berechnen Sie so, wie warm es in New York ist (gerundet auf zwei Nachkommastellen):
 
 
 
-  [[68]]
+  [[23.33]]
 *************************************
 
 ```python
-9/5*20+32
+round((5/9)*(74-32),2)
 ```
-
+@Pyodide.eval
 
 *************************************
 

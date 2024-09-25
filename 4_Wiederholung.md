@@ -163,3 +163,7 @@ flowchart TD
 
 </div>
 </div>
+
+## Babylonisches Wurzelziehen
+
+@[embed(style="height: 1000px; width:100%; border: none")](html/4/wurzel.html)
