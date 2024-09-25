@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  1.0.1
+version:  1.0.2
 date:     2024
 language: de
 narrator: Deutsch Female
@@ -233,7 +233,7 @@ In einem konkreten Beispiel setzen wir zunächst den Wert von `n` auf 10. Dann t
 
 ``` python
 n = 10
-if n < 100
+if n < 100:
    n = n + 1 
 else:
    n = 100
@@ -379,7 +379,7 @@ Durch das Verschachteln von if-Anweisungen können mehrere Bedingungen geprüft 
 if TEST1:
     # wenn TEST1 == true
 else:
-    if TEST2 == true:
+    if TEST2:
         # wenn TEST1 == false UND TEST2 == true
     else:
         # wenn TEST1 == false UND TEST2 == false
@@ -390,7 +390,7 @@ Eine Kurzschreibweise dafür ist mit `elif` möglich, eine Kombination von `else
 ``` python
 if TEST1:
     # wenn TEST1 == true
-elif TEST2 == true:
+elif TEST2:
     # wenn TEST1 == false UND TEST2 == true
 else:
     # wenn TEST1 == false UND TEST2 == false
