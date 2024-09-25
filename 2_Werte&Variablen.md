@@ -99,7 +99,6 @@ In den USA wird die Temperatur in Fahrenheit gemessen. Man rechnet von Celsius n
 Setzen Sie diese Formel in Python um, und berechnen Sie so, wie warm es in New York ist (gerundet auf zwei Nachkommastellen):
 
 
-
   [[23.33]]
 *************************************
 
