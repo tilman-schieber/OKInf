@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Babylonisches Wurzelziehen</title>
+    <script type="text/javascript" async
+     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=AM_HTMLorMML">
+    </script>
+    <style>
+      :root {
+        box-sizing: border-box;
+        --primary: #00a0a2;
+        --light_primary: #86bdbd;
+        --xlight_primary: #b0d4d4;
+        --secondary: #e2b847;
+      
+        font-family: sans-serif;
+        line-height: 2.2rem;
+      }
+      h2 {
+        color: var(--primary);
+      }
+      
+      input {
+        text-align: center;
+        font-size: 1.2rem;
+        background: var(--secondary);
+        border-radius: 10px;
+        border: none;
+        width: 3.5rem;
+        padding:5px;
+      }
+      
+      button {
+       border: 0;
+       border-radius: 10px;
+       background: none;
+       box-shadow: none;
+       border-radius: 0px;
+       background: var(--primary);
+       color: black;
+       font-size: inherit;
+       padding:10px;
+       transition: all 0.5s;
+       cursor: pointer;
+       margin: 10px;
+      }
+      
+      #gobutton:hover  {
+        background: var(--light_primary);
+      }
+      
+      #resetbutton {
+        display: none;
+        background: tomato;
+      }
+      
+      #resetbutton:hover {
+        background: salmon;
+      }
+      
+      table {
+        border-spacing: 0px;
+      }
+      table td + td {
+        border-left:3px solid var(--primary); 
+      }
+      
+      td {
+        padding: 1em 2em 1em ;
+        margin: 0px;
+        border: 0px;
+      }
+    </style>
+  </head>
+<body>
+<h2> Babylonisches Wurzelziehen </h2>
+<div style="padding-left:2em;">
+  
+  <p>Berechne `\sqrt{S}`  für `S=`<input type="text" id="sinput" value="21" maxlength="3" oninput="limiter(this);"></p>
+  <p>Was ist ihr Schätzwert?
+  `\sqrt{S}\approx x_0 = `<input type="text" id="x0input" value="1" maxlength="3" oninput="limiter(this);"></p>
+</div>  
+<table id="output"></table>
+
+  <div style="padding-left:2em;">
+   <button id=gobutton class="button" onclick="start()">Algorithmus starten 
+   </button>
+   <button id=resetbutton class="button" onclick="reset()">Zurücksetzen 
+   </button>
+  </div>
+  <script>
+    "use strict";
+    
+    const output = document.getElementById("output");
+    const sinput = document.getElementById("sinput");
+    const x0input = document.getElementById("x0input");
+    const gobutton = document.getElementById("gobutton");
+    const resetbutton = document.getElementById("resetbutton");
+    
+    function limiter(input) {  
+       let val = input.value.replace(/[^0-9]/g, '');
+       if ((val < 0)||(val=="")) input.value = 1;
+       if (val > 999) input.value = 999;
+    }
+    
+    function reset() {
+      sinput.removeAttribute("readonly");
+      x0input.removeAttribute("readonly");
+      output.innerHTML="";
+      sinput.value=21;
+      sinput.style.cursor="text";
+      x0input.value=1;
+      x0input.style.cursor="text";
+      gobutton.style.display="inline";
+      gobutton.innerHTML="Algorithmus starten";
+      gobutton.setAttribute("onclick","start()");
+      resetbutton.style.display="none";
+    }
+    
+    function start() {
+      let S = Number(sinput.value);
+      let xn = Number(x0input.value);
+      sinput.setAttribute("readonly","readonly");
+      sinput.style.cursor="default";
+      x0input.setAttribute("readonly","readonly");
+      x0input.style.cursor="default";
+      resetbutton.style.display="inline"
+      update(S,xn,1);
+    }
+    
+    function update(S,xn,i) {
+      let xnnew = (xn+S/xn)/2
+      let tr = document.createElement("tr")
+      tr.innerHTML=`<td>\`x_${i}=1/2(${+xn.toFixed(4)}+${S}/${+xn.toFixed(4)})=${+xnnew.toFixed(4)}\`</td><td> \`x_${i}^2=${+(xnnew**2).toFixed(4)} \`</td>`
+      output.appendChild(tr)
+      if (Math.abs(xnnew**2-S)>=0.0001) {
+        gobutton.innerHTML="Weiter"
+        gobutton.setAttribute("onclick",`update(${S},${xnnew},${i+1})`)
+      }
+      else {
+        gobutton.style.display="none"
+      }
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+  </script>
+</body>
+</html>
