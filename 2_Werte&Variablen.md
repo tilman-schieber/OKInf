@@ -199,9 +199,6 @@ Selbst wenn das Ergebnis als `int` dargestellt werden könnte, erhalten wir hier
 Sie werden bald noch viele weitere Datentypen kennenlernen. Probieren Sie doch einmal die Funktion `type` mit verschiedenen Ausdrücken aus. Können Sie neue Datentypen finden?[^3]
 
 
-
-
-
 [^1]: Java, C, C++ und Pascal sind Beispiele für statische Programmiersprachen. Python, Javascript, PHP und Lua sind dynamisch. 
 
 [^2]: Später werden Sie auch lernen, eigene Funktionen zu programmieren.

@@ -116,6 +116,7 @@ $$
 Oder in Worten: das Produkt aller Zahlen von 1 bis n.
 
 Für $n=5$ also  
+
 $$
 5! = \prod_{k=1}^{5} k = 1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 = 120
 $$  
@@ -126,8 +127,9 @@ Als iterativen Algorithmus berechnen wir die Fakultät folgendermaßen:
 <div class="flex-container">
 
 
-<div class="my-3 alert alert-blue flex-child">
+<div class="my-3 pt-5 alert alert-blue flex-child">
 
+<!-- class="my-2" -->
 Algorithmus Fakultät
 --------------------
 
@@ -163,6 +165,17 @@ flowchart TD
 
 </div>
 </div>
+
+```python
+n = 5
+i = 1
+fak = 1
+while i <= n:
+    fak = fak * i
+    i = i + 1
+print(fak)
+```
+@Pyodide.eval
 
 ## Babylonisches Wurzelziehen
 

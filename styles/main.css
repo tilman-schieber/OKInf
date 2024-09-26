@@ -1,42 +1,5 @@
 /* main.css */
-
-
-w-50 {
-  width: 50%;
-}
-
-w-30 {
-  width: 30%;
-}
-
-
-
-my-5 {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-my-4 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-my-3 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-my-1 {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
-
-
+@import url(tools.css);
 
 kbd {
   font-size: 1.2rem;
@@ -51,18 +14,18 @@ div.center {
 }
 
 div.center > * {
-  max-width: 600px; /* Sets the maximum width of the child elements */
-  width: 100%; /* Ensures the child elements take up the full available width up to the max-width */
-  box-sizing: border-box; /* Ensures padding and border are included in the width */
+  max-width: 600px; 
+  width: 100%; 
+  box-sizing: border-box;
 }
 
 .flex-container {
   margin-top: 30px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; /* Allows the items to wrap as needed */
+  flex-wrap: wrap; 
   align-items: stretch;
-  gap: 20px; /* Adds both horizontal and vertical spacing between items */
+  gap: 20px; 
 }
 
 .flex-child { 
@@ -83,8 +46,8 @@ div.center > * {
 
 @media (max-width: 600px) {
   .flex-child {
-      flex: 100%; /* Makes the child divs take up the full width on slim devices */
-      margin-right: 0; /* Removes the right margin */
+      flex: 100%; 
+      margin-right: 0; 
   }
 }
 

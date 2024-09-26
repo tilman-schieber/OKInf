@@ -1,0 +1,46 @@
+
+w-50 {
+    width: 50%;
+  }
+  
+  w-30 {
+    width: 30%;
+  }
+  
+  my-5 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  my-4 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  my-3 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  my-2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  my-1 {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  ml-5 {
+    margin-left: 3rem;
+  }
+  
+  ml-4 {
+    margin-left: 2rem;
+  }
+  
+  ml-3 {
+    margin-left: 1rem;
+  }
+  
