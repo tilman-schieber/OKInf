@@ -6,7 +6,7 @@ date:     2024
 language: de
 narrator: Deutsch Female
 logo:     img/1/classroom2.png
-icon:     img/TU_Logo_kurz.png
+icon:     img/TU_Logo_kurz.svg
 comment:  Was bedeutet es einen Computer zu programmieren und 
           wie lernt man es?
 import:   https://raw.githubusercontent.com/liaScript/mermaid_template/master/README.md

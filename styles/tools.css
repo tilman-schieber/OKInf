@@ -44,3 +44,17 @@ w-50 {
     margin-left: 1rem;
   }
   
+  mx-5 {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  mx-4 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  mx-3 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }

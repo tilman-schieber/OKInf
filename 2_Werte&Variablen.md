@@ -6,7 +6,7 @@ date:     2024
 language: de
 narrator: Deutsch Female
 logo:     img/2/datastorage.png
-icon:     img/TU_Logo_kurz.png
+icon:     img/TU_Logo_kurz.svg
 comment:  Nutzen Sie Python, um mit Werten zu rechnen und die Ergebnisse
           der Berechnungen in Variablen zu speichern.
 import:   macros/macros.md

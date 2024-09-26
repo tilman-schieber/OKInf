@@ -6,7 +6,7 @@ date:     2024
 language: de
 narrator: Deutsch Female
 logo:     img/3/decisions.png
-icon:     img/TU_Logo_kurz.png
+icon:     img/TU_Logo_kurz.svg
 comment:  Setzen Sie Logik ein, um den Fluss eines Programmes zu steuern
           und so Entscheidungen zu treffen. 
 import:   https://raw.githubusercontent.com/LiaTemplates/Pyodide/master/README.md

@@ -176,9 +176,95 @@ while i <= n:
 print(fak)
 ```
 @Pyodide.eval
+### Aufgabe: Summe ungerader Zahlen
+
+<div class="alert alert-yellow my-3">
+
+Lesen Sie eine Ganzzahl $n$ vom Benutzer ein und berechnen Sie die Summe aller ungeraden Zahlen von 1 bis $n$.
+
+</div>
+
+
+### Aufgabe: Alternierende Reihe
+
+Die alternierende Reihe ist eine mathematische Reihe, die sich durch das Vorzeichen der Summanden auszeichnet. Die Summe der alternierenden Reihe ist definiert als:
+
+$$
+1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \ldots
+$$
+
+Die Summe der alternierenden Reihe konvergiert gegen den natürlichen Logarithmus von 2.
+
+<div class="alert alert-yellow my-3">
+
+Aufgabe ✍️
+----------
+
+Schreiben Sie ein Programm, das die Summe der alternierenden Reihe berechnet, bis die Terme kleiner als $10^{-6}$[^1] sind.
+
+</div>
+
+[^1]: Wie bereits erwähnt, kann das in Python als `1e-6` geschrieben werden.
+
+
+
+
+
+
+
 
 ## Babylonisches Wurzelziehen
 
+In der Mathematik definiert man die Quadratwurzel einer Zahl folgendermaßen
+
+$$
+x=\sqrt{y}  \text{ genau dann wenn }  x^2=y und x\geq 0
+$$
+
+Diese Definition erlaubt uns nicht, auf direktem Weg einen Algorithmus aus ihr herzuleiten.
+Zwar kann man mit ihr überprüfen, ob $x$ die Quadratwurzel von $y$ ist, wie man $x$ für ein gegebenes $y$ berechnet, ist aber nicht offensichtlich.
+
+Ein erster Ansatz könnte also sein, einfach verschiedene Werte für $\sqrt{y}$ durchzuprobieren und zu überprüfen, ob man die richtige Wurzel gefunden hat. 
+
+<div class="alert alert-gray">
+
+Beispiel
+--------
+
+Wollen wir beispielsweise $\sqrt{21}$ berechnen, probieren wir erstmal die natürlichen Zahlen durch:
+
+$2$,$3$ und $4$ sind zu klein, da ihre Quadrate $4$,$9$ und $16$ alle kleiner als $21$ sind.
+$5$ ist zu groß, da $5^2=25$.
+ 
+$\sqrt{21}$ muss also zwischen $4$ und $5$ liegen.
+Nun haben wir den Suchbereich eingegrenzt.  
+Betrachten wir die Mitte zwischen $4$ und $5$, also $4\frac{1}{2}$ erhalten wir für $(4\frac{1}{2})^2=20\frac{1}{4}$ .  
+Nun wissen wir also $\sqrt{21}$ liegt zwischen $4\frac{1}{2}$ und $5$ und können so den tatsächlichen Wert immer weiter eingrenzen.
+
+</div>
+
+
+Eine solche Vorgehensweise nennt man Näherungsverfahren.
+Ein Näherungsverfahren zur Berechnung der Wurzel einer Zahl nennt man auch „Babylonisches Wurzelziehen“ oder das „Heron-Verfahren“
+
+Die Wurzel einer Zahl S können wir mit dieser Methode folgendermaßen bestimmen:
+
+
+<div class="alert alert-blue">
+
+Babylonisches Wurzelziehen
+--------------------------
+
+1. Wir setzen einen Schätzwert für die Wurzel $x_0\approx \sqrt{S}$  
+2. im nächsten Schritt bilden wir den Durchschnitt unseres aktuellen Schätzwertes $x_n$  mit $\frac{S}{x_n}$  und gewinnen so eine verbesserte Näherung der Wurzel $x_{(n+1)}$ :
+$$
+x_{(n+1)}=\frac{1}{2}(x_n+\frac{S}{x_n})
+$$
+3. Berechne $x_n^2$ und wiederhole Schritt 2 bis der Wert nahe genug an S ist.
+
+</div>
+
+### interaktiver Algorithmus
 @[embed(style="height: 1000px; width:100%; border: none")](html/4/wurzel.html)
 
 

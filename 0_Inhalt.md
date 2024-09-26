@@ -5,7 +5,7 @@ version:  1.2.0
 date:     2024
 language: de
 logo:     img/oberkurs_logo.png
-icon:     img/TU_Logo_kurz.png
+icon:     img/TU_Logo_kurz.svg
 comment:  Oberkurs Informatik am Studienkolleg der
           Technischen Universität Berlin.
 link:     styles/main.css

@@ -6,7 +6,7 @@ date:     2024
 language: de
 narrator: Deutsch Female
 logo:     img/A/linux.png
-icon:     img/TU_Logo_kurz.png
+icon:     img/TU_Logo_kurz.svg
 comment:  Eine kurze Einführung in Linux
 import:   macros/macros.md
 import:   macros/asciinema.md
