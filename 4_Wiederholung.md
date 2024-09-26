@@ -180,3 +180,24 @@ print(fak)
 ## Babylonisches Wurzelziehen
 
 @[embed(style="height: 1000px; width:100%; border: none")](html/4/wurzel.html)
+
+
+### Aufgabe: Fizzbuzz
+
+[Fizzbuzz](https://de.wikipedia.org/wiki/Fizz_buzz) ist ein Kinderspiel, bei dem Kinder abwechseln von 1 auf 100 zählen. Dabei ersetzen sie jedes Vielfache von 3 durch "Fizz", jedes Vielfache von 5 durch "Buzz" und jedes Vielfache von 15 durch "FizzBuzz".
+
+Man zählt also:
+
+<!-- class="ml-3"-->
+***"1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz"*** 
+
+und so weiter.
+
+<div class="alert alert-yellow my-4">
+
+Aufgabe ✍️
+----------
+
+Schreiben Sie ein Programm, das von 1 bis 100 zählt und dabei die Zahlen durch "Fizz", "Buzz" oder "FizzBuzz" ersetzt, wenn sie die entsprechenden Bedingungen erfüllen.
+
+</div>
