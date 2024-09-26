@@ -63,7 +63,7 @@ p.lead {
   position: relative;
   padding: 1em 1em;
   margin-bottom: 1em;
-  color: rgb(var(--color-text));;
+  color: rgb(var(--lia-anthracite));
   background-color: var(--bs-alert-bg);
   border: var(--bs-alert-border);
   border-radius: 0.25em;
