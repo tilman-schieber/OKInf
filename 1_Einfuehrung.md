@@ -24,7 +24,7 @@ link:     styles/main.css
 > -- Steve Jobs
 
 
-<div class="alert alert-green">
+<div class="alert summary">
 
 <h4>Lernziele</h4>
 
@@ -49,8 +49,16 @@ Programmieren ist der Prozess, Anweisungen so zu formulieren, dass ein Computer 
 
 
 ## Von der Idee zum Algorithmus
+
+<div class="flex-container">
+
+<div class="flex-child-1">
+
 ![al-Khwarizmi](img\1\alkhwarizmi.png "ein Portrait von al-Khwarizmi")<!--style = "width: 200px;"-->
 
+</div>
+
+<div class="flex-child-3">
 Das Wort Algorithmus leitet sich vom Namen eines persischen Mathematikers, *al-Chwarizmi*[^1] (خوارزمی), ab, der Lösungswege für zahlreiche mathematische Probleme entwickelte und mit seinem Buch über Algebra einen großen Einfluss auf die Entwicklung der Mathematik hatte.
 
 Ein Algorithmus ist eine systematische Vorgehensweise zur Lösung eines Problems bzw. einer Aufgabe. In der Informatik wird ein Problem durch eine Eingabe (was ist gegeben) und eine Ausgabe (was möchte man erhalten) beschrieben. Eine einfache Additionsaufgabe kann wie folgt definiert werden. 
@@ -60,6 +68,10 @@ _Man bekommt zwei Zahlen als Eingabe und möchte als Ausgabe die Summe dieser be
 Ein Algorithmus für dieses Problem ist aus der Schule bekannt: 
 
 _Schreibe eine Zahl unter die andere und addiere Stelle für Stelle._
+
+</div>
+</div>
+
 
 [^1]: s. [Wikipedia - Al Chwarizmi](https://de.wikipedia.org/wiki/Al-Chwarizmi)
 
@@ -74,7 +86,7 @@ Ausführlich beschreiben kann man ihn wie folgt:
 
 
 
-<div class="flex-child alert alert-blue" style="min-width: 500px">
+<div class="flex-child alert definition" style="min-width: 500px">
 
 <!-- class="lead" -->
 **Algorithmus zur schriftlichen Addition**
@@ -122,7 +134,7 @@ Auch wenn die Studie der Algorithmen in der Mathematik ihren Anfang nahm, kommen
 
 Während einige dieser Probleme und die dazugehörigen Algorithmen sehr komplex sind, ist das erste Beispiel, das Sortieren, eine alltägliche Aufgabe und kann mit einem einfachen Algorithmus gelöst werden.
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Übung ✍️[^1]
 --------
@@ -150,7 +162,7 @@ Ist man am Ende der Reihe angekommen beginnt man von vorne bis kein Tausch mehr 
 
 Ausführlich kann man den Algorithmus für eine Liste aus vergleichbaren Elementen so formulieren:
 
-<div class="alert alert-blue">
+<div class="alert definition">
 
 <!-- class="lead" -->
 **Algorithmus Bubble Sort**
@@ -182,14 +194,18 @@ Hier sehen Sie wie Bubble Sort mit einer zufälligen Liste funktioniert:
 
 #### Flussdiagramm: Bubble Sort
 
-> EIn Flussdiagramm (englisch *Flowchart*) ist eine übersichtliche Weise einen Algorithmus zu skizzieren.
-> Flussdiagramme haben noch viele weitere Anwendungsmöglichkeiten und es gibt sie in vielen Varianten.
-> Wir verwenden eine sehr einfache Version:
->
-> - Wir beginnen oben und folgen den Pfeilen
-> - Anweisungen stehen in einem Rechteck
-> - Entscheidungen stehen in einer Raute, nach einer Entscheidung folgen wir dem jeweils richtigen Pfeil.
-> - Sind wir ganz unten angekommen, so sind wir fertig.
+<div class="alert definition">
+
+ Ein Flussdiagramm (englisch *Flowchart*) ist eine übersichtliche Weise einen Algorithmus zu skizzieren.
+ Flussdiagramme haben noch viele weitere Anwendungsmöglichkeiten und es gibt sie in vielen Varianten.
+ Wir verwenden eine sehr einfache Version:
+
+ - Wir beginnen oben und folgen den Pfeilen
+ - Anweisungen stehen in einem Rechteck
+ - Entscheidungen stehen in einer Raute, nach einer Entscheidung folgen wir dem jeweils richtigen Pfeil.
+ - Sind wir ganz unten angekommen, so sind wir fertig.
+
+</div>
 
 <!--style="max-width: 450px;margin:3em"-->
 ```mermaid @mermaid
@@ -210,7 +226,7 @@ flowchart TD
 
 ### ❓Aufgaben
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Welche der folgenden Aussagen sind wahr?
 ------------------------------------------
@@ -229,7 +245,7 @@ Welche der folgenden Aussagen sind wahr?
 
 ---
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Woher kommt der Name Bubble Sort?
 ----------------------------------------
@@ -243,7 +259,7 @@ Woher kommt der Name Bubble Sort?
 
 ---
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Sortieren Sie diese Liste mit Bubble Sort. Wie viele Vertauschungen sind nötig?
 -------------------------------------------------------------------------------
@@ -349,7 +365,7 @@ Es gibt eine unüberschaubare Menge an Programmiersprachen, die für unterschied
 
 @[embed(style="height: 400px; width:700px; border: none")](html/console.html)
 
-<div class="alert alert-blue">
+<div class="alert tip">
 Tipp: die REPL
 --------------
 

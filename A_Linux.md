@@ -31,7 +31,7 @@ Tatsächlich ist nichts davon richtig. Die Personen auf diesem Bild sind sogenan
 Ihre Rolle besteht darin, Programme zu laden, deren Ausführung zu überwachen und sicherzustellen, dass die Computer effizient arbeiten. In den Anfangstagen der Computertechnologie mussten Programme direkt in die Hardware geladen werden, was bedeutete, dass alle Programme direkt eine bestimmte Hardware ansprachen.
 
 
-<div class="alert alert-yellow">
+<div class="alert tip">
 
 <!-- class="lead" -->
 **Programme laden im Jahr 1970**
@@ -132,6 +132,7 @@ Betriebssysteme vermitteln also zwischen der Hardware und der Software. Sie abst
 | (2007) |     +--------+          +---------------+
 +--------+
 ```
+
 <div class="flex-child">
 Die Geschichte der Betriebssysteme begann in den 1960er Jahren mit den ersten Betriebssystemen für Großrechner. In den 1970er Jahren wurde UNIX entwickelt, dessen Nutzerverwaltung, Dateisystem und Aufbau immer noch die Grundlage für heutige Betriebssysteme sind. Aus UNIX gingen in den späten 1970er Jahren BSD (Berkeley Software Distribution) und später Linux (1991) hervor. Bei beiden handelt es sich um UNIX-Varianten die aber frei und quelloffen (*open source*) waren[^1]. Linux ist bis heute weit verbreitet und bildet die Basis für Android (2008).
 
@@ -169,7 +170,7 @@ Linux ist eigentlich der Name des Betriebssystemkerns (englisch *Kernel*), also 
 Jede dieser Distributionen können Sie als vollwertiges Betriebssystem benutzen.
 Wenn sie weiterhin Windows benötigen können Sie Linux auch parallel zu Windows auf Ihrer Festplatte installieren. Beim Start des Computers wählen Sie dann, welches Betriebssystem Sie verwenden möchten. Dies wird als *Dual Boot* bezeichnet.
 
-<!--  class="alert alert-green" -->
+<!--  class="alert tip" -->
 **Tipp:**
 Auch wenn die hier genannten Distributionen seit langer Zeit sehr beliebt und weit verbreitet sind, gibt es noch sehr viel mehr. Auch entstehen immer neuere Varianten von bekannten Distributionen, so Beispielsweise [Linux Mint](https://linuxmint.com/) (als Variante von Ubuntu) oder [Manjaro](https://manjaro.org/) (als Variante von Archlinux).\
 Seit vielen Jahren führt [DistroWatch](https://distrowatch.com/) eine umfassende Liste von Linux Distributionen.
@@ -248,7 +249,7 @@ So gibt der Befehl `whoami` den aktuellen Benutzernamen aus
 Hier sehen Sie ein Beispiel *(drücken Sie den Play-Knopf)*:
 @[asciinema2(`rows: 5`)](cast/whoami.cast)
 
-<!--  class="alert alert-red" -->
+<!--  class="alert warning" -->
 **Vorsicht root:**
 In jedem Linux gibt es den Benutzer *root*, den sogenannten *superuser*. Dieser hat alle Berechtigungen im System und kann deshalb großen Schaden anrichten. Achten Sie darauf, nicht als *root* sondern mit ihrem Benutzernamen angemeldet zu sein.
 
@@ -436,7 +437,7 @@ Die Befehle die sie bis jetzt kennengelernt haben, decken bereits einen großen 
 
 So haben wir gesehen, dass `rmdir` nur leere Verzeichnisse löschen kann. Wenn sie aber den Befehl `rm` mit `rm -r` aufrufen, können Sie auch Verzeichnisse mit Inhalt löschen. `-r` steht für *recursive* und bedeutet, und ist eine Option, die besagt, dass der Befehl rekursiv alle Dateien und Unterverzeichnisse löschen soll. 
 
-<div class="alert alert-red">
+<div class="alert warning">
 **Vorsicht!** \
 `rm -r` ist einer der gefährlichsten Befehle im Linux Terminal.
 Ohne Nachfrage werden alle Dateien und Unterverzeichnisse unwiderruflich gelöscht. Vor allem wenn Sie als *root* angemeldet sind, können Sie so das gesamte System löschen. Überlegen Sie also immer zweimal bevor sie <kbd>Enter</kbd> drücken.
@@ -457,7 +458,7 @@ Hier ein paar Beispiele für Optionen der Ihnen bereits bekannten Befehle:
 [^1]: Man kann so statt `rm -r` auch `rm --recursive` schreiben. Meistens verwendet man aber die Kurzform. Es gibt aber auch Optionen ohne Kurzform, wie zum Beispiel `--help`.
 [^2]: Neben dieser eingebauten Hilfe gibt es auch umfangreiche Handbücher für die meisten Befehle. Diese können Sie mit dem Befehl `man` für *manual* aufrufen. So zeigt `man rm` die Hilfe für den Befehl `rm` an.
 
-<div class="alert alert-green">
+<div class="alert tip">
 **Tipps und Tricks** \
 Wir haben bisher nur die Grundlagen der Arbeit im Terminal kennengelernt. 
 Hier sind ein paar hilfreiche weiterführende Tipps:
@@ -472,7 +473,7 @@ Hier sind ein paar hilfreiche weiterführende Tipps:
 
 ### ❓Fragen
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Sicherungskopie
 ----------------
@@ -486,7 +487,7 @@ Welcher der folgenden Befehle ist korrekt?
 - [( )] `mv projekte backup`
 
 </div>
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Heimatverzeichnis
 ------------------
@@ -501,7 +502,7 @@ Sie sind angemeldet als Nutzer `erwin`. Welche der folgenden Befehle bringen Sie
 - [[ ]] `cd /erwin`
 
 </div>
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Verzeichnis löschen
 --------------------

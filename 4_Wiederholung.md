@@ -6,7 +6,7 @@ date:     2024
 language: de
 narrator: Deutsch Female
 logo:     img/4/repetition.png
-icon:     img/TU_Logo_kurz.png
+icon:     img/TU_Logo_kurz.svg
 comment:  Wir lernen Schleifen und Listen einzusetzen, um den selben Code wiederholt auszuführen.
 import:   https://raw.githubusercontent.com/LiaTemplates/Pyodide/master/README.md
 import:   https://raw.githubusercontent.com/liaScript/mermaid_template/master/README.md
@@ -17,7 +17,7 @@ link:     styles/main.css
 
 # 4. Wiederholung
 
-<div class="alert alert-green">
+<div class="alert summary">
 
 <h4>Lernziele</h4>
 
@@ -37,7 +37,7 @@ Am Ende können Sie:
 
 Ein wichtiger Bestandteil vieler Algorithmen ist die Wiederholung bestimmter Handlungsanweisungen. Auch bei vielen alltäglichen Handlungen spielt die Wiederholung eine wichtige Rolle.
 
-<div class="alert alert-blue">
+<div class="alert example">
 
 Beispiel 1: Treppensteigen
 --------------------------
@@ -75,7 +75,7 @@ Diese drei Beispiele stehen für drei Schleifentypen:
 3. **Mengenschleife:** Wiederholt den Schleifenrumpf für jedes Element einer Menge _(siehe Beispiel 3, Teigtaschen)_
 
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Übung
 ------
@@ -127,7 +127,7 @@ Als iterativen Algorithmus berechnen wir die Fakultät folgendermaßen:
 <div class="flex-container">
 
 
-<div class="my-3 pt-5 alert alert-blue flex-child">
+<div class="my-3 pt-5 alert definition flex-child">
 
 <!-- class="my-2" -->
 Algorithmus Fakultät
@@ -178,7 +178,7 @@ print(fak)
 @Pyodide.eval
 ### Aufgabe: Summe ungerader Zahlen
 
-<div class="alert alert-yellow my-3">
+<div class="alert exercise my-3">
 
 Lesen Sie eine Ganzzahl $n$ vom Benutzer ein und berechnen Sie die Summe aller ungeraden Zahlen von 1 bis $n$.
 
@@ -195,7 +195,7 @@ $$
 
 Die Summe der alternierenden Reihe konvergiert gegen den natürlichen Logarithmus von 2.
 
-<div class="alert alert-yellow my-3">
+<div class="alert exercise my-3">
 
 Aufgabe ✍️
 ----------
@@ -226,7 +226,7 @@ Zwar kann man mit ihr überprüfen, ob $x$ die Quadratwurzel von $y$ ist, wie ma
 
 Ein erster Ansatz könnte also sein, einfach verschiedene Werte für $\sqrt{y}$ durchzuprobieren und zu überprüfen, ob man die richtige Wurzel gefunden hat. 
 
-<div class="alert alert-gray">
+<div class="alert example">
 
 Beispiel
 --------
@@ -250,7 +250,7 @@ Ein Näherungsverfahren zur Berechnung der Wurzel einer Zahl nennt man auch „B
 Die Wurzel einer Zahl S können wir mit dieser Methode folgendermaßen bestimmen:
 
 
-<div class="alert alert-blue">
+<div class="alert definition">
 
 Babylonisches Wurzelziehen
 --------------------------
@@ -279,7 +279,7 @@ Man zählt also:
 
 und so weiter.
 
-<div class="alert alert-yellow my-4">
+<div class="alert exercise my-4">
 
 Aufgabe ✍️
 ----------

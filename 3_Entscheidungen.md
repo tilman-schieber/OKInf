@@ -18,7 +18,7 @@ link:     styles/main.css
 
 # 3. Entscheidungen
 
-<div class="alert alert-green">
+<div class="alert summary">
 
 <h4>Lernziele</h4>
 
@@ -129,7 +129,7 @@ x % 2 == 1
 
 ### Übungen
 
-<div class="alert alert-yellow">	
+<div class="alert exercise">	
 
 Was ist wahr?
 -------------
@@ -166,7 +166,7 @@ print(1 > 2 > 3 > 4 > 5)
 
 ----
 
-<div class="alert alert-yellow">	
+<div class="alert exercise">	
 
 Teilbar!
 --------
@@ -215,7 +215,7 @@ else:
     # wenn TEST == False
 ```
 
-<div class="alert alert-blue">
+<div class="alert definition">
 
 Blöcke und Einrückungen
 ------------------------
@@ -280,7 +280,7 @@ Probieren Sie doch mal `fehler=False` zu setzen und entfernen Sie eine oder mehr
 
 ### Übungen
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Lückentext
 -----------
@@ -305,7 +305,7 @@ Damit ist `not x%2==0 and x > 0` hier die einzig richtige Antwort.
 
 </div>
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Fehlersuche
 -----------
@@ -345,7 +345,7 @@ else:
 
 </div>
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Einrückung
 -----------
@@ -399,7 +399,7 @@ else:
 Diese Schreibweise ist äquivalent zum vorherigen Beispiel und soll vor allem die Lesbarkeit verbessern.
 
 
-<div class="alert alert-green">
+<div class="alert tip">
 
 Bonus: `match`
 ---------------
@@ -447,7 +447,7 @@ Diese Information finden Sie zum Beispiel hier:
 </details>
 
 
-<div class="alert alert-yellow my-4">
+<div class="alert exercise my-4">
 
 Aufgabe ✍️
 ----------
@@ -484,7 +484,7 @@ flowchart LR
 
 ```
 
-<div class="alert alert-yellow my-4">
+<div class="alert exercise my-4">
 
 Aufgabe ✍️
 ----------

@@ -17,7 +17,7 @@ link:     styles/main.css
 
 # 2. Werte und Variablen
 
-<div class="alert alert-green">
+<div class="alert summary">
 
 <h4>Lernziele</h4>
 
@@ -48,7 +48,7 @@ Hier stellen wir Python die Rechenaufgabe $2+12\cdot2$:
 ```
 @Pyodide.eval
 
-<div class="alert alert-blue">
+<div class="alert tip">
 
 
 Interaktives Python
@@ -88,7 +88,7 @@ Hier steht `-` für die Substraktion und `/` für die Division.
 
 ### Übung: Temperaturumrechnung
 
-<div class="alert alert-yellow">	
+<div class="alert exercise">	
 
 Sie lesen den Wetterbericht für New York:
 
@@ -118,7 +118,7 @@ round((5/9)*(74-32),2)
 
 ### Übung: Pythagoras
 
-<div class="alert alert-yellow">	
+<div class="alert exercise">	
 
 <div class="flex-container">
 
@@ -238,7 +238,7 @@ Wir übergeben hier zuerst die Fließkommazahl, die wir runden wollen und dann d
 Diese Funktion nimmt also zwei Argumente, die durch Komma getrennt werden.
 
 
-<div class="alert alert-yellow">	
+<div class="alert exercise">	
 
 Frage
 ------
@@ -323,7 +323,7 @@ $$m^{priv}\!\!\mod 3233$$ und entschlüsselt nach $$c^{pub}\!\!\mod 3233$$
 
 Verwenden Sie Python um die folgenden Aufgaben zu lösen:
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 
 Verschlüsseln Sie die Nachricht $m=123$:[^1]
@@ -344,7 +344,7 @@ so erhalten wir $855$.
 </div>
 
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Entschlüsseln Sie die codierte Nachricht $c=2573$:
 
@@ -389,7 +389,7 @@ Auf gleiche Weise kann man in Python auch mit Oktalzahlen und Hexadezimalzahlen 
 Eine Oktalzahl beginnt mit den Zeichen `0o` und die Funktion `oct()` stellt einen Ausdruck als Oktalzahl dar. 
 Hexadezimalzahlen beginnen mit den Zeichen `0x` und die dazugehörige Funktion ist `hex()`
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Aufgabe
 -------
@@ -433,7 +433,7 @@ name-2
 $alter
 ```
 
-<div class="alert alert-yellow" style="">
+<div class="alert exercise">
 
 Aufgabe
 -------
@@ -495,7 +495,7 @@ print("Hallo", name)
 Der Befehl `input()` wartet auf eine Eingabe des Benutzers und gibt diese als Zeichenkette zurück. Optional kann als Argument auch ein Text angegeben werden, der als Eingabeaufforderung angezeigt wird.
 Der Befehl `print()` gibt die Argumente auf dem Bildschirm aus. Er nimmt beliebig viele Argumente und gibt diese durch Leerzeichen getrennt aus.
 
-<div class="alert alert-blue">
+<div class="alert definition">
 
 Zeichenketten oder *Strings*
 ----------------------------
@@ -567,7 +567,7 @@ Dennoch ist Code, der so verständlich ist, dass er sich selbst erklärt, besser
 
 ## ❓Aufgaben
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Python-Ausdrücke
 ----------------
@@ -584,7 +584,7 @@ Wie lautet das Ergebnis der folgenden Ausdrücke und von welchem Typ ist das Erg
 
 ---
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Variablenzuweisung
 ------------------
@@ -609,7 +609,7 @@ Am Ende des Programms ist `x=6`, `y=4` und `z=2`. Das Programm gibt also $6+4=10
 
 </div>
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Titrationsrechner✍[^1]
 ------------------------
@@ -624,7 +624,7 @@ Volumen der unbekannten Lösung, sowie Konzentration und Volumen des Titranten s
 </div>
 
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Quadratische Gleichungen✍
 --------------------------

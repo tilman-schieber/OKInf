@@ -19,7 +19,7 @@ link:     styles/main.css
 
 
 
-<div class="alert alert-green">
+<div class="alert summary">
 
 <h4>Musterlösungen</h4>
 
@@ -33,7 +33,7 @@ Hier finden Sie die Lösungen zu den Vertiefungsaufgaben (mit dem Symbol ✍).
 
 ### Spielkarten sortieren
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Stellen Sie sich vor, sie haben einen Stapel unsortierter Spielkarten und sie sollen diese aufsteigend nach ihrem Wert sortieren.
 
@@ -56,7 +56,7 @@ Man kann auch die niedrigste Karte aussuchen, sie ganz nach links legen und dann
 
 ### Titrationsrechner
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Bei einer Titration wird die Konzentration einer unbekannten Lösung bestimmt, indem man eine Lösung bekannter Konzentration (Titrant) in kleinen Mengen zu der unbekannten Lösung gibt, bis z.B. ein Indikator umschlägt.	
 
@@ -84,7 +84,7 @@ print("Konzentration der unbekannten Lösung:", round(c2,2), "mol/l")
 
 ### Quadratische Gleichungen
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Eine Gleichung der Form $ax^2 + bx + c = 0$ lässt sich mit der *quadratischen Formel* lösen:
 
@@ -114,7 +114,7 @@ print("x2 =", x2)
 
 ### Aufgabe: Ammoniak
 
-<div class="alert alert-yellow my-4">
+<div class="alert exercise my-4">
 
 Schreiben Sie ein Programm, das
 
@@ -153,7 +153,7 @@ print(aggregatzustand)
 * *Aber:* Durch 400 teilbare Jahre sind Schaltjahre
 
 
-<div class="alert alert-yellow my-4">
+<div class="alert exercise my-4">
 
 Schreiben Sie ein Programm, das prüft, ob ein gegebenes Jahr ein Schaltjahr ist:
 
