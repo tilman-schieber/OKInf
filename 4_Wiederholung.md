@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  0.0.1
+version:  1.0.0
 date:     2024
 language: de
 narrator: Deutsch Female
@@ -176,14 +176,130 @@ while i <= n:
 print(fak)
 ```
 @Pyodide.eval
-### Aufgabe: Summe ungerader Zahlen
 
-<div class="alert exercise my-3">
+---
 
-Lesen Sie eine Ganzzahl $n$ vom Benutzer ein und berechnen Sie die Summe aller ungeraden Zahlen von 1 bis $n$.
+<div class="alert exercise my-2">
+
+ $42!$
+-------
+
+Berechnen Sie $42!$ mit Hilfe des obigen Algorithmus:
+
+[[1405006117752879898543142606244511569936384000000000]]
 
 </div>
 
+---
+
+<div class="alert exercise my-2">
+
+ Summe statt Produkt!
+---------------------
+
+ändern sie den obigen Algorithmus so ab, dass er die Summe der Zahlen von 1 bis 1000 berechnet.
+
+[[500000500000]]
+[[?]] Verwenden Sie direkt das obige Code-Fenster um den Algorithmus zu ändern.
+[[?]] Beachten Sie: Während das [leere Produkt](https://de.wikipedia.org/wiki/Leeres_Produkt) $1$ ist, ist die [leere Summe](https://de.wikipedia.org/wiki/Leere_Summe) $0$. Passen Sie den Anfangswert der Summe entsprechend an!
+********************
+
+```python
+n = 1000
+i = 1
+summe = 0
+while i <= n:
+    summe = summe + i
+    i = i + 1
+print(summe)
+```
+@Pyodide.eval
+
+********************
+
+</div>
+
+### Tipp: *syntactic sugar*
+
+Von *syntactic sugar* oder auch syntaktischem[^1] Zucker spricht man, wenn eine Programmiersprache eine spezielle Syntax für eine häufige Operation bereitstellt. 
+Diese Kurzschreibweisen sind nicht notwendig, erleichtern aber das Schreiben von Code.
+
+Im Algorithmus zur Berechnung der Fakultät, sah der Schleifenrumpf so aus:
+
+```python
+fak = fak * i
+i = i + 1
+```
+
+Die Kombination aus arithmetischer Operation und Zuweisung ist so häufig, dass Python eine Kurzschreibweise dafür anbietet.
+Wir können einfach
+
+```python
+fak *= i
+i += 1
+```
+schreiben
+
+
+Die Kurzschreibweise `+=` und `*=` sind nur zwei Beispiele. Analog gibt es auch `-=`, `/=`, `**=`, `//=` und `%=` und mehr.
+
+Hier sehen Sie ein Beispiel, das einige dieser Operatoren einsetzt:
+
+```python
+x = 5
+x += 5 
+x *= 2 
+x -= 4
+x **= 0.5
+x %= 3
+```
+
+
+<div class="alert exercise my-3">
+
+Aufgabe
+--------
+
+Welchen Wert hat `x` nach der Ausführung des obigen Codes?
+
+- [( )] 0
+- [(X)] 1
+- [( )] 2
+- [( )] 3
+
+</div>
+
+[^1]: Die Syntax einer Programmiersprache bezeichnet die Regeln, die bestimmen, wie ein Programm geschrieben werden muss.
+
+### Aufgabe: Summe ungerader Zahlen 
+
+<div class="alert exercise my-3">
+
+
+Teil 1 ✍️
+----------
+
+Lesen Sie eine Ganzzahl $n$ vom Benutzer ein und geben Sie die Summe der ersten n ungeraden Zahlen aus.
+
+für $n=5$ wäre das $1+3+5+7+9=25$
+
+---
+
+Teil 2 ✍️
+----------
+
+- Die Summe der ersten $2$ ungeraden Zahlen ist $1+3=4$, 
+- die Summe der ersten $3$ ungeraden Zahlen ist $1+3+5=9$, 
+- die Summe der ersten $4$ ungeraden Zahlen ist $1+3+5+7=16$. 
+
+Es fällt auf, dass die Summe der ersten $n$ ungeraden Zahlen immer $n^2$ zu ergeben scheint.
+
+Schreiben Sie ein Programm, das überprüft, ob diese Vermutung stimmt. Es reicht wenn Sie es für alle $n \leq 10000$ zeigen[^1][^2].
+
+</div>
+
+[^1]: wundern sie sich nicht, wenn das Programm einige Zeit braucht, um alle Zahlen zu überprüfen.
+[^2]: Gerne dürfen Sie es auch für alle natürlichen Zahlen mit vollständiger Induktion beweisen.
 
 ### Aufgabe: Alternierende Reihe
 
@@ -200,7 +316,7 @@ Die Summe der alternierenden Reihe konvergiert gegen den natürlichen Logarithmu
 Aufgabe ✍️
 ----------
 
-Schreiben Sie ein Programm, das die Summe der alternierenden Reihe berechnet, bis die Terme kleiner als $10^{-6}$[^1] sind.
+Schreiben Sie ein Programm, das die Summe der alternierenden Reihe und damit $\ln(2)$ berechnet. Sie können abbrechen, wenn die Terme kleiner als $10^{-6}$[^1] sind.
 
 </div>
 
@@ -208,9 +324,25 @@ Schreiben Sie ein Programm, das die Summe der alternierenden Reihe berechnet, bi
 
 
 
+### Aufgabe: Fizzbuzz
 
+[Fizzbuzz](https://de.wikipedia.org/wiki/Fizz_buzz) ist ein Kinderspiel, bei dem Kinder abwechseln von 1 auf 100 zählen. Dabei ersetzen sie jedes Vielfache von 3 durch "Fizz", jedes Vielfache von 5 durch "Buzz" und jedes Vielfache von 15 durch "FizzBuzz".
 
+Man zählt also:
 
+<!-- class="ml-3"-->
+***"1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz"*** 
+
+und so weiter.
+
+<div class="alert exercise my-4">
+
+Aufgabe ✍️
+----------
+
+Schreiben Sie ein Programm, das von 1 bis 100 zählt und dabei die Zahlen durch "Fizz", "Buzz" oder "FizzBuzz" ersetzt, wenn sie die entsprechenden Bedingungen erfüllen.
+
+</div>
 
 
 ## Babylonisches Wurzelziehen
@@ -233,12 +365,15 @@ Beispiel
 
 Wollen wir beispielsweise $\sqrt{21}$ berechnen, probieren wir erstmal die natürlichen Zahlen durch:
 
-$2$,$3$ und $4$ sind zu klein, da ihre Quadrate $4$,$9$ und $16$ alle kleiner als $21$ sind.
-$5$ ist zu groß, da $5^2=25$.
- 
-$\sqrt{21}$ muss also zwischen $4$ und $5$ liegen.
+- $2$,$3$ und $4$ sind zu klein, da ihre Quadrate $4$,$9$ und $16$ alle kleiner als $21$ sind.
+- $5$ ist zu groß, da $5^2=25$.
+- $\sqrt{21}$ muss also zwischen $4$ und $5$ liegen.
+
 Nun haben wir den Suchbereich eingegrenzt.  
-Betrachten wir die Mitte zwischen $4$ und $5$, also $4\frac{1}{2}$ erhalten wir für $(4\frac{1}{2})^2=20\frac{1}{4}$ .  
+
+Betrachten wir die Mitte zwischen $4$ und $5$, also $4\frac{1}{2}$ erhalten wir für $(4\frac{1}{2})^2=20\frac{1}{4}$.
+
+ 
 Nun wissen wir also $\sqrt{21}$ liegt zwischen $4\frac{1}{2}$ und $5$ und können so den tatsächlichen Wert immer weiter eingrenzen.
 
 </div>
@@ -264,26 +399,22 @@ $$
 
 </div>
 
+
 ### interaktiver Algorithmus
+
+Hier Können Sie sehen, wie gut dieser Algorithmus funktioniert. Sie können den Wert von $S$ und den Startwert $x_0$ verändern und sehen, wie schnell der Algorithmus konvergiert.
+
+
 @[embed(style="height: 1000px; width:100%; border: none")](html/4/wurzel.html)
 
 
-### Aufgabe: Fizzbuzz
+### Python Implementierung
 
-[Fizzbuzz](https://de.wikipedia.org/wiki/Fizz_buzz) ist ein Kinderspiel, bei dem Kinder abwechseln von 1 auf 100 zählen. Dabei ersetzen sie jedes Vielfache von 3 durch "Fizz", jedes Vielfache von 5 durch "Buzz" und jedes Vielfache von 15 durch "FizzBuzz".
-
-Man zählt also:
-
-<!-- class="ml-3"-->
-***"1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz"*** 
-
-und so weiter.
-
-<div class="alert exercise my-4">
+<div class="alert exercise my-3">
 
 Aufgabe ✍️
 ----------
 
-Schreiben Sie ein Programm, das von 1 bis 100 zählt und dabei die Zahlen durch "Fizz", "Buzz" oder "FizzBuzz" ersetzt, wenn sie die entsprechenden Bedingungen erfüllen.
+Schreiben Sie ein Programm, das die Quadratwurzel einer Zahl nach der babylonischen Methode berechnet. 
 
 </div>
