@@ -119,6 +119,11 @@ p.lead {
   --bs-alert-border-color: #d3d6d8;
 }
 
+.lia-quote {
+  background: none;
+  font-style: italic;
+}
+
 /* MERMAID: change colors of flowcharts */
 #graphDiv_6_0 .node rect, #graphDiv_6_0 .node circle, #graphDiv_6_0 .node ellipse, #graphDiv_6_0 .node polygon, #graphDiv_6_0 .node path {
   fill: #cfe2ff !important;

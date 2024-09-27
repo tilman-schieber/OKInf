@@ -253,7 +253,7 @@ Woher kommt der Name Bubble Sort?
 - [( )] Der Erfinder war ein Programmierer mit dem Spitznamen "Bubbles"
 - [( )] Frühe Röhrencomputern nutzten sogenannten "Bubble Memory" um Daten zu speichern.
 - [( )] Der Algorithmus wurde von einem Programmierer in einem Sprudelbad erfunden.
-- [(X)] unsortierte Elemente bewegen sich wie aufsteigende Luftblase ans Ende der Liste.
+- [(X)] unsortierte Elemente bewegen sich wie aufsteigende Luftblasen ans Ende der Liste.
 
 </div>
 
