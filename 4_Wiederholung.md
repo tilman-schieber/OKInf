@@ -206,6 +206,40 @@ flowchart TD
 </div>
 </div>
 
+## Die while-Schleife
+
+Eine Schleife kann in Python mit dem Schlüsselwort `while` eingeleitet werden. Der Schleifenrumpf wird so lange wiederholt, wie die Bedingung wahr ist:
+
+``` python
+while BEDINGUNG:
+  # Dieser Code wird wiederholt
+  # solange BEDINGUNG wahr ist
+```
+
+<div class="alert beispiel">
+
+Beispiel
+--------
+
+``` python
+geheimzahl = 42
+eingabe = 0
+print("Errate die Geheimzahl!")
+while eingabe != geheimzahl:
+    eingabe = int(input())
+print("Richtig geraten!")
+```
+@Pyodide.eval
+
+Dieses Programm wiederholt so lange die Frage nach der Geheimzahl, bis die richtige Zahl erraten wird.
+Das ist ein Beispiel für eine Bedingungsschleife mit `while`.
+
+</div>
+
+Sie haben bereits den [Algorithmus zur Berechnung der Fakultät](#Ein-iterativer-Algorithmus:-die-Fakultät) gesehen.\
+Hier ist der Algorithmus in Python implementiert:
+
+
 ```python
 n = 5
 i = 1
@@ -216,6 +250,9 @@ while i <= n:
 print(fak)
 ```
 @Pyodide.eval
+
+Auch wenn hier eine Bedingung verwendet wird, handelt es sich eigentlich um eine Zählschleife, da die Schleife genau $n$ mal wiederholt wird.
+Das Zählen wird durch die Variable `i` realisiert, die bei 1 beginnt und in jedem Schleifendurchlauf um 1 erhöht wird.
 
 ---
 
