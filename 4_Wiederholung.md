@@ -39,12 +39,36 @@ Ein wichtiger Bestandteil vieler Algorithmen ist die Wiederholung bestimmter Han
 
 <div class="alert example">
 
+<div class="flex-container align-center">
+
+<div class="flex-child">
+
+![Treppensteigen](img/4/treppen.png)<!--style="max-width:150px"-->
+
+</div>
+
+<div class="flex-child-4">
+
+
 Beispiel 1: Treppensteigen
 --------------------------
 1. gehen Sie eine Treppenstufe hinauf. ⏺️
 2. Falls Sie noch nicht oben sind, wiederholen Sie Schritt 1 🔁
 
+</div>
+</div>
+
 ---
+
+<div class="flex-container align-center">
+
+<div class="flex-child">
+
+![Treppensteigen](img/4/auto.png)<!--style="max-width:150px"-->
+
+</div>
+
+<div class="flex-child-4">
 
 Beispiel 2: Reifen am Auto wechseln
 -----------------------------------
@@ -52,7 +76,21 @@ Beispiel 2: Reifen am Auto wechseln
 1. Führen Sie vier mal den nächsten Schritt aus: 🔁
 2. Wechseln Sie einen Reifen ⏺️
 
+
+</div>
+</div>
+
 ---
+
+<div class="flex-container align-center">
+
+<div class="flex-child">
+
+![Treppensteigen](img/4/ravioli.png)<!--style="max-width:150px"-->
+
+</div>
+
+<div class="flex-child-4">
 
 Beispiel 3: Teigtaschen[^1] füllen
 -------------------------------
@@ -62,6 +100,8 @@ Beispiel 3: Teigtaschen[^1] füllen
 3. Klappen Sie die Teigtaschen zu. ⏺️
 4. Wiederholen Sie Schritte 2-3 für jedes Teigquadrat. 🔁
 
+</div>
+</div>
 </div>
 
 Dies sind Beispiele für eine Iteration. In der Informatik bezeichnet man so die Wiederholung einer Handlungsanweisung mit einem bestimmten Ziel. In der Programmierung spricht man auch von Schleifen.
