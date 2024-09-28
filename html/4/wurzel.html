@@ -73,8 +73,7 @@
 <div style="padding-left:2em;">
   
   <p>Berechne `\sqrt{S}`  für `S=`<input type="text" id="sinput" value="21" maxlength="3" oninput="limiter(this);"></p>
-  <p>Was ist ihr Schätzwert?
-  `x_0 = `<input type="text" id="x0input" value="1" maxlength="3" oninput="limiter(this);"></p>
+  <p>Startwert `x_0 = `<input type="text" id="x0input" value="1" maxlength="3" oninput="limiter(this);"></p>
 </div>  
 <table id="output"></table>
 
@@ -95,7 +94,7 @@
     
     function limiter(input) {  
        let val = input.value.replace(/[^0-9]/g, '');
-       if ((val < 0)||(val=="")) input.value = 1;
+       if (val < 0) input.value = '';
        if (val > 999) input.value = 999;
     }
     
@@ -114,6 +113,9 @@
     }
     
     function start() {
+      if (sinput.value=="" || x0input.value=="") {
+        return;
+      }
       let S = Number(sinput.value);
       let xn = Number(x0input.value);
       sinput.setAttribute("readonly","readonly");
