@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  1.1.0
+version:  1.1.1
 date:     2024
 language: de
 narrator: Deutsch Female
@@ -138,7 +138,7 @@ Welche Art von Schleifen benötigen die folgenden Algorithmen?
 
 [^1]: in vielen Ländern isst man gefüllte Teigtaschen, man nennt sie z.B. Maultaschen, Пельмени, 饺子, ხინკალი, Ravioli, Mantı, Pierogi usw.
 
-## Ein iterativer Algorithmus: Fakultät
+## Ein iterativer Algorithmus: die Fakultät
 
 Wir versuchen in der Informatik die unterschiedlichsten Problemstellungen mit Hilfe von Algorithmen zu lösen. Die Wiederholung, oder auch Iteration ist dafür ein wichtiger Grundbaustein.  
 
@@ -239,7 +239,7 @@ Berechnen Sie $42!$ mit Hilfe des obigen Algorithmus:
 
 ändern sie den obigen Algorithmus so ab, dass er die Summe der Zahlen von 1 bis 1000 berechnet.
 
-[[500000500000]]
+[[5050]]
 [[?]] Verwenden Sie direkt das obige Code-Fenster um den Algorithmus zu ändern.
 [[?]] Beachten Sie: Während das [leere Produkt](https://de.wikipedia.org/wiki/Leeres_Produkt) $1$ ist, ist die [leere Summe](https://de.wikipedia.org/wiki/Leere_Summe) $0$. Passen Sie den Anfangswert der Summe entsprechend an!
 ********************
@@ -316,8 +316,8 @@ Welchen Wert hat `x` nach der Ausführung des obigen Codes?
 <div class="alert exercise my-3">
 
 
-Teil 1 ✍️
-----------
+Teil 1
+------
 
 Lesen Sie eine Ganzzahl $n$ vom Benutzer ein und geben Sie die Summe der ersten n ungeraden Zahlen aus.
 
@@ -325,8 +325,8 @@ für $n=5$ wäre das $1+3+5+7+9=25$
 
 ---
 
-Teil 2 ✍️
-----------
+Teil 2
+------
 
 - Die Summe der ersten $2$ ungeraden Zahlen ist $1+3=4$, 
 - die Summe der ersten $3$ ungeraden Zahlen ist $1+3+5=9$, 
@@ -353,8 +353,8 @@ Die Summe der alternierenden Reihe konvergiert gegen den natürlichen Logarithmu
 
 <div class="alert exercise my-3">
 
-Aufgabe ✍️
-----------
+Aufgabe
+-------
 
 Schreiben Sie ein Programm, das die Summe der alternierenden Reihe und damit $\ln(2)$ berechnet. Sie können abbrechen, wenn die Terme kleiner als $10^{-6}$[^1] sind.
 
@@ -451,10 +451,9 @@ Die Wurzel von zwei ist als 𒐕 𒐖𒐘 𒐙𒐕 𒌋 geschrieben, das ist die
 
 
 
-### interaktiver Algorithmus
+### Interaktiver Algorithmus
 
-Hier Können Sie sehen, wie gut dieser Algorithmus funktioniert. Sie können den Wert von $S$ und den Startwert $x_0$ verändern und sehen, wie schnell der Algorithmus konvergiert.
-
+Hier können Sie beobachten, wie effizient dieser Algorithmus arbeitet. Sie haben die Möglichkeit, den Wert von $S$ sowie den Startwert $x_0$ zu verändern:
 
 @[embed(style="height: 1000px; width:100%; border: none")](html/4/wurzel.html)
 
@@ -468,18 +467,19 @@ Aufgabe
 
 Schreiben Sie ein Programm, das die Quadratwurzel einer Zahl nach der babylonischen Methode berechnet. 
 
-Verwenden Sie $S=1764$ und $50$ als ersten Schätzwert.
-
-zur Erinnerung: Die nächste Näherung $x_{(n+1)}$ berechnet sich nach der Formel:
+*zur Erinnerung:* Die nächste Näherung $x_{(n+1)}$ berechnet sich nach der Formel:
 $$
 x_{(n+1)}=\frac{1}{2}\left(x_n+\frac{S}{x_n}\right)
 $$
 
-Um zu überprüfen, ob die Näherung gut genug ist, können Sie die Differenz zwischen $x^2$ und $S$, oder $\left|S - x^2\right|$[^1] berechnen.
-Sie können die Schleife beenden, wenn diese Differenz kleiner als $10^{-6}$ ist.	
+Wie nahe sie an der richtigen Lösung sind, sehen Sie an der Differenz zwischen $x^2$ und $S$. Das ist $\left|S - x^2\right|$[^1].\
+Ist diese Differenz kleiner als $10^{-6}$, können Sie die Schleife abbrechen.
 
+---
 
-Hier ist ein Codegerüst, das Sie verwenden können:
+Hier ist ein Codegerüst als Ausgangspunkt. Dieses setzt $S$ auf $1764$ und nimmt $50$ als ersten Schätzwert. 
+Natürlich können Sie auch andere Werte verwenden.
+
 
 ```python
 S = 1764
