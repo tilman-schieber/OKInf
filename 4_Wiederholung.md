@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  1.0.0
+version:  1.1.0
 date:     2024
 language: de
 narrator: Deutsch Female
@@ -311,7 +311,7 @@ Welchen Wert hat `x` nach der Ausführung des obigen Codes?
 
 [^1]: Die Syntax einer Programmiersprache bezeichnet die Regeln, die bestimmen, wie ein Programm geschrieben werden muss.
 
-### Aufgabe: Summe ungerader Zahlen 
+### ✍️ Aufgabe: Summe ungerader Zahlen 
 
 <div class="alert exercise my-3">
 
@@ -341,7 +341,7 @@ Schreiben Sie ein Programm, das überprüft, ob diese Vermutung stimmt. Es reich
 [^1]: wundern sie sich nicht, wenn das Programm einige Zeit braucht, um alle Zahlen zu überprüfen.
 [^2]: Gerne dürfen Sie es auch für alle natürlichen Zahlen mit vollständiger Induktion beweisen.
 
-### Aufgabe: Alternierende Reihe
+### ✍️Aufgabe: Alternierende Reihe
 
 Die alternierende Reihe ist eine mathematische Reihe, die sich durch das Vorzeichen der Summanden auszeichnet. Die Summe der alternierenden Reihe ist definiert als:
 
@@ -364,7 +364,7 @@ Schreiben Sie ein Programm, das die Summe der alternierenden Reihe und damit $\l
 
 
 
-### Aufgabe: Fizzbuzz
+### ✍️ Aufgabe: Fizzbuzz
 
 [Fizzbuzz](https://de.wikipedia.org/wiki/Fizz_buzz) ist ein Kinderspiel, bei dem Kinder abwechseln von 1 auf 100 zählen. Dabei ersetzen sie jedes Vielfache von 3 durch "Fizz", jedes Vielfache von 5 durch "Buzz" und jedes Vielfache von 15 durch "FizzBuzz".
 
@@ -377,15 +377,15 @@ und so weiter.
 
 <div class="alert exercise my-4">
 
-Aufgabe ✍️
-----------
+Aufgabe
+--------
 
 Schreiben Sie ein Programm, das von 1 bis 100 zählt und dabei die Zahlen durch "Fizz", "Buzz" oder "FizzBuzz" ersetzt, wenn sie die entsprechenden Bedingungen erfüllen.
 
 </div>
 
 
-## Babylonisches Wurzelziehen
+## Ein Algorithmus zum Wurzelziehen
 
 In der Mathematik definiert man die Quadratwurzel einer Zahl folgendermaßen
 
@@ -418,9 +418,15 @@ Nun wissen wir also $\sqrt{21}$ liegt zwischen $4\frac{1}{2}$ und $5$ und könne
 
 </div>
 
-
 Eine solche Vorgehensweise nennt man Näherungsverfahren.
+
+### Das Babylonische Wurzelziehen
+
 Ein Näherungsverfahren zur Berechnung der Wurzel einer Zahl nennt man auch „Babylonisches Wurzelziehen“ oder das „Heron-Verfahren“
+
+![YBC 7289](img/4/YBC7289.png) Auf dieser Keilschrifttafel aus dem alten Babylon ist ein Quadrat mit Diagonalen und der Wert von $\sqrt{2}$[^1] dargestellt. 
+Es ist eines der ältesten bekannten mathematischen Artefakte und zeigt, dass die Babylonier bereits um das Jahr 1800 v. Chr. die Quadratwurzel kannten und auch berechnen konnten.\
+Im Jahr 60 n. Chr. beschrieb Heron von Alexandria dann dieses Verfahren zum ersten Mal in einem Buch, weshalb es auch „Heron-Verfahren“ genannt wird.
 
 Die Wurzel einer Zahl S können wir mit dieser Methode folgendermaßen bestimmen:
 
@@ -433,11 +439,16 @@ Babylonisches Wurzelziehen
 1. Wir setzen einen Schätzwert für die Wurzel $x_0\approx \sqrt{S}$  
 2. im nächsten Schritt bilden wir den Durchschnitt unseres aktuellen Schätzwertes $x_n$  mit $\frac{S}{x_n}$  und gewinnen so eine verbesserte Näherung der Wurzel $x_{(n+1)}$ :
 $$
-x_{(n+1)}=\frac{1}{2}(x_n+\frac{S}{x_n})
+x_{(n+1)}=\frac{1}{2}\left(x_n+\frac{S}{x_n}\right)
 $$
 3. Berechne $x_n^2$ und wiederhole Schritt 2 bis der Wert nahe genug an S ist.
 
 </div>
+
+[^1]: Diese Tafel heißt [YBC 7289](https://de.wikipedia.org/wiki/YBC_7289) und ist Teil der *Yale Babylonian Collection*. Sie ist eine Art Notizblock, auf dem zuerst $\sqrt{2}$ notiert wird, und dann die Diagonale eines Quadrats mit Kantenlänge $30$ berechnet wird.\
+Die Wurzel von zwei ist als 𒐕 𒐖𒐘 𒐙𒐕 𒌋 geschrieben, das ist die Zahlenfolge $1, 24, 51, 10$. Die Babylonier benutzten ein Zahlensystem zur Basis 60 (ähnlich unseren Stunden, Minuten, Sekunden), so dass diese Zahlenfolge für $1 + \frac{24}{60} + \frac{51}{60^2} + \frac{10}{60^3} = 1.414213$ steht. Diese Annäherung an $\sqrt{2}$ ist korrekt auf sechs Stellen nach dem Komma!
+
+
 
 
 ### interaktiver Algorithmus
@@ -448,13 +459,42 @@ Hier Können Sie sehen, wie gut dieser Algorithmus funktioniert. Sie können den
 @[embed(style="height: 1000px; width:100%; border: none")](html/4/wurzel.html)
 
 
-### Python Implementierung
+### ✍️ Aufgabe: Implementierung
 
 <div class="alert exercise my-3">
 
-Aufgabe ✍️
-----------
+Aufgabe
+--------
 
 Schreiben Sie ein Programm, das die Quadratwurzel einer Zahl nach der babylonischen Methode berechnet. 
 
+Verwenden Sie $S=1764$ und $50$ als ersten Schätzwert.
+
+zur Erinnerung: Die nächste Näherung $x_{(n+1)}$ berechnet sich nach der Formel:
+$$
+x_{(n+1)}=\frac{1}{2}\left(x_n+\frac{S}{x_n}\right)
+$$
+
+Um zu überprüfen, ob die Näherung gut genug ist, können Sie die Differenz zwischen $x^2$ und $S$, oder $\left|S - x^2\right|$[^1] berechnen.
+Sie können die Schleife beenden, wenn diese Differenz kleiner als $10^{-6}$ ist.	
+
+
+Hier ist ein Codegerüst, das Sie verwenden können:
+
+```python
+S = 1764
+x = 50
+
+while # Fügen Sie hier die Bedingung ein
+    # Fügen Sie hier den Schleifenrumpf ein
+
+print("Die Wurzel von", S, "ist", x)
+
+```
+@Pyodide.eval
+
+
+
 </div>
+
+[^1]: $\left|x\right|$ ist der Betrag einer Zahl $x$ und kann in Python mit `abs(x)` berechnet werden.

@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  1.0.2
+version:  1.0.3
 date:     2024
 language: de
 narrator: Deutsch Female
@@ -425,7 +425,7 @@ Auch wenn es in einigen Fällen die Lesbarkeit verbessern kann, werden Sie es in
 </div>
 
 
-### Aufgabe: Ammoniak
+### ✍️ Aufgabe: Ammoniak
 
 ![Ammonikasyntheseapparat](https://upload.wikimedia.org/wikipedia/commons/7/7f/Hermann_L%C3%BCtge_-_Ammoniaksyntheseapparat_aus_Die_BASF_HZ_1_1952_S._26.jpg "ein historischer Apparat zur Synthese von Ammoniak[^1]")
 
@@ -449,8 +449,8 @@ Diese Information finden Sie zum Beispiel hier:
 
 <div class="alert exercise my-4">
 
-Aufgabe ✍️
-----------
+Aufgabe
+--------
 
 Schreiben Sie ein Programm, das
 
@@ -464,7 +464,7 @@ Schreiben Sie ein Programm, das
 
 
 
-### Aufgabe: Schaltjahre
+### ✍️ Aufgabe: Schaltjahre 
 
 * Ein [Schaltjahr](https://de.wikipedia.org/wiki/Schaltjahr)  ist ein Jahr, das durch vier teilbar ist
 * *Aber:* Durch 100 teilbare Jahre sind keine Schaltjahre
@@ -486,8 +486,8 @@ flowchart LR
 
 <div class="alert exercise my-4">
 
-Aufgabe ✍️
-----------
+Aufgabe
+--------
 
 Schreiben Sie ein Programm, das prüft, ob ein gegebenes Jahr ein Schaltjahr ist:
 
