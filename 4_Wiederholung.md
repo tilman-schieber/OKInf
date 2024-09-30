@@ -7,7 +7,7 @@ language: de
 narrator: Deutsch Female
 logo:     img/4/repetition.png
 icon:     img/TU_Logo_kurz.svg
-comment:  Wir lernen Schleifen und Listen einzusetzen, um den selben Code wiederholt auszuführen.
+comment:  Wir lernen while-Schleifen einzusetzen, um den selben Code wiederholt auszuführen.
 import:   https://raw.githubusercontent.com/LiaTemplates/Pyodide/master/README.md
 import:   https://raw.githubusercontent.com/liaScript/mermaid_template/master/README.md
 import:   macros/macros.md
@@ -21,14 +21,15 @@ link:     styles/main.css
 
 <h4>Lernziele</h4>
 
-In diesem Kapitel lernen Sie, wie Sie Schleifen und Listen in Python verwenden können, um den selben Code wiederholt auszuführen.
+In diesem Kapitel lernen Sie, wie Sie die `while`-Schleife in Python verwenden können, um den selben Code wiederholt auszuführen.
 
 Am Ende können Sie:
 
 1. Die Wichtigkeit von Wiederholung für Algorithmen verstehen.
-2. Schleifen mit `while` und `for` verwenden
-3. Die Liste und andere Sequenztypen verstehen.
-4. Mit `for` Iterationen über Sequenzen anwenden.
+2. Verstehen, wie ein iterativer Algorithmus funktioniert.
+3. Die `while`-Schleife in Python verwenden.
+4. Iterative Algorithmen mit Python umsetzen.
+
 
 
 </div>
@@ -114,6 +115,7 @@ Diese drei Beispiele stehen für drei Schleifentypen:
 2. **Zählschleife:** Wiederholt eine bestimmte Anzahl an Malen. _(siehe Beispiel 2, Reifenwechsel)_
 3. **Mengenschleife:** Wiederholt den Schleifenrumpf für jedes Element einer Menge _(siehe Beispiel 3, Teigtaschen)_
 
+Alle drei Schleifentypen werden wir in diesem Kurs mit Python umsetzen.[^2]
 
 <div class="alert exercise">
 
@@ -137,6 +139,8 @@ Welche Art von Schleifen benötigen die folgenden Algorithmen?
 </div>
 
 [^1]: in vielen Ländern isst man gefüllte Teigtaschen, man nennt sie z.B. Maultaschen, Пельмени, 饺子, ხინკალი, Ravioli, Mantı, Pierogi usw.
+
+[^2]: Da wir Auflistungen oder Mengen noch nicht in Python darstellen können, werden wir uns zunächst auf die Bedingungsschleife und die Zählschleife konzentrieren. Im nächsten Kapitel werden wir dann die Mengenschleife kennenlernen.
 
 ## Ein iterativer Algorithmus: die Fakultät
 

@@ -125,7 +125,9 @@ p.lead {
 .lia-quote {
   background: none;
   font-style: italic;
+  padding: 0rem 2rem;
 }
+
 
 /* MERMAID: change colors of flowcharts */
 #graphDiv_6_0 .node rect, #graphDiv_6_0 .node circle, #graphDiv_6_0 .node ellipse, #graphDiv_6_0 .node polygon, #graphDiv_6_0 .node path {
