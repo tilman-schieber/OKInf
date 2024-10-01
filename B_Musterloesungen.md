@@ -306,3 +306,94 @@ Aufgabe
 Schreiben Sie ein Programm, das von 1 bis 100 zählt und dabei die Zahlen durch "Fizz", "Buzz" oder "FizzBuzz" ersetzt, wenn sie die entsprechenden Bedingungen erfüllen.
 
 </div>
+
+## 5: Listen&Schleifen
+
+### ✍️ Aufgabe: Recamán-Folge
+
+Aufgabe
+-------
+
+Die Recamán-Folge ist eine mathematische Folge, die 1964 von dem kolumbianischen Mathematiker Bernardo Recamán Santos erfunden wurde. Die Folge wird wie folgt definiert:
+
+- $a_0 = 0$
+- $a_{n+1} = a_n - n$, falls $a_n - n > 0$ und $a_{n+1}$ noch nicht in der Folge vorkommt
+- $a_{n+1} = a_n + n$, sonst
+
+Programmieren Sie ein Python-Programm, das die ersten 100 Elemente der Recamán-Folge berechnet und ausgibt.
+
+</div>
+
+Musterlösung:
+-------------
+
+```python	
+
+recaman = [0]
+index = 1
+
+while len(recaman)<100:
+    jump_back = recaman[-1]-index
+    if jump_back>0 and jump_back not in recaman:
+        recaman.append(recaman[-1]-index)
+    else:
+        recaman.append(recaman[-1]+index)
+    index += 1
+
+recaman
+```
+@Pyodide.eval
+
+### ✍️ Aufgabe: Fieberliste 2.0
+
+<div class="alert exercise">
+
+Fieberliste 2.0
+---------------
+
+Die Fieberliste soll jeweils für eine Woche geführt werden. Der erste Messwert steht also für Montag, der zweite für Dienstag und so weiter.
+Verwenden Sie eine zusätzliche Liste mit den Namen der Wochentage.
+
+Passen Sie das Programm so an, dass die Tage mit Namen ausgegeben werden.\
+Also z.B.: `Am Montag wurden 37.4 Grad gemessen`
+
+
+
+Hier unser Ausgangsprogramm:
+
+```python 
+fieber = [37.4, 37.7, 38.4, 38.8, 37.5]
+i = 0
+while i < len(fieber):
+  print("Am Tag", i + 1 ,"wurden", fieber[i], "Grad gemessen")
+  i += 1
+```
+@Pyodide.eval
+
+---
+
+⭐️ ***Bonus:*** Man spricht von "erhöhter Temperatur" wenn die Temperatur über 37.5 Grad liegt und von Fieber bei über 38 Grad. Geben Sie zusätzlich aus, ob der Patient an einem Tag erhöhte Temperatur oder Fieber hatte.	
+
+</div>
+
+Musterlösung:
+-------------
+
+
+```python
+fieber = [37.4, 37.7, 38.4, 38.8, 37.5]
+wochentage = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"]
+i = 0
+while i < len(fieber):
+    ausgabe = "Am " + wochentage[i] + " wurden " + str(fieber[i]) + " Grad gemessen. "
+    if fieber[i] > 38:
+        ausgabe += "Fieber!"
+    elif fieber[i] > 37.5:
+        ausgabe += "Erhöhte Temperatur."
+    print(ausgabe)
+    i += 1
+```
+@Pyodide.eval
+
+ *Anmerkung:*\
+ Hier wird die Liste der Wochentage hinzugefügt und die Ausgabe entsprechend angepasst. Zur Lösung der Bonusaufgabe fügen wir einer temporären Variable `ausgabe` eine Meldung hinzu, wenn es sich um erhöhte Temperatur oder Fieber handelt. Wenn sie die Zeilen 6-9 löschen, erhalten Sie die Lösung zur Aufgabe ohne Bonus.

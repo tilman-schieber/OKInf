@@ -110,59 +110,240 @@ fieber = [37.4, 37.7, 38.4, 38.8]
 
 Auf einzelne Elemente der Liste können wir zugreifen, in dem wir den Index des Elements in eckigen Klammern angeben. Beachten Sie, dass das erste Element den Index „Null“ hat.
 
-`fieber[1]` gibt also das zweite Element zurück. Mit `fieber[0]` erhalten wir das erste Element:
+`fieber[1]` gibt also das zweite Element zurück. Mit `fieber[0]` erhalten wir das erste Element.
 
 ```python 
-fieber[1]
-fieber[0]
+>>> fieber[1]
+37.7
+
+>>> fieber[0]
+37.4
 ```
-@Pyodide.eval
 
 Die Funktion `len`, kurz für „length“ gibt die Anzahl der Elemente in der Liste aus. In diesem Fall vier:
+
 ```python 
 >>> len(fieber)
 4
 ```
 
-Auch Listen sind in Python Objekte: sie unterstützen die Methode „append“, die den Parameter der Liste hinzufügt.  
-Mit `fieber.append` fügen wir einen neuen Wert hinzu:
+Eine Liste kann auch leer sein. In diesem Fall schreiben wir einfach `[]`:
 
-```python 
->>> fieber.append(37.7)
->>> fieber
-[37.4, 37.7, 38.4, 38.8, 37.7]
+```python
+leere_liste = []
 ```
 
-Die Liste enthält nun den neuen Wert, und hat eine Länge von Fünf. 
+Mit einer `while-Schleife`, die bis zur Länge der Liste läuft, können wir alle Elemente der Liste ausgeben. Dabei erhöhen wir den Index `i` in jedem Schleifendurchlauf um eins. Die Schleife läuft so lange der Index `i` kleiner der Länge der Liste ist [^1]
+
+```python
+fieber = [37.4, 37.7, 38.4, 38.8]
+i = 0
+while i < len(fieber):
+  print("Am Tag", i + 1 ,"wurden", fieber[i], "Grad gemessen")
+  i += 1
+```
+@Pyodide.eval
+
+Hier wird die Ausgabe der Tage um eins erhöht, damit die Tage von 1 bis 5 gezählt werden, den `Tag 0` würde nicht unbedingt Sinn machen.
+
+
+[^1]: Hier müssen Sie wieder aufpassen: zwar ist die Länge der Liste 5, aber der Index des letzten Elements ist 4. Wenn wir den Wert von `fieber[5]` abfragen, erhalten wir einen Fehler.
+
+### Übungen: Listen
+
+<div class="alert exercise">
+
+Notenliste
+-----------
+
+Gegeben ist diese Liste mit Noten:
+
+
+```python
+noten = [2.0, 1.7, 2.3, 1.3]
+```
+
+---
+
+Was ist die Ausgabe von `noten[2]`?
+
+[[ 2.3 ]]
+
+---
+
+Was ist die Ausgabe von `len(noten)`?
+
+[[ 4 ]]
+
+---
+
+Was ist die Ausgabe von `noten[-1]`?
+
+[[ 1.3 ]]
+
+---
+
+Was ist die Ausgabe von `noten * 2`?
+
+- [(X)] `[2.0, 1.7, 2.3, 1.3, 2.0, 1.7, 2.3, 1.3]`
+- [( )] `[4.0, 3.4, 4.6, 2.6]`
+- [( )] Es gibt einen Fehler.
+
+---
+
+Was ist die Ausgabe von `noten + 1`?
+
+- [( )] `[3.0, 2.7, 3.3, 2.3]`
+- [( )] `[2.0, 1.7, 2.3, 1.3, 1]`
+- [(X)] Es gibt einen Fehler.
+ 
+---
+
+Was ist die Ausgabe von `list(10)`
+
+- [( )] `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`
+- [( )] `[]`
+- [(X)] `[10]`
+
+---
+
+Was berechnet der folgende Code?
+
+```python
+i = 0
+x = 0 
+
+while i < len(noten):
+  x += noten[i]  
+  i += 1
+
+ergebnis = x / len(noten)
+
+```
+
+- [( )] Die Summe der Noten
+- [(X)] Den Durchschnitt der Noten
+- [( )] Die Anzahl der Noten
+
+
+@pyconsole 
+
+*Wenn Sie sich nicht sicher sind, können Sie die Befehle in der Python-Konsole ausprobieren.*
+
+
+
+</div>
+
+---
+
+<div class="alert exercise">
+
+Fieberliste 2.0
+---------------
+
+Die Fieberliste soll jeweils für eine Woche geführt werden. Der erste Messwert steht also für Montag, der zweite für Dienstag und so weiter.
+Verwenden Sie eine zusätzliche Liste mit den Namen der Wochentage.
+
+Passen Sie das Programm so an, dass die Tage mit Namen ausgegeben werden.\
+Also z.B.: `Am Montag wurden 37.4 Grad gemessen`
+
+
+
+Hier unser Ausgangsprogramm:
+
+```python 
+fieber = [37.4, 37.7, 38.4, 38.8]
+i = 0
+while i < len(fieber):
+  print("Am Tag", i + 1 ,"wurden", fieber[i], "Grad gemessen")
+  i += 1
+```
+@Pyodide.eval
+
+---
+
+⭐️ ***Bonus:*** Man spricht von "erhöhter Temperatur" wenn die Temperatur über 37.5 Grad liegt und von Fieber bei über 38 Grad. Geben Sie zusätzlich aus, ob der Patient an einem Tag erhöhte Temperatur oder Fieber hatte.	
+
+</div>
+
+
+## Listen verändern
+
 Natürlich kann auch ein bereits existierender Wert in einer Liste geändert werden. So weisen wir hier dem letzten Wert der Liste – `fieber[4]` – den neuen Wert 37.5 zu:
 
 ```python 
->>> fieber[4] = 37.5
->>> fieber
-[37.4, 37.7, 38.4, 38.8, 37.5]
+fieber = [37.4, 37.7, 38.4, 38.8]
+fieber[3] = 37.5
+fieber
 ```
-Sie sehen, dass an Index 4 nun der neue Wert steht.
+@Pyodide.eval
 
-Wir können dem letzten Wert der Liste aber auch die Zeichenkette „keine Messung“ zuweisen. Das macht zum Beispiel Sinn, wenn an diesem Tag kein Fieber gemessen wurde. 
+Sie sehen, dass an Index 3 nun der neue Wert steht.
+
+Es ist aber nicht möglich, auf einen Index zuzugreifen, der nicht existiert. Um neue Werte hinzuzufügen, können wir  `liste.append(wert)` verwenden. Hier fügen wir der Liste `fieber` den Wert 37.7 hinzu:
+
+```python
+fieber.append(37.7)
+```
+
+
+<div class="alert tip">
+
+**Hinweis: Methoden und Funktionen**
+
+Funktionen wie `len()` kennen Sie bereits. Methoden sind spezielle Funktionen, die immer an ein Objekt gebunden sind. 
+Sie werden mit einem Punkt an das Objekt angehängt und verwenden dessen Daten.
+
+Hier wird also die Methode `append` mit dem Parameter `37.7` auf die Liste `fieber` angewendet.
+
+Wir werden uns noch genauer mit Methoden beschäftigen, wenn wir Klassen und Objektorientierung behandeln.
+
+Listen und auch Strings haben viele praktische Methoden, können Sie erraten, was im folgenden Code passiert?
+
+```python	
+s = "Hallo Welt"
+s = s.replace("Welt", "Python")
+s = s.upper()
+print(s)
+```
+@Pyodide.eval
+
+</div>
+
+
+## Datentypen in Listen
+
+In einer Liste können auch verschiedene Datentypen gemischt werden. So können wir zum Beispiel eine Liste mit Zahlen und Zeichenketten erstellen.
+
+Angenommen, in unserer Liste mit Temperaturmessungen, gab es an einem Tag keine Messung. Wir könnten dem letzten Wert der Liste einfach die Zeichenkette „keine Messung“ zuweisen. 
 
 ```python 
->>> fieber[4] = "keine Messung"
+>>> fieber = [37.4, 37.7, 38.4, 38.8]
+>>> fieber[3] = "keine Messung"
 >>> fieber
-[37.4, 37.7, 38.4, 38.8, 'keine Messung']
+[37.4, 37.7, 38.4, 'keine Messung']
 ```
 
-Eine Liste kann nicht nur Zahlen, sondern eine Mischung beliebiger Typen speichern.
+Listen können immer eine beliebige Mischung von Datentypen enthalten. Das macht sie sehr flexibel, kann aber auch eine Fehlerquelle sein.
 
-Versuchen wir auf einen Index in der Liste zugreifen, der nicht existiert meldet Python einen Fehler:
-```python 
->>> fieber[5] = 38.0
-Traceback (most recent call last):
-  File "<pyshell#12>", line 1, in <module>
-    fieber[5] = 38.0
-IndexError: list assignment index out of range
+
+Aber auch eine Liste von Listen ist möglich. Wenn drei Messungen am Tag durchgeführt werden, könnte die Liste für die ersten drei Tage so aussehen:
+
+```python
+fieber = [[37.4, 37.7, 38.4], [38.0, 38.5, 39.1], [37.5, 37.6, 37.5]]
+montag = fieber[0]
+print("Messwerte am Montag: ", montag)
+
+# Hier indizieren wir die Liste Montag
+print("Messwert am Montagabend: ", montag[2])
+
+# ... fieber[1] wäre Dienstag, die resultierende Liste indiziern wir mit [2]
+print("Messwert am Dienstagabend: ", fieber[1][2])
 ```
+@Pyodide.eval
 
-Hier versuchen wir den Wert mit dem Index 5 neu zuzuweisen, die Liste enthält aber nur Werte von Index Null bis Vier. Das resultiert in dem Fehler „IndexError“.
+
+
 
 Listen sind ein sogenannter Sequenztyp und Python bietet zahlreiche eingebaute Funktionen, die auf solchen Sequenztypen operieren.
 So lässt sich das Minimum `min`, und auch das Maximum `max` einer liste einfach ermitteln. In diesem Fall also die niedrigste und höchste Temperatur unserer Liste:
@@ -186,73 +367,12 @@ Im Fall unseres Fieber-Beispiels macht das wenig Sinn. Teilen wir aber die Summe
 37.96
 ```
 
-Lassen Sie uns nun ein Programm schreiben, das die Daten der Liste auf dem Bildschirm ausgibt. Zunächst setzen wir den Index `i` auf 0.
-Dann beginnen wir eine `while`-Schleife, die so lange ausgeführt werden soll, wie der index `i` kleiner als die Länge der Liste ist. Der Schleifeninhalt gibt mit einer `print`-Funktion die Information aus, welche Temperatur an welchem Tag gemessen wurde.
-In der nächsten Zeile wird der Index `i` um eins erhöht:
 
-```python 
-fieber = [37.4, 37.7, 38.4, 38.8, 37.5]
-i = 0
-while i < len(fieber):
-  print("Am Tag", i,"wurden", fieber[i], "Grad Fieber gemessen")
-  i += 1
-```
+### ✍️ Aufgabe: Recamán-Folge
 
-Führen wir das Programm aus werden die Inhalte der Liste wie erwartet ausgegeben
-```
-Am Tag 0 wurden 37.4 Grad Fieber gemessen
-Am Tag 1 wurden 37.7 Grad Fieber gemessen
-Am Tag 2 wurden 38.4 Grad Fieber gemessen
-Am Tag 3 wurden 38.8 Grad Fieber gemessen
-Am Tag 4 wurden 37.5 Grad Fieber gemessen
-```
+![recaman](img/5/recaman.png "Eine Visualisierung der Recamán-Folge")
 
-Wir verbessern die Ausgabe, in dem wir die Ausgabe der Tage um eins erhöhen:
-
-```
-fieber = [37.4, 37.7, 38.4, 38.8, 37.5]
-while i < len(fieber):
-  print("Am Tag", i+1,"wurden", fieber[i], "Grad Fieber gemessen")
-  i += 1
-```
-
-So wird nun ab Tag 1 gezählt:
-```
-Am Tag 1 wurden 37.4 Grad Fieber gemessen
-Am Tag 2 wurden 37.7 Grad Fieber gemessen
-Am Tag 3 wurden 38.4 Grad Fieber gemessen
-Am Tag 4 wurden 38.8 Grad Fieber gemessen
-Am Tag 5 wurden 37.5 Grad Fieber gemessen
-```
-
-Wir können die Ausgabe weiter verbessern, in dem wir den Tagen Namen geben.
-Dafür legen wir eine neue Liste an, die die Namen der Wochentage enthält.
-
-```python 
-fieber = [37.4, 37.7, 38.4, 38.8, 37.5]
-wochentage = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"]
-i = 0
-while i < len(fieber):
-  print("Am", wochentage[i],"wurden", fieber[i], "Grad Fieber gemessen")
-  i += 1
-```
-Führen wir das Programm nun aus, erhalten wir den Namen des Tages anstatt einer Zahl:
-```
-Am Montag wurden 37.4 Grad Fieber gemessen
-Am Dienstag wurden 37.7 Grad Fieber gemessen
-Am Mittwoch wurden 38.4 Grad Fieber gemessen
-Am Donnerstag wurden 38.8 Grad Fieber gemessen
-Am Freitag wurden 37.5 Grad Fieber gemessen
-```
-
-:::
-
-
-### Recamán-Folge
-
-![recaman](img/5/recaman.png "Eine Visualisierung der Recamán-Folge[^1]")
-
-Die Recamán-Folge ist eine mathematische Folge, die 1964 von dem kolumbianischen Mathematiker Bernardo Recamán Santos entdeckt wurde. Die Folge wird wie folgt definiert:
+Die Recamán-Folge ist eine mathematische Folge, die 1964 von dem kolumbianischen Mathematiker Bernardo Recamán Santos erfunden wurde. Die Folge wird wie folgt definiert:
 
 - $a_0 = 0$
 - $a_{n+1} = a_n - n$, falls $a_n - n > 0$ und $a_{n+1}$ noch nicht in der Folge vorkommt
@@ -260,7 +380,7 @@ Die Recamán-Folge ist eine mathematische Folge, die 1964 von dem kolumbianische
 
 Intuitiv erklärt:
 
-> Man beginnt auf dem Zahlenstrahl bei 0. Nun springt man nacheinander um $1,2,3,4\ldots$ auf dem Zahlenstrahl hin- und her. Man versucht zunächst zurückzuspringen, wenn das Ziel aber schon in der Folge vorkommt (oder $\leq 0$ ist), springt man stattdessen um diese Distanz nach vorne.[^2]
+> Man beginnt auf dem Zahlenstrahl bei 0. Nun springt man nacheinander um $1,2,3,4\ldots$ auf dem Zahlenstrahl hin- und her. Man versucht zunächst zurückzuspringen, wenn das Ziel aber schon in der Folge vorkommt (oder $\leq 0$ ist), springt man stattdessen um diese Distanz nach vorne.[^1]
 
 So sind die ersten Elemente der Folge:
 
@@ -279,27 +399,15 @@ Aufgabe
 
 Programmieren Sie ein Python-Programm, das die ersten 100 Elemente der Recamán-Folge berechnet und ausgibt.
 
-```python	
+Was ist das 100. Element[^2] der Recamán-Folge? 
 
-recaman = [0]
-index = 1
-
-while len(recaman)<100:
-    jump_back = recaman[-1]-index
-    if jump_back>0 and jump_back not in recaman:
-        recaman.append(recaman[-1]-index)
-    else:
-        recaman.append(recaman[-1]+index)
-
-recaman
-```
-@Pyodide.eval
+[[ 64 ]]
 
 </div>
 
 
 
-[^1]: Die Folge kann man auch auf dem Klavier spielen, hier können sie hören wie der Anfang der Folge klingt:
 
+[^1]: Eine ausführliche Erklärung finden Sie auch in diesem Video (englisch): [The Slightly Spooky Recamán Sequence](https://www.youtube.com/watch?v=FGC5TdIiT9U "The Slightly Spooky Recamán Sequence (Numberphile)")
 
-[^2]: Eine ausführliche Erklärung finden Sie auch in diesem Video (englisch): [The Slightly Spooky Recamán Sequence](https://www.youtube.com/watch?v=FGC5TdIiT9U "The Slightly Spooky Recamán Sequence (Numberphile)")
+[^2]: Achtung, das 100. Element hat den Index 99, da die Liste bei 0 beginnt.

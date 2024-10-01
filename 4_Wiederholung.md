@@ -407,7 +407,7 @@ Schreiben Sie ein Programm, das die Summe der alternierenden Reihe und damit $\l
 
 ### ✍️ Aufgabe: Fizzbuzz
 
-[Fizzbuzz](https://de.wikipedia.org/wiki/Fizz_buzz) ist ein Kinderspiel, bei dem Kinder abwechseln von 1 auf 100 zählen. Dabei ersetzen sie jedes Vielfache von 3 durch "Fizz", jedes Vielfache von 5 durch "Buzz" und jedes Vielfache von 15 durch "FizzBuzz".
+[Fizzbuzz](https://de.wikipedia.org/wiki/Fizz_buzz) ist ein Kinderspiel, bei dem Kinder abwechseln von 1 auf 100 zählen. Dabei ersetzen sie jedes Vielfache von 3 durch "Fizz", jedes Vielfache von 5 durch "Buzz" und jedes Vielfache von 15 durch "FizzBuzz"[^1].
 
 Man zählt also:
 
@@ -425,6 +425,8 @@ Schreiben Sie ein Programm, das von 1 bis 100 zählt und dabei die Zahlen durch 
 
 </div>
 
+
+[^1]: Dieses amerikanische Kinderspiel wurde berühmt als [Interviewfrage](https://blog.codinghorror.com/why-cant-programmers-program/) für Programmierer, da viele Bewerber daran scheiterten. Wenn Sie diese Aufgabe lösen können, sind Sie schon besser als viele der Bewerber!
 
 ## Ein Algorithmus zum Wurzelziehen
 
