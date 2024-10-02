@@ -290,7 +290,7 @@ Berechnen Sie $42!$ mit Hilfe des obigen Algorithmus:
 
 ändern sie den obigen Algorithmus so ab, dass er die Summe der Zahlen von 1 bis 1000 berechnet.
 
-[[5050]]
+[[500500]]
 [[?]] Verwenden Sie direkt das obige Code-Fenster um den Algorithmus zu ändern.
 [[?]] Beachten Sie: Während das [leere Produkt](https://de.wikipedia.org/wiki/Leeres_Produkt) $1$ ist, ist die [leere Summe](https://de.wikipedia.org/wiki/Leere_Summe) $0$. Passen Sie den Anfangswert der Summe entsprechend an!
 ********************
