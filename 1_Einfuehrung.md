@@ -18,13 +18,25 @@ link:     styles/main.css
 
 
 # 1. Was ist Programmieren?
+
+
+
+
                   {{|> US English Male}}
 > “Everybody should learn to program a computer because it teaches you how to think.”
 >
 > -- Steve Jobs
 
 
-<div class="alert summary">
+<div class="flex-container align-center my-4">
+
+<div class="flex-child">
+
+![Was ist Programmieren?](img/1/classroom2.png)
+
+</div>
+
+<div class="flex-child-2 mx-3">
 
 <h4>Lernziele</h4>
 
@@ -39,6 +51,7 @@ Am Ende können Sie:
 4. Python auf ihrem Computer installieren und ausführen.
 
 
+</div>
 </div>
 
 

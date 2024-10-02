@@ -17,7 +17,16 @@ link:     styles/main.css
 
 # 4. Wiederholung
 
-<div class="alert summary">
+
+<div class="flex-container align-center my-4">
+
+<div class="flex-child">
+
+![Was ist Programmieren?](img/4/repetition.png)
+
+</div>
+
+<div class="flex-child-2 mx-3">
 
 <h4>Lernziele</h4>
 
@@ -31,6 +40,7 @@ Am Ende können Sie:
 4. Iterative Algorithmen mit Python umsetzen.
 
 
+</div>
 
 </div>
 

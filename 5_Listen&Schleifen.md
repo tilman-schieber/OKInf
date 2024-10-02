@@ -18,10 +18,17 @@ link:     styles/main.css
 
 # 5. Listen und Schleifen
 
-<div class="alert summary">
+<div class="flex-container align-center my-4">
+
+<div class="flex-child">
+
+![Was ist Programmieren?](img/5/logo_listen.png)
+
+</div>
+
+<div class="flex-child-2 mx-3">
 
 <h4>Lernziele</h4>
-
 
 In diesem Kapitel lernen Sie, wie Sie mit Auflistungen von Daten umgehen und wie Sie Schleifen verwenden können, um über diese zu iterieren. 
 
@@ -31,6 +38,8 @@ Am Ende können Sie:
 2. Listen als Sequenztypen verstehen
 3. Mit der `for`-Schleife über Listen iterieren
 
+
+</div>
 
 </div>
 

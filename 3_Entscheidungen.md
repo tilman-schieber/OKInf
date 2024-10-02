@@ -18,10 +18,18 @@ link:     styles/main.css
 
 # 3. Entscheidungen
 
-<div class="alert summary">
+
+<div class="flex-container align-center my-4">
+
+<div class="flex-child">
+
+![Was ist Programmieren?](img/3/decisions.png)
+
+</div>
+
+<div class="flex-child-2 mx-3">
 
 <h4>Lernziele</h4>
-
 
 In diesem Kapitel lernen Sie, mit Python Entscheidungen zu treffen und so den Fluss eines Programmes zu steuern. 
 Am Ende können Sie:
@@ -32,6 +40,9 @@ Am Ende können Sie:
 
 
 </div>
+
+</div>
+
 
 ## Boolesche Ausdrücke
 

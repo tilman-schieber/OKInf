@@ -18,3 +18,21 @@ link:     styles/main.css
 
 # Funktionen
 
+<div class="flex-container align-center my-4">
+
+<div class="flex-child">
+
+![Was ist Programmieren?](img/6/bicycle.png)
+
+</div>
+
+<div class="flex-child-2 mx-3">
+
+<h4>Lernziele</h4>
+
+TODO
+
+</div>
+
+</div>
+

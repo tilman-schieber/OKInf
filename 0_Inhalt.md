@@ -4,7 +4,7 @@ email:    tilman.schieber@tu-berlin.de
 version:  1.2.0
 date:     2024
 language: de
-logo:     img/oberkurs_logo.png
+logo:     img/1/classroom2.png
 icon:     img/TU_Logo_kurz.svg
 comment:  Oberkurs Informatik am Studienkolleg der
           Technischen Universität Berlin.

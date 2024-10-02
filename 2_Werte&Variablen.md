@@ -17,7 +17,16 @@ link:     styles/main.css
 
 # 2. Werte und Variablen
 
-<div class="alert summary">
+
+<div class="flex-container align-center my-4">
+
+<div class="flex-child">
+
+![Was ist Programmieren?](img/2/datastorage.png)
+
+</div>
+
+<div class="flex-child-2 mx-3">
 
 <h4>Lernziele</h4>
 
@@ -35,6 +44,7 @@ Am Ende können Sie:
 
 </div>
 
+</div>
 
 
 ## Grundrechenarten in Python
