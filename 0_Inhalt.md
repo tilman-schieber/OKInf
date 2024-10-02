@@ -9,30 +9,14 @@ icon:     img/TU_Logo_kurz.svg
 comment:  Oberkurs Informatik am Studienkolleg der
           Technischen Universität Berlin.
 link:     styles/main.css
-
-@style
-
-h1 {
-  display: none;
-}
-
-img.card__logo {
-  height: 20px !important;
-}
-
-@end
 -->
 
+
 # Oberkurs Informatik
-
-
-<div class="center">
-![Oberkurs Informatik](img/oberkurs_logo.png)
 
 <!-- class="lead" -->
 Willkommen beim Oberkurs Informatik am Studienkolleg der Technischen Universität Berlin.
 
-</div>
 
 ---
 
@@ -42,11 +26,13 @@ Python Programmierkurs
 [preview-lia](1_Einfuehrung.md)
 [preview-lia](2_Werte&Variablen.md)
 [preview-lia](3_Entscheidungen.md)
+[preview-lia](4_Wiederholung.md)
 
 
 <div style="display:none">
 
-[preview-lia](4_Wiederholung.md)
+[preview-lia](5_Listen&Schleifen.md)
+[preview-lia](6_Funktionen.md)
 
 </div>
 

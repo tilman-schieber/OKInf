@@ -5,7 +5,7 @@ version:  0.0.1
 date:     2024
 language: de
 narrator: Deutsch Female
-logo:     img/5/repetition.png
+logo:     img/5/logo_listen.png
 icon:     img/TU_Logo_kurz.svg
 comment:  Wir lernen Listen und Sequenzen und wie wir mit der for-Schleife über sie iterieren können.
 import:   https://raw.githubusercontent.com/LiaTemplates/Pyodide/master/README.md
