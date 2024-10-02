@@ -551,3 +551,37 @@ print("Die Wurzel von", S, "ist", x)
 </div>
 
 [^1]: $\left|x\right|$ ist der Betrag einer Zahl $x$ und kann in Python mit `abs(x)` berechnet werden.
+
+### ✍️⭐️ Bonusaufgaben
+
+
+<div class="alert exercise my-3">
+
+
+Primzahltest
+---------------
+
+Schreiben Sie ein Programm, das überprüft, ob eine gegebene Zahl eine Primzahl ist.
+
+Eine Primzahl ist eine natürliche Zahl, die größer als $1$ ist und nur durch $1$ und sich selbst teilbar ist.
+
+
+</div>
+
+---
+
+<div class="alert exercise my-3">
+
+Collatz-Folge
+---------------
+
+Die Collatz-Folge ist eine mathematische Folge, die durch folgende Regeln definiert ist:
+
+- Ist die aktuelle Zahl gerade, so teilen wir sie durch $2$.
+- Ist die aktuelle Zahl ungerade, so multiplizieren wir sie mit $3$ und addieren $1$.
+
+Die Folge endet, wenn die Zahl $1$ erreicht ist.
+
+Schreiben Sie ein Programm, das die Collatz-Folge für eine gegebene Zahl berechnet und die Anzahl der Schritte ausgibt, die benötigt wurden, um $1$ zu erreichen.
+
+</div>
