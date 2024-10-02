@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  1.1.1
+version:  1.2.0
 date:     2024
 language: de
 narrator: Deutsch Female
