@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Das Sieb des Erathostenes</title>
+    <style>
+        :root {
+            box-sizing: border-box;
+            --akzentfarbe1: #00a0a2;
+            --akzentfarbe2: #e2b847;
+            --highlight: #ff4d84;
+            font-family: sans-serif;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-gap: 5px;
+            margin: 20px auto;
+        }
+        .grid-item {
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s;
+        }
+        .prime {
+            background-color: var(--akzentfarbe1);
+            color: white;
+        }
+        .non-prime {
+            background-color: var(--akzentfarbe2);
+            color: white;
+        }
+        .current {
+            background-color: var(--highlight);
+            color: black;
+        }
+        button {
+            width: 50px;
+            height: 50px;
+            padding-top: 4px;
+            border: none;
+            border-radius: 50%;
+            background-color: var(--akzentfarbe2);
+            color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.1s;
+            margin: 0 auto;
+        }
+        .icon {
+            fill: white;
+        }
+        button:hover {
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+        }
+        button:active {
+            transform: scale(0.9);
+        }
+
+        #info {
+            text-align: center;
+            min-height: 2em;
+        }
+        
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <p>Drücken Sie auf den Play-Knopf um das Sieb des Erathostenes zu starten.</p>
+    </div>
+    <div class="grid-container" id="grid-container"></div>
+    <footer>
+        <button onclick="playPauseRestart()"> 
+            <span id="playIcon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 0 384 512">
+                    <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
+                </svg>
+            </span>
+            <span style="display: none;" id="pauseIcon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 0 320 512">
+                    <path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z" />
+                </svg>
+            </span>
+            <span style="display: none;" id="restartIcon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 0 320 512">
+                    <path d="M267.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29V96c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192 160L64 241V96c0-17.7-14.3-32-32-32S0 78.3 0 96V416c0 17.7 14.3 32 32 32s32-14.3 32-32V271l11.5 9.6 192 160z" />
+                </svg>
+            </span>
+        </button>
+    </footer>
+
+    <script>
+        let animationRunning = false;
+        let animationFinished = false;
+        let timeoutHandle;
+        let currentPrime = 2; 
+        let isPrime;
+        const limit = 100;
+        const delay = 1500;
+
+        function createGrid() {
+            const gridContainer = document.getElementById('grid-container');
+            const gridSize = Math.floor(Math.sqrt(limit));
+            gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+            gridContainer.innerHTML = '';
+            gridContainer.style.width = `${gridSize * 50}px`;
+
+            for (let i = 1; i <= limit; i++) {
+                const cell = document.createElement('div');
+                cell.classList.add('grid-item');
+                cell.id = `cell-${i}`;
+                cell.textContent = i;
+                gridContainer.appendChild(cell);
+            }
+        }
+
+        function highlightCurrentPrime(n) {
+            const cell = document.getElementById(`cell-${n}`);
+            cell.classList.add('current');
+        }
+
+        function markNonPrime(n) {
+            const cell = document.getElementById(`cell-${n}`);
+            cell.classList.remove('current');
+            cell.classList.add('non-prime');
+        }
+
+        function markPrime(n) {
+            const cell = document.getElementById(`cell-${n}`);
+            cell.classList.add('prime');
+        }
+
+        function clearCurrentHighlight(n) {
+            const cell = document.getElementById(`cell-${n}`);
+            cell.classList.remove('current');
+        }
+
+        function sieveOfEratosthenesStepByStep() {
+            if (!animationRunning) return;
+            markNonPrime(1)
+            const sqrtLimit = Math.floor(Math.sqrt(limit));
+            if (currentPrime > sqrtLimit) {
+                updateInfo(`Wir haben alle Primfaktoren bis ${sqrtLimit} überprüft.<br>Alle verbleibenden Zahlen sind prim.`);
+                highlightRemainingPrimes();
+                animationFinished = true;
+                setIconDisplay("restart");
+                return;
+            }
+
+            if (isPrime[currentPrime]) {
+                updateInfo(`Markiere alle Vielfachen von ${currentPrime} als nicht prim.`);
+                highlightCurrentPrime(currentPrime);
+                timeoutHandle = setTimeout(() => {
+                    for (let multiple = currentPrime * currentPrime; multiple <= limit; multiple += currentPrime) {
+                        if (isPrime[multiple]) {
+                            isPrime[multiple] = false;
+                            markNonPrime(multiple);
+                        }
+                    }
+
+                    setTimeout(() => {
+                        markPrime(currentPrime);
+                        clearCurrentHighlight(currentPrime);
+                        currentPrime++;
+                        sieveOfEratosthenesStepByStep();
+                    }, delay);
+                }, delay);
+            } else {
+                currentPrime++;
+                sieveOfEratosthenesStepByStep();
+            }
+        }
+
+        function highlightRemainingPrimes() {
+            for (let i = Math.floor(Math.sqrt(limit)) + 1; i <= limit; i++) {
+                if (isPrime[i]) {
+                    markPrime(i);
+                }
+            }
+        }
+
+        function playPauseRestart() {
+            if (animationFinished) {
+                resetAnimation(); 
+            } else if (!animationRunning) {
+                animationRunning = true;
+                setIconDisplay("pause");
+                sieveOfEratosthenesStepByStep(); 
+            } else {
+                animationRunning = false;
+                clearTimeout(timeoutHandle);
+                setIconDisplay("play");
+            }
+        }
+        
+        function updateInfo(message) {
+            const infoDiv = document.getElementById('info').querySelector('p');
+            infoDiv.innerHTML = message;
+        }
+
+        function setIconDisplay(state) {
+            document.getElementById("playIcon").style.display = (state === "play") ? "inline" : "none";
+            document.getElementById("pauseIcon").style.display = (state === "pause") ? "inline" : "none";
+            document.getElementById("restartIcon").style.display = (state === "restart") ? "inline" : "none";
+        }
+
+        function resetAnimation() {
+            clearTimeout(timeoutHandle);
+            currentPrime = 2;
+            animationRunning = false;
+            animationFinished = false;
+            isPrime = Array(limit + 1).fill(true);
+            isPrime[0] = isPrime[1] = false;
+            createGrid();
+            setIconDisplay("play");
+        }
+        window.onload = resetAnimation;
+    </script>
+</body>
+</html>
