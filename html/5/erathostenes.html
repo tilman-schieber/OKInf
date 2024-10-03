@@ -12,7 +12,7 @@
             --highlight: #ff4d84;
             font-family: sans-serif;
         }
-        
+
         .grid-container {
             display: grid;
             grid-gap: 3px;
@@ -68,7 +68,7 @@
             text-align: center;
             min-height: 2em;
         }
-        
+
         footer {
             display: flex;
             justify-content: center;
@@ -116,7 +116,7 @@
             const gridSize = Math.floor(Math.sqrt(limit));
             gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
             gridContainer.innerHTML = '';
-            gridContainer.style.width = `${gridSize * 40}px`;
+            gridContainer.style.width = `${gridSize * 46}px`;
 
             for (let i = 1; i <= limit; i++) {
                 const cell = document.createElement('div');
@@ -205,7 +205,7 @@
                 setIconDisplay("play");
             }
         }
-        
+
         function updateInfo(message) {
             const infoDiv = document.getElementById('info').querySelector('p');
             infoDiv.innerHTML = message;
@@ -224,7 +224,7 @@
             animationFinished = false;
             isPrime = Array(limit + 1).fill(true);
             isPrime[0] = isPrime[1] = false;
-            updateInfo('Klicke auf Play, um das Sieb des Erathostenes zu starten.');
+            updateInfo('Klicken Sie auf den Knopf, um das Sieb des Erathostenes zu starten.');
             createGrid();
             setIconDisplay("play");
         }

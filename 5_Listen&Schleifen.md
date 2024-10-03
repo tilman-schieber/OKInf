@@ -445,6 +445,17 @@ Sieb des Eratosthenes
 
 </div>
 
+Hier sehen Sie, wie schnell man so alle Primzahlen bis 100 findet:
+
 @[embed(style="height: 650px; width:600px; border: none")](html/5/erathostenes.html)
 
 
+
+<div class="alert exercise">
+
+Aufgabe
+-------
+
+Setzen Sie den Algorithmus in Python um. Geben Sie alle Primzahlen bis 100 aus.
+
+</div>

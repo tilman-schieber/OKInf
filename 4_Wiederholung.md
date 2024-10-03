@@ -577,11 +577,40 @@ Collatz-Folge
 
 Die Collatz-Folge ist eine mathematische Folge, die durch folgende Regeln definiert ist:
 
+- Wir starten mit einer beliebigen natürlichen Zahl $n>0$.
 - Ist die aktuelle Zahl gerade, so teilen wir sie durch $2$.
 - Ist die aktuelle Zahl ungerade, so multiplizieren wir sie mit $3$ und addieren $1$.
 
-Die Folge endet, wenn die Zahl $1$ erreicht ist.
+Die Folge endet, wenn die Zahl $1$ erreicht ist[^1].
+
+
+Hier die Folge für den Startwert $n=10$:
+
+$$ 10, 5, 16, 8, 4, 2, 1$$
+
+sehr viel länger ist die Folge für $n=9$:
+
+> $$ 9, 28, 14, 7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1$$
 
 Schreiben Sie ein Programm, das die Collatz-Folge für eine gegebene Zahl berechnet und die Anzahl der Schritte ausgibt, die benötigt wurden, um $1$ zu erreichen.
 
 </div>
+
+<div class="alert exercise my-3">
+
+Collatz-Vermutung
+------------------
+
+Die [Collatz-Vermutung](https://de.wikipedia.org/wiki/Collatz-Problem) besagt, dass die Collatz-Folge für jede natürliche Zahl $1$ erreicht.
+Es ist noch nicht gelungen, diese Vermutung zu beweisen oder zu widerlegen[^2].
+
+Schreiben Sie ein Programm, das die Collatz-Vermutung für alle Zahlen bis $10^6$ überprüft.
+Was ist die längste Folge die sie finden können?
+[[ 525 ]]
+*************************
+Die längste Folge unter einer Million beginnt mit der Zahl $837799$ und hat $525$ Schritte.
+*************************
+
+</div>
+
+[^1]: Da auf $1$ wieder $4, 2, 1$ folgt und sich das dann wiederholt.
