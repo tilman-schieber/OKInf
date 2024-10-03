@@ -498,7 +498,7 @@ $$
 
 </div>
 
-[^1]: Diese Tafel heißt [YBC 7289](https://de.wikipedia.org/wiki/YBC_7289) und ist Teil der *Yale Babylonian Collection*. Sie ist eine Art Notizblock, auf dem zuerst $\sqrt{2}$ notiert wird, und dann die Diagonale eines Quadrats mit Kantenlänge $30$ berechnet wird.\
+[^1]: Diese Tafel heißt [YBC 7289](https://en.wikipedia.org/wiki/YBC_7289) und ist Teil der *Yale Babylonian Collection*. Sie ist eine Art Notizblock, auf dem zuerst $\sqrt{2}$ notiert wird, und dann die Diagonale eines Quadrats mit Kantenlänge $30$ berechnet wird.\
 Die Wurzel von zwei ist als 𒐕 𒐖𒐘 𒐙𒐕 𒌋 geschrieben, das ist die Zahlenfolge $1, 24, 51, 10$. Die Babylonier benutzten ein Zahlensystem zur Basis 60 (ähnlich unseren Stunden, Minuten, Sekunden), so dass diese Zahlenfolge für $1 + \frac{24}{60} + \frac{51}{60^2} + \frac{10}{60^3} = 1.414213$ steht. Diese Annäherung an $\sqrt{2}$ ist korrekt auf sechs Stellen nach dem Komma!
 
 
