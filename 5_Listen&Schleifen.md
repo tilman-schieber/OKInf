@@ -383,9 +383,17 @@ Im Fall unseres Fieber-Beispiels macht das wenig Sinn. Teilen wir aber die Summe
 
 Die Recamán-Folge ist eine mathematische Folge, die 1964 von dem kolumbianischen Mathematiker Bernardo Recamán Santos erfunden wurde. Die Folge wird wie folgt definiert:
 
+
+<div class="alert definition">
+
+Definition: Recamán-Folge
+--------------------------
+
 - $a_0 = 0$
 - $a_{n+1} = a_n - n$, falls $a_n - n > 0$ und $a_{n+1}$ noch nicht in der Folge vorkommt
 - $a_{n+1} = a_n + n$, sonst
+
+</div>
 
 Intuitiv erklärt:
 
@@ -420,3 +428,23 @@ Was ist das 100. Element[^2] der Recamán-Folge?
 [^1]: Eine ausführliche Erklärung finden Sie auch in diesem Video (englisch): [The Slightly Spooky Recamán Sequence](https://www.youtube.com/watch?v=FGC5TdIiT9U "The Slightly Spooky Recamán Sequence (Numberphile)")
 
 [^2]: Achtung, das 100. Element hat den Index 99, da die Liste bei 0 beginnt.
+
+### ✍️ Aufgabe: Das Sieb des Erathostenes
+
+Das Sieb des Eratosthenes ist ein Algorithmus, um alle Primzahlen bis zu einer gegebenen Zahl $n$ zu finden. Der Algorithmus funktioniert wie folgt:
+
+<div class="alert definition">
+
+Sieb des Eratosthenes
+----------------------
+
+1. Erstelle eine Liste aller Zahlen von 2 bis $n$.
+2. Beginne mit der ersten Zahl in der Liste (2) und streiche alle Vielfachen dieser Zahl aus der Liste.
+3. Gehe zur nächsten ungestrichenen Zahl in der Liste und wiederhole den Schritt 2.
+4. Wiederhole den Schritt 3, bis die nächste ungestrichene Zahl größer als $\sqrt{n}$ ist.
+
+</div>
+
+@[embed(style="height: 650px; width:600px; border: none")](html/5/erathostenes.html)
+
+

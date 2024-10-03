@@ -15,7 +15,7 @@
         
         .grid-container {
             display: grid;
-            grid-gap: 5px;
+            grid-gap: 3px;
             margin: 20px auto;
         }
         .grid-item {
@@ -24,8 +24,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 50px;
-            font-size: 18px;
+            height: 40px;
+            width: 40px;
+            font-size: 16px;
             font-family: Arial, sans-serif;
             transition: background-color 0.3s;
         }
@@ -78,7 +79,7 @@
 </head>
 <body>
     <div id="info">
-        <p>Drücken Sie auf den Play-Knopf um das Sieb des Erathostenes zu starten.</p>
+        <p></p>
     </div>
     <div class="grid-container" id="grid-container"></div>
     <footer>
@@ -115,7 +116,7 @@
             const gridSize = Math.floor(Math.sqrt(limit));
             gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
             gridContainer.innerHTML = '';
-            gridContainer.style.width = `${gridSize * 50}px`;
+            gridContainer.style.width = `${gridSize * 40}px`;
 
             for (let i = 1; i <= limit; i++) {
                 const cell = document.createElement('div');
@@ -223,6 +224,7 @@
             animationFinished = false;
             isPrime = Array(limit + 1).fill(true);
             isPrime[0] = isPrime[1] = false;
+            updateInfo('Klicke auf Play, um das Sieb des Erathostenes zu starten.');
             createGrid();
             setIconDisplay("play");
         }
