@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slicing in Python</title>
+    <style>
+        :root {
+            --akzentfarbe1: #00a0a2;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+            width: 600px;
+        }
+
+        .list-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .list-item {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #333;
+            margin: 0 10px;
+            position: relative;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .list-item.selected {
+            background-color: var(--akzentfarbe1);
+            color: white;
+            font-weight: bold;
+            border-color: var(--akzentfarbe1);
+        }
+
+        .index-label {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            color: var(--akzentfarbe1);
+        }
+
+        .connector {
+            position: absolute;
+            top: 30px;
+            height: 4px;
+            background-color: #333;
+            z-index: -1;
+            width: calc(100% - 80px);
+            left: 40px;
+        }
+
+        .connector::before,
+        .connector::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            width: 10px;
+            height: 10px;
+            background-color: #333;
+            border-radius: 50%;
+        }
+
+        .connector::before {
+            left: 0;
+        }
+
+        .connector::after {
+            right: 0;
+        }
+
+        .python-code {
+            font-family: monospace;
+            font-size: 18px;
+            padding: 10px;
+            border: 1px solid #333;
+            display: inline-block;
+            min-width: 300px;
+            background-color: #f9f9f9;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="list-container">
+    <div class="connector"></div>
+    <div class="list-item" data-index="0">1</div>
+    <div class="list-item" data-index="1">2</div>
+    <div class="list-item" data-index="2">4</div>
+    <div class="list-item" data-index="3">8</div>
+    <div class="list-item" data-index="4">16</div>
+    <div class="list-item" data-index="5">32</div>
+</div>
+
+<div id="pythonCode" class="python-code">Wählen Sie einen Teil der Liste aus...</div>
+
+<script>
+    const listItems = document.querySelectorAll('.list-item');
+    const pythonCodeDiv = document.getElementById('pythonCode');
+
+    listItems.forEach(item => {
+        const index = item.getAttribute('data-index');
+        const indexLabel = document.createElement('div');
+        indexLabel.classList.add('index-label');
+        indexLabel.textContent = index;
+        item.appendChild(indexLabel);
+    });
+
+    listItems.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('selected');
+            updatePythonCode();
+        });
+    });
+
+  function updatePythonCode() {
+      const selectedItems = Array.from(listItems)
+          .filter(item => item.classList.contains('selected'))
+          .map(item => parseInt(item.getAttribute('data-index')));
+
+      const selectedValues = selectedItems.map(index => parseInt(listItems[index].firstChild.nodeValue));
+
+      if (selectedItems.length === 0) {
+          pythonCodeDiv.textContent = "Wählen Sie einen Teil der Liste aus...";
+          return;
+      }
+
+      let resultText = '';
+
+      if (selectedItems.length === 1) {
+          const index = selectedItems[0];
+          const value = selectedValues[0];
+          const negativeIndex = index - 6;
+
+          resultText += `lst[${index}] = ${value}<br>`;
+          resultText += `lst[${negativeIndex}] = ${value}<br>`;
+          pythonCodeDiv.innerHTML = resultText;
+          pythonCodeDiv.classList.remove('error');
+          return;
+      }
+
+      const slice = findSlice(selectedItems);
+
+      if (slice === null) {
+          pythonCodeDiv.textContent = "Wählen Sie andere Elemente aus!";
+          pythonCodeDiv.classList.add('error');
+          return;
+      }
+
+      resultText = `lst${slice} = [${selectedValues.join(', ')}]<br>`;
+
+      const negativeSliceStr = getNegativeIndexing(selectedItems);
+      if (negativeSliceStr !== null) {
+          resultText += `lst${negativeSliceStr} = [${[...selectedValues].reverse().join(', ')}]`;
+      }
+
+      pythonCodeDiv.innerHTML = resultText;
+      pythonCodeDiv.classList.remove('error');
+  }
+
+  function findSlice(selected) {
+      const lstLength = 6;
+
+      
+      if (arraysEqual(selected, [0, 1, 2, 3, 4, 5])) {
+          return ``; // Show "lst" for the whole list
+      }
+
+      for (let start = 0; start < lstLength; start++) {
+          for (let end = start + 1; end <= lstLength; end++) {
+              for (let step = 1; step <= lstLength; step++) {
+                  const sliceIndices = [];
+                  for (let i = start; i < end; i += step) {
+                      sliceIndices.push(i);
+                  }
+                  if (arraysEqual(sliceIndices, selected)) {
+                      let sliceStr = `[`;
+                      if (start !== 0) sliceStr += `${start}`; // Omit 0 as the start
+                      sliceStr += `:`;
+
+                      if (end !== lstLength) {
+                          sliceStr += `${end}`;
+                      }
+
+                      if (step !== 1) {
+                          sliceStr += `:${step}`;
+                      }
+                      sliceStr += `]`;
+                      return sliceStr;
+                  }
+              }
+          }
+      }
+
+      if (selected.length === 1) {
+          const index = selected[0];
+          return `[${index}]` + (index < lstLength - 1 ? ':' : ''); 
+      }
+      return null;
+  }
+
+  
+  function getNegativeIndexing(indices) {
+      if (indices.length > 1) {
+          const sortedIndices = [...indices].sort((a, b) => b - a);
+          const start = sortedIndices[0]; 
+          const end = sortedIndices[sortedIndices.length - 1];
+          const step = sortedIndices[0] - sortedIndices[1];
+
+          if (sortedIndices.every((val, i, arr) => i === 0 || arr[i - 1] - val === step)) {
+
+              if (end === 0) {
+                  return `[${start}::-` + step + `]`;
+              }
+              return `[${start}:${end - 1}:-` + step + `]`;
+          }
+      }
+
+      return null;  // Return null if there's no valid reverse slice
+  }
+
+    function arraysEqual(a, b) {
+        if (a.length !== b.length) return false;
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] !== b[i]) return false;
+        }
+        return true;
+    }
+</script>
+
+</body>
+</html>
