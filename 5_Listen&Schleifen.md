@@ -335,7 +335,6 @@ Angenommen, in unserer Liste mit Temperaturmessungen, gab es an einem Tag keine 
 
 Listen können immer eine beliebige Mischung von Datentypen enthalten. Das macht sie sehr flexibel, kann aber auch eine Fehlerquelle sein.
 
-
 Aber auch eine Liste von Listen ist möglich. Wenn drei Messungen am Tag durchgeführt werden, könnte die Liste für die ersten drei Tage so aussehen:
 
 ```python
@@ -346,16 +345,104 @@ print("Messwerte am Montag: ", montag)
 # Hier indizieren wir die Liste Montag
 print("Messwert am Montagabend: ", montag[2])
 
-# ... fieber[1] wäre Dienstag, die resultierende Liste indiziern wir mit [2]
+# ... fieber[1] wäre Dienstag, die resultierende Liste indizieren wir mit [2]
 print("Messwert am Dienstagabend: ", fieber[1][2])
 ```
 @Pyodide.eval
 
+## Listen als Sequenztyp
+
+Listen sind ein sogenannter Sequenztyp.
+
+Sequenztypen sind 
+
+1. nicht-skalar
+2. Die ELemente haben eine feste Reihenfolge
+
+Einen anderen Sequenztyp haben Sie mit Strings bereits kennengelernt.
+Auch sie bestehen aus mehreren Zeichen (nicht-skalar), die eine feste Reihenfolge haben.
+
+Alle Sequenztypen unterstützen folgende Operationen:
+
+* **Verkettung:** Sie können mit `seq + seq` aneinandergefügt werden
+* **Wiederholung:** Sie können mit `seq * n` aneinandergefügt werden
+* **Indizierung:** Mit dem Operator `seq[n]` erhalten wir das n-te Element. (Vorsicht! Man zählt immer ab Null). Negatives n indiziert vom Ende der Liste.
+* **Slicing:** Eine kompliziertere Art der Indizierung, `seq[a:b]` gibt eine Teilsequenz vom `a`-ten bis zum `b`-ten Element zurück (das `b`-te Element ist nicht enthalten).
+* **Test auf Mitgliedschaft:** `i in seq` ist wahr wenn `i` in der Sequenz enthalten ist
+* **Funktionen:** Eine Vielzahl von Funktionen operiert auf Sequenzen:
+      * `len(seq)` Länge der Sequenz
+      * `min(seq)` der kleinste Wert der Sequenz
+      * `max(seq)` der größte Wert der Sequenz
+und schließlich das Thema dieser Lerneinheit, die
+* **Iteration:** `for i in seq`: führt einen Codeblock mit jedem Element der Sequenz aus.[^1]
+
+[^1]: Das ist eine neue Art der Schleife, die Mengenschleife, die wir in diesem Kapitel gleich noch ausführlicher betrachten werden.
+
+
+### Verkettung und Wiederholung
+
+Die Operatoren `+` und `*` können auch auf Sequenzen angewendet werden. 
+
+- `+` fügt zwei Sequenzen zusammen
+- `* n` wiederholt eine Sequenz n-mal
+
+Hier sehen sie ein Beispiel mit Strings:
+
+```python
+linie = '-' * 20
+print(linie * 3)
+print(linie + "Herzlich Willkommen!" + linie)
+print(linie * 3)
+```
+@Pyodide.eval
+
+<div class="alert exercise">
+
+Frage
+-----
+
+Was ist die Ausgabe des folgenden Codes?
+
+```python
+l1 = [1, 2, 3]
+l2 = [4, 5, 6]
+l3 = l1 * 2 + l2 + l1 * 2 
+print(l3[7])
+```
+
+[[ 5 ]]
+
+</div>
+
+
+### Indizierung und Slicing
+
+Die Indizierung haben Sie bereits kennengelernt, mit `seq[n]` erhalten Sie das n-te Element einer Sequenz:
+
+Wir nehmen an, dass `seq = [1, 2, 4, 8, 16, 32]`:
+
+* `seq[0]` – das erste Element `1`
+* `seq[5]` – das 6. Element, `32`
+* `seq[-1]` – das letzte Element, `32`
+* `seq[-2]` – das vorletzte Element, `16`
+
+eine etwas komplexere Variante davon ist das sogenannte *Slicing*. Hiermit können Sie eine Teilsequenz einer Liste extrahieren:
+
+* `seq[0:2]` – die ersten zwei Elemente `[1, 2]`.
+* `seq[:2]` – ebenfalls `[1, 2]`  Beginnt das *slice* bei 0 kann die Zahl weggelassen werden.
+* `seq[3:6]` – `[8, 16, 32]`, die Elemente an Position 3,4 und 5
+* `seq[3:]` – ebenfalls `[8, 16, 32]`,  die Elemente von Position 3 bis zum Ende der Liste
+* `seq[1:3]` – `[2, 4]`, die Elemente an Position 1 und 2
+* `seq[::2]` – `[1, 4, 16]`, jedes zweite Element
+* `seq[::-1]` – `[32, 16, 8, 4, 2, 1]`, die Liste rückwärts
 
 
 
+
+### Funktionen auf Sequenzen
 Listen sind ein sogenannter Sequenztyp und Python bietet zahlreiche eingebaute Funktionen, die auf solchen Sequenztypen operieren.
-So lässt sich das Minimum `min`, und auch das Maximum `max` einer liste einfach ermitteln. In diesem Fall also die niedrigste und höchste Temperatur unserer Liste:
+So lässt sich das Minimum `min`, und auch das Maximum `max` einer Liste einfach ermitteln.
+Die Summe berechnet man einfach mit der Funktion `sum`. In diesem Fall also die niedrigste und höchste Temperatur unserer Liste:
 
 ```python 
 >>> min(fieber)
@@ -375,6 +462,14 @@ Im Fall unseres Fieber-Beispiels macht das wenig Sinn. Teilen wir aber die Summe
 >>> sum(fieber)/len(fieber)
 37.96
 ```
+
+<div class="alert tipp"
+
+**Tipp: Strings als Sequenztypen**
+
+Tatsächlich kennen Sie schon einen Sequenztyp: String. So können Sie mit Strings viele der selben 
+
+</div>
 
 
 ### ✍️ Aufgabe: Recamán-Folge
@@ -456,6 +551,6 @@ Hier sehen Sie, wie schnell man so alle Primzahlen bis 100 findet:
 Aufgabe
 -------
 
-Setzen Sie den Algorithmus in Python um. Geben Sie alle Primzahlen bis 100 aus.
+Setzen Sie den Algorithmus in Python um. Geben Sie alle Primzahlen bis 1000 aus.
 
 </div>

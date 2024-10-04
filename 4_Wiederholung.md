@@ -606,6 +606,7 @@ Es ist noch nicht gelungen, diese Vermutung zu beweisen oder zu widerlegen[^2].
 
 Schreiben Sie ein Programm, das die Collatz-Vermutung für alle Zahlen bis $10^6$ überprüft.
 Was ist die längste Folge die sie finden können?
+
 [[ 525 ]]
 *************************
 Die längste Folge unter einer Million beginnt mit der Zahl $837799$ und hat $525$ Schritte.
