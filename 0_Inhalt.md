@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  1.2.0
+version:  1.3.0
 date:     2024
 language: de
 logo:     img/1/classroom2.png
