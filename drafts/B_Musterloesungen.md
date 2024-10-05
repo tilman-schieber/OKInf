@@ -9,8 +9,7 @@ logo:     img/B/logo.png
 icon:     img/TU_Logo_kurz.svg
 comment:  Musterlösungen für die Aufgaben aus dem Kurs.
 import:   https://raw.githubusercontent.com/LiaTemplates/Pyodide/master/README.md
-import:   macros/macros.md
-link:     styles/main.css
+link:     ../styles/main.css
 
 -->
 
@@ -358,6 +357,34 @@ while i < len(fieber):
 
  *Anmerkung:*\
  Hier wird die Liste der Wochentage hinzugefügt und die Ausgabe entsprechend angepasst. Zur Lösung der Bonusaufgabe fügen wir einer temporären Variable `ausgabe` eine Meldung hinzu, wenn es sich um erhöhte Temperatur oder Fieber handelt. Wenn sie die Zeilen 6-9 löschen, erhalten Sie die Lösung zur Aufgabe ohne Bonus.
+
+### ✍️ Aufgabe: Fibonacci-Zahlen
+
+<div class="alert exercise">
+
+Aufgabe
+-------
+
+Programmieren Sie ein Programm, das mit der Liste `fib = [1, 1]` beginnt und die ersten 100 Fibonacci-Zahlen berechnet und an die Liste anhängt.
+
+Was ist die 100. Fibonacci-Zahl?
+
+[[ 354224848179261915075 ]]
+[[?]] Achtung: Die erste Fibonacci-Zahl ist `fib[0]`, die 100. Fibonacci-Zahl ist `fib[99]`.
+
+
+</div>
+
+Musterlösung:
+-------------
+
+```python
+fib = [1, 1]
+for i in range(98):
+    fib.append(fib[-1] + fib[-2])
+fib[99]
+```
+@Pyodide.eval
 
 ### ✍️ Aufgabe: Recamán-Folge
 

@@ -36,6 +36,10 @@ Python Programmierkurs
 
 </div>
 
-Einführung Betriebssysteme
-==========================
+<!-- class="my-5"-->
+---
+
+Zusätzliche Inhalte
+====================
 [preview-lia](A_Linux.md)
+[preview-lia](B_Musterloesungen.md)
