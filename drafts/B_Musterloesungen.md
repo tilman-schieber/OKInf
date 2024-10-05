@@ -199,3 +199,197 @@ else:
 </details>
 
 
+
+## 4: Wiederholung
+
+### Aufgabe: Summe ungerader Zahlen 
+
+<div class="alert exercise my-3">
+
+
+Teil 1
+------
+
+Lesen Sie eine Ganzzahl $n$ vom Benutzer ein und geben Sie die Summe der ersten n ungeraden Zahlen aus.
+
+für $n=5$ wäre das $1+3+5+7+9=25$
+
+---
+
+Teil 2
+------
+
+- Die Summe der ersten $2$ ungeraden Zahlen ist $1+3=4$, 
+- die Summe der ersten $3$ ungeraden Zahlen ist $1+3+5=9$, 
+- die Summe der ersten $4$ ungeraden Zahlen ist $1+3+5+7=16$. 
+
+Es fällt auf, dass die Summe der ersten $n$ ungeraden Zahlen immer $n^2$ zu ergeben scheint.
+
+Schreiben Sie ein Programm, das überprüft, ob diese Vermutung stimmt. Es reicht wenn Sie es für alle $n \leq 10000$ zeigen.
+
+</div>
+
+Musterlösung:
+-------------
+
+Teil 1:
+
+```python
+n = int(input())
+summe = 0
+while n > 0:
+    summe += 2*n-1
+    n -= 1
+print(summe)
+```
+@Pyodide.eval
+
+Teil 2:
+
+```python
+n = 1
+while n <= 10000:
+    summe = 0
+    k = n
+    while k > 0:
+        summe += 2 * k - 1
+        k -= 1
+    if summe != n ** 2:
+        print("Vermutung falsch für n =",n)
+    n += 1
+
+print("Vermutung stimmt für alle n ≤ 10000")
+```
+@Pyodide.eval
+
+
+### ✍️Aufgabe: Alternierende Reihe
+
+Die alternierende Reihe ist eine mathematische Reihe, die sich durch das Vorzeichen der Summanden auszeichnet. Die Summe der alternierenden Reihe ist definiert als:
+
+$$
+1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \ldots
+$$
+
+Die Summe der alternierenden Reihe konvergiert gegen den natürlichen Logarithmus von 2.
+
+<div class="alert exercise my-3">
+
+Aufgabe
+-------
+
+Schreiben Sie ein Programm, das die Summe der alternierenden Reihe und damit $\ln(2)$ berechnet. Sie können abbrechen, wenn die Terme kleiner als $10^{-6}$ sind.
+
+</div>
+
+
+### ✍️ Aufgabe: Fizzbuzz
+
+[Fizzbuzz](https://de.wikipedia.org/wiki/Fizz_buzz) ist ein Kinderspiel, bei dem Kinder abwechseln von 1 auf 100 zählen. Dabei ersetzen sie jedes Vielfache von 3 durch "Fizz", jedes Vielfache von 5 durch "Buzz" und jedes Vielfache von 15 durch "FizzBuzz".
+
+Man zählt also:
+
+<!-- class="ml-3"-->
+***"1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz"*** 
+
+und so weiter.
+
+<div class="alert exercise my-4">
+
+Aufgabe
+--------
+
+Schreiben Sie ein Programm, das von 1 bis 100 zählt und dabei die Zahlen durch "Fizz", "Buzz" oder "FizzBuzz" ersetzt, wenn sie die entsprechenden Bedingungen erfüllen.
+
+</div>
+
+## 5: Listen&Schleifen
+
+### ✍️ Aufgabe: Fieberliste 2.0
+
+<div class="alert exercise">
+
+Fieberliste 2.0
+---------------
+
+Die Fieberliste soll jeweils für eine Woche geführt werden. Der erste Messwert steht also für Montag, der zweite für Dienstag und so weiter.
+Verwenden Sie eine zusätzliche Liste mit den Namen der Wochentage.
+
+Passen Sie das Programm so an, dass die Tage mit Namen ausgegeben werden.\
+Also z.B.: `Am Montag wurden 37.4 Grad gemessen`
+
+
+
+Hier unser Ausgangsprogramm:
+
+```python 
+fieber = [37.4, 37.7, 38.4, 38.8, 37.5]
+i = 0
+while i < len(fieber):
+  print("Am Tag", i + 1 ,"wurden", fieber[i], "Grad gemessen")
+  i += 1
+```
+@Pyodide.eval
+
+---
+
+⭐️ ***Bonus:*** Man spricht von "erhöhter Temperatur" wenn die Temperatur über 37.5 Grad liegt und von Fieber bei über 38 Grad. Geben Sie zusätzlich aus, ob der Patient an einem Tag erhöhte Temperatur oder Fieber hatte.	
+
+</div>
+
+Musterlösung:
+-------------
+
+
+```python
+fieber = [37.4, 37.7, 38.4, 38.8, 37.5]
+wochentage = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"]
+i = 0
+while i < len(fieber):
+    ausgabe = "Am " + wochentage[i] + " wurden " + str(fieber[i]) + " Grad gemessen. "
+    if fieber[i] > 38:
+        ausgabe += "Fieber!"
+    elif fieber[i] > 37.5:
+        ausgabe += "Erhöhte Temperatur."
+    print(ausgabe)
+    i += 1
+```
+@Pyodide.eval
+
+ *Anmerkung:*\
+ Hier wird die Liste der Wochentage hinzugefügt und die Ausgabe entsprechend angepasst. Zur Lösung der Bonusaufgabe fügen wir einer temporären Variable `ausgabe` eine Meldung hinzu, wenn es sich um erhöhte Temperatur oder Fieber handelt. Wenn sie die Zeilen 6-9 löschen, erhalten Sie die Lösung zur Aufgabe ohne Bonus.
+
+### ✍️ Aufgabe: Recamán-Folge
+
+Aufgabe
+-------
+
+Die Recamán-Folge ist eine mathematische Folge, die 1964 von dem kolumbianischen Mathematiker Bernardo Recamán Santos erfunden wurde. Die Folge wird wie folgt definiert:
+
+- $a_0 = 0$
+- $a_{n+1} = a_n - n$, falls $a_n - n > 0$ und $a_{n+1}$ noch nicht in der Folge vorkommt
+- $a_{n+1} = a_n + n$, sonst
+
+Programmieren Sie ein Python-Programm, das die ersten 100 Elemente der Recamán-Folge berechnet und ausgibt.
+
+</div>
+
+Musterlösung:
+-------------
+
+```python	
+
+recaman = [0]
+index = 1
+
+while len(recaman)<100:
+    jump_back = recaman[-1]-index
+    if jump_back>0 and jump_back not in recaman:
+        recaman.append(recaman[-1]-index)
+    else:
+        recaman.append(recaman[-1]+index)
+    index += 1
+
+recaman
+```
+@Pyodide.eval
