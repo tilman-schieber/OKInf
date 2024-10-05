@@ -1,6 +1,10 @@
 /* main.css */
 @import url(tools.css);
 
+.katex {
+  font-size: 1.15em;
+}
+
 kbd {
   font-size: 1.2rem;
   line-height: 1.2rem;

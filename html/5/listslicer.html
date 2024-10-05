@@ -225,6 +225,10 @@
           const end = sortedIndices[sortedIndices.length - 1];
           const step = sortedIndices[0] - sortedIndices[1];
 
+        if (arraysEqual(sortedIndices, [5, 4, 3, 2, 1, 0])) {
+            return `[::-1]`;
+        }
+
           if (sortedIndices.every((val, i, arr) => i === 0 || arr[i - 1] - val === step)) {
 
               if (end === 0) {
