@@ -46,6 +46,9 @@ Am Ende können Sie:
 
 </div>
 
+<!-- class="context"-->
+Ab diesem Teil des Kurses sollten Sie ihre eigene Programmierumgebung eingerichtet haben. Am Ende von @[lialink(Kapitel 1: Einführung)](1_Einfuehrung.md) finden Sie dazu Hinweise.\ 
+Für einen Gesamtüberblick über den Kurs geht es @[lialink(hier zurück zur Kursübersicht)](0_Inhalt.md).
 
 ## Grundrechenarten in Python
 

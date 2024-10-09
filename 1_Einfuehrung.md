@@ -50,9 +50,12 @@ Am Ende können Sie:
 3. Die Unterschiede zwischen Maschinen- und höheren Programmiersprachen erklären.
 4. Python auf ihrem Computer installieren und ausführen.
 
+</div>
+</div>
 
-</div>
-</div>
+<!-- class="context"-->
+Dieses Kapitel ist der Einstieg in den Programmierkurs Python.\
+Für einen Gesamtüberblick über den Kurs geht es @[lialink(hier zurück zur Kursübersicht)](0_Inhalt.md).
 
 
 ## Was ist Programmieren?

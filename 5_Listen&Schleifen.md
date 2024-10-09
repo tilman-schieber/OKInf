@@ -43,6 +43,12 @@ Am Ende können Sie:
 
 </div>
 
+<!-- class="context"-->
+Dieses Kapitel knüpft direkt an das Kapitel @[lialink(Wiederholung)](4_Wiederholung.md) an, indem Sie die `while`-Schleife kennengelernt haben.\
+Für den Überblick über den gesamten Kurs kommen Sie 
+@[lialink(hier zurück zur Kursübersicht)](0_Inhalt.md).
+
+
 ## Wozu Listen?
 
 Im letzten Kapitel [„Wiederholung“](https://liascript.github.io/course/?https://raw.githubusercontent.com/tilman-schieber/OKInf/refs/heads/main/4_Wiederholung.md#2) haben Sie auch die sogenannte Mengenschleife kennengelernt. Dabei wird der Schleifenrumpf für jedes Element einer Auflistung einmal durchgeführt. Typischerweise wird dabei dieses Element gelesen, geschrieben oder beides.

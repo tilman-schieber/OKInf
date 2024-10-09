@@ -7,6 +7,14 @@ email:    tilman.schieber@tu-berlin.de
 <a target="_blank" role="button" href="https://tilman-schieber.github.io/console"><button class="lia-btn lia-btn--outline">Python Konsole</button></a>
 @end
 
+
+@lialink
+<script modify="false" run-once="true">
+`LIASCRIPT: [@0](${window.location.origin + window.location.pathname}?@1)`
+</script>
+@end
+
+
 @embed
 <script run-once modify="false">
 fetch("@1")
@@ -41,3 +49,15 @@ fetch("@1")
 -->
 
 # Macros
+
+## Lialink
+
+Example:
+
+`@[lialink(relative)](dir/french.md)`
+@[lialink(relative)](dir/french.md)
+
+
+## Embed
+
+`@[embed(style="height: 400px; width:600px; border: none")](html/5/listslicer.html)`

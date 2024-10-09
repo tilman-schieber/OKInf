@@ -10,6 +10,13 @@ kbd {
   line-height: 1.2rem;
 }
 
+.context {
+  background-color: rgba(var(--color-highlight),.15);
+  font-style: italic; 
+  padding: 2rem;
+  margin: 0rem 4rem;
+}
+
 div.center {
   display: flex;
   justify-content: center;
