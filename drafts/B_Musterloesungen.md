@@ -262,7 +262,7 @@ print("Vermutung stimmt für alle n ≤ 10000")
 @Pyodide.eval
 
 
-### ✍️Aufgabe: Alternierende Reihe
+### Aufgabe: Alternierende Reihe
 
 Die alternierende Reihe ist eine mathematische Reihe, die sich durch das Vorzeichen der Summanden auszeichnet. Die Summe der alternierenden Reihe ist definiert als:
 
@@ -282,7 +282,7 @@ Schreiben Sie ein Programm, das die Summe der alternierenden Reihe und damit $\l
 </div>
 
 
-### ✍️ Aufgabe: Fizzbuzz
+### Aufgabe: Fizzbuzz
 
 [Fizzbuzz](https://de.wikipedia.org/wiki/Fizz_buzz) ist ein Kinderspiel, bei dem Kinder abwechseln von 1 auf 100 zählen. Dabei ersetzen sie jedes Vielfache von 3 durch "Fizz", jedes Vielfache von 5 durch "Buzz" und jedes Vielfache von 15 durch "FizzBuzz".
 
@@ -358,7 +358,7 @@ while i < len(fieber):
  *Anmerkung:*\
  Hier wird die Liste der Wochentage hinzugefügt und die Ausgabe entsprechend angepasst. Zur Lösung der Bonusaufgabe fügen wir einer temporären Variable `ausgabe` eine Meldung hinzu, wenn es sich um erhöhte Temperatur oder Fieber handelt. Wenn sie die Zeilen 6-9 löschen, erhalten Sie die Lösung zur Aufgabe ohne Bonus.
 
-### ✍️ Aufgabe: Fibonacci-Zahlen
+### Aufgabe: Fibonacci-Zahlen
 
 <div class="alert exercise">
 
@@ -386,7 +386,7 @@ fib[99]
 ```
 @Pyodide.eval
 
-### ✍️ Aufgabe: Recamán-Folge
+### Aufgabe: Recamán-Folge
 
 Aufgabe
 -------

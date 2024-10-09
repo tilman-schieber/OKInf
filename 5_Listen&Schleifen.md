@@ -295,7 +295,6 @@ Es ist aber nicht möglich, auf einen Index zuzugreifen, der nicht existiert. Um
 fieber.append(37.7)
 ```
 
-
 <div class="alert tip">
 
 **Hinweis: Methoden und Funktionen**
@@ -316,6 +315,43 @@ s = s.upper()
 print(s)
 ```
 @Pyodide.eval
+
+</div>
+
+Auch das Entfernen von Werten ist möglich. Mit `liste.pop(index)` entfernen wir den Wert an der Stelle `index` und geben ihn zurück. Ohne Parameter wird einfach der letzte Wert entfernt:
+
+```python
+fieber = [37.4, 37.7, 38.4, 38.8]
+print("Wert an Index 1:",fieber.pop(1))
+print("Letzter Wert:", fieber.pop())
+print("Die Liste nach Entfernen:", fieber)
+```
+@Pyodide.eval
+
+Wenn Sie einen bestimmten Wert entfernen wollen und nicht wissen, an welcher Stelle er steht, können Sie `liste.remove(wert)` verwenden. 
+
+```python
+freunde = ["Ivan", "Michael", "Andrea", "Lena"]
+freunde.remove("Michael")
+freunde
+```
+@Pyodide.eval
+
+<div class="alert exercise">
+
+Übung
+-----
+
+Was ist die Ausgabe des folgenden Codes?
+
+```python
+zahlen = [1, 1, 2, 3, 5 ,8, 13]
+zahlen.pop()
+zahlen.remove(1)
+print(zahlen.pop(1))
+```
+
+[[ 2 ]]
 
 </div>
 
@@ -712,7 +748,7 @@ Nach 12 Monaten sind es 144 Kaninchenpaare!
 Aufgabe
 -------
 
-Programmieren Sie ein Programm, das mit der Liste `fib = [1, 1]` beginnt und die ersten 100 Fibonacci-Zahlen berechnet und an die Liste anhängt.
+Programmieren Sie ein Programm, das mit der Liste `fib = [1, 1]` beginnt, die ersten 100 Fibonacci-Zahlen berechnet und an die Liste anhängt.
 
 Was ist die 100. Fibonacci-Zahl?
 
@@ -787,9 +823,9 @@ Sieb des Eratosthenes
 ----------------------
 
 1. Erstelle eine Liste aller Zahlen von 2 bis $n$.
-2. Beginne mit der ersten Zahl in der Liste (2) und streiche alle Vielfachen dieser Zahl aus der Liste.
-3. Gehe zur nächsten ungestrichenen Zahl in der Liste und wiederhole den Schritt 2.
-4. Wiederhole den Schritt 3, bis die nächste ungestrichene Zahl größer als $\sqrt{n}$ ist.
+2. Beginne mit der ersten noch nicht gestrichenen Zahl in der Liste und streiche alle Vielfachen dieser Zahl aus der Liste.
+3. Gehe zur nächsten ungestrichenen Zahl in der Liste. Ist sie kleiner als $\sqrt{n}$ wiederhole den Schritt 2.
+4. Alle nicht gestrichenen Zahlen auf der Liste sind Primzahlen.
 
 </div>
 
@@ -804,6 +840,17 @@ Hier sehen Sie, wie schnell man so alle Primzahlen bis 100 findet:
 Aufgabe
 -------
 
-Setzen Sie den Algorithmus in Python um. Geben Sie alle Primzahlen bis 1000 aus.
+Setzen Sie den Algorithmus in Python um. Berechnen Sie alle Primzahlen unter einer Million ($10^6$).
+
+Überlegen Sie sich zunächst wie Sie das "aus der Liste streichen" implementieren wollen.
+Hier zwei Ideen:
+
+1. Erstellen Sie eine Liste aller Zahlen von 2-1000000. Um eine Zahl zu streichen, setzen Sie den Wert auf 0.
+
+
+Was ist die größte Primzahl kleiner als eine Million?
+  
+  [[ 999983 ]]
+  [[?]] 
 
 </div>
