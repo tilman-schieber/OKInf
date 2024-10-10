@@ -853,6 +853,8 @@ Hier zwei Ideen:
 
 1. Erstellen Sie eine Liste aller Zahlen von 2-1000000. Um eine Zahl zu streichen, setzen Sie den Wert auf 0.
 
+2. Erstellen Sie eine Liste mit einer Million `True`-Werten. Um eine Zahl zu streichen, setzen Sie den Wert auf `False`. 
+
 
 Was ist die größte Primzahl kleiner als eine Million?
   
