@@ -46,8 +46,7 @@ Am Ende können Sie:
 
 <!-- class="context"-->
 Nach dem Sie gelernt haben, wie man @[lialink(Werte berechnet und speichert)](2_Werte&Variablen.md) und  @[lialink(Entscheidungen)](3_Entscheidungen.md) trifft, lernen Sie in diesem Kapitel das letzte Puzzleteil, das sie benötigen um Algorithmen vollständig in Python zu Formulieren: Die Wiederholung.\
-Für den Überblick über den gesamten Kurs kommen Sie 
-@[lialink(hier zurück zur Kursübersicht)](0_Inhalt.md).
+Für den Überblick über den gesamten Kurs kommen Sie @[lialink(hier zurück zur Kursübersicht)](0_Inhalt.md).
 
 ## Wiederholung im Alltag
 

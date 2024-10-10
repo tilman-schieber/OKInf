@@ -45,8 +45,7 @@ Am Ende können Sie:
 
 <!-- class="context"-->
 Dieses Kapitel knüpft direkt an das Kapitel @[lialink(Wiederholung)](4_Wiederholung.md) an, indem Sie die `while`-Schleife kennengelernt haben.\
-Für den Überblick über den gesamten Kurs kommen Sie 
-@[lialink(hier zurück zur Kursübersicht)](0_Inhalt.md).
+Für den Überblick über den gesamten Kurs kommen Sie @[lialink(hier zurück zur Kursübersicht)](0_Inhalt.md).
 
 
 ## Wozu Listen?

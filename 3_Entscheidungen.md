@@ -44,7 +44,7 @@ Am Ende können Sie:
 </div>
 
 <!-- class="context"-->
-Der Stoff in diesem Kapitel baut auf die Grundlagen in @[lialink(Kapitel 2: Werte und Variablen)](2_Werte&Variablen.md) auf.\ 
+Der Stoff in diesem Kapitel baut auf die Grundlagen in @[lialink(Kapitel 2: Werte und Variablen)](2_Werte&Variablen.md) auf.\
 Für einen Gesamtüberblick über den Kurs geht es @[lialink(hier zurück zur Kursübersicht)](0_Inhalt.md).
 
 
