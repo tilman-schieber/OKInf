@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  1.3.0
+version:  1.4.0
 date:     2024
 language: de
 logo:     img/1/classroom2.png
@@ -27,11 +27,10 @@ Python Programmierkurs
 [preview-lia](2_Werte&Variablen.md)
 [preview-lia](3_Entscheidungen.md)
 [preview-lia](4_Wiederholung.md)
-
+[preview-lia](5_Listen&Schleifen.md)
 
 <div style="display:none">
 
-[preview-lia](5_Listen&Schleifen.md)
 [preview-lia](6_Funktionen.md)
 
 </div>
