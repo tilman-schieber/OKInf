@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  1.0.0
+version:  1.1.0
 date:     2024
 language: de
 narrator: Deutsch Female
@@ -199,3 +199,105 @@ else:
 </details>
 
 
+## 4: Wiederholung
+
+### Aufgabe: Summe ungerader Zahlen 
+
+<div class="alert exercise my-3">
+
+
+Teil 1
+------
+
+Lesen Sie eine Ganzzahl $n$ vom Benutzer ein und geben Sie die Summe der ersten n ungeraden Zahlen aus.
+
+für $n=5$ wäre das $1+3+5+7+9=25$
+
+---
+
+Teil 2
+------
+
+- Die Summe der ersten $2$ ungeraden Zahlen ist $1+3=4$, 
+- die Summe der ersten $3$ ungeraden Zahlen ist $1+3+5=9$, 
+- die Summe der ersten $4$ ungeraden Zahlen ist $1+3+5+7=16$. 
+
+Es fällt auf, dass die Summe der ersten $n$ ungeraden Zahlen immer $n^2$ zu ergeben scheint.
+
+Schreiben Sie ein Programm, das überprüft, ob diese Vermutung stimmt. Es reicht wenn Sie es für alle $n \leq 10000$ zeigen.
+
+</div>
+
+Musterlösung:
+-------------
+
+Teil 1:
+
+```python
+n = int(input())
+summe = 0
+while n > 0:
+    summe += 2*n-1
+    n -= 1
+print(summe)
+```
+@Pyodide.eval
+
+Teil 2:
+
+```python
+n = 1
+while n <= 10000:
+    summe = 0
+    k = n
+    while k > 0:
+        summe += 2 * k - 1
+        k -= 1
+    if summe != n ** 2:
+        print("Vermutung falsch für n =",n)
+    n += 1
+
+print("Vermutung stimmt für alle n ≤ 10000")
+```
+@Pyodide.eval
+
+
+### Aufgabe: Alternierende Reihe
+
+Die alternierende Reihe ist eine mathematische Reihe, die sich durch das Vorzeichen der Summanden auszeichnet. Die Summe der alternierenden Reihe ist definiert als:
+
+$$
+1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \ldots
+$$
+
+Die Summe der alternierenden Reihe konvergiert gegen den natürlichen Logarithmus von 2.
+
+<div class="alert exercise my-3">
+
+Aufgabe
+-------
+
+Schreiben Sie ein Programm, das die Summe der alternierenden Reihe und damit $\ln(2)$ berechnet. Sie können abbrechen, wenn die Terme kleiner als $10^{-6}$ sind.
+
+</div>
+
+
+### Aufgabe: Fizzbuzz
+
+[Fizzbuzz](https://de.wikipedia.org/wiki/Fizz_buzz) ist ein Kinderspiel, bei dem Kinder abwechseln von 1 auf 100 zählen. Dabei ersetzen sie jedes Vielfache von 3 durch "Fizz", jedes Vielfache von 5 durch "Buzz" und jedes Vielfache von 15 durch "FizzBuzz".
+
+Man zählt also:
+
+<!-- class="ml-3"-->
+***"1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz"*** 
+
+und so weiter.
+
+<div class="alert exercise my-4">
+
+Aufgabe
+--------
+
+Schreiben Sie ein Programm, das von 1 bis 100 zählt und dabei die Zahlen durch "Fizz", "Buzz" oder "FizzBuzz" ersetzt, wenn sie die entsprechenden Bedingungen erfüllen.
+
+</div>
