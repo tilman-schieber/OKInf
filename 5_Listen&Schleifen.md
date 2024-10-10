@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  0.0.1
+version:  1.0.1
 date:     2024
 language: de
 narrator: Deutsch Female
@@ -853,7 +853,7 @@ Hier zwei Ideen:
 
 1. Erstellen Sie eine Liste aller Zahlen von 2-1000000. Um eine Zahl zu streichen, setzen Sie den Wert auf 0.
 
-2. Erstellen Sie eine Liste mit einer Million `True`-Werten. Um eine Zahl zu streichen, setzen Sie den Wert auf `False`. 
+2. Erstellen Sie eine Liste mit einer Million `True`-Werten. Um eine Zahl zu streichen, setzen Sie den entsprechenden Wert der Liste auf `False`. 
 
 
 Was ist die größte Primzahl kleiner als eine Million?
