@@ -850,9 +850,9 @@ Setzen Sie den Algorithmus in Python um. Berechnen Sie alle Primzahlen unter ein
 Überlegen Sie sich zunächst wie Sie das "aus der Liste streichen" implementieren wollen.
 Hier zwei Ideen:
 
-1. Erstellen Sie eine Liste aller Zahlen von 2-1000000. Um eine Zahl zu streichen, setzen Sie den Wert auf 0.
+1. Erstellen Sie eine Liste aller Zahlen bis 1000000. Um eine Zahl zu streichen, entfernen Sie sie aus der Liste.
 
-2. Erstellen Sie eine Liste mit einer Million `True`-Werten. Um eine Zahl zu streichen, setzen Sie den entsprechenden Wert der Liste auf `False`. 
+2. Erstellen Sie eine Liste mit einer Million `True`-Werten. Um eine Zahl `n` zu streichen, setzen Sie `Liste[n]` auf `False`. 
 
 
 Was ist die größte Primzahl kleiner als eine Million?
