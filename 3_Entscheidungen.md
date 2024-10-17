@@ -23,7 +23,7 @@ link:     styles/main.css
 
 <div class="flex-child">
 
-![Was ist Programmieren?](img/3/decisions.png)
+![Entscheidung](img/3/decisions.png)
 
 </div>
 

@@ -22,7 +22,7 @@ link:     styles/main.css
 
 <div class="flex-child">
 
-![Was ist Programmieren?](img/2/datastorage.png)
+![Werte&Variablen](img/2/datastorage.png)
 
 </div>
 

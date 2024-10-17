@@ -22,7 +22,7 @@ link:     styles/main.css
 
 <div class="flex-child">
 
-![Was ist Programmieren?](img/4/repetition.png)
+![Wiederholung](img/4/repetition.png)
 
 </div>
 

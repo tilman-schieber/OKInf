@@ -22,7 +22,7 @@ link:     styles/main.css
 
 <div class="flex-child">
 
-![Was ist Programmieren?](img/6/bicycle.png)
+![Funktionen](img/6/bicycle.png)
 
 </div>
 

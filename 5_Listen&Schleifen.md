@@ -22,7 +22,7 @@ link:     styles/main.css
 
 <div class="flex-child">
 
-![Was ist Programmieren?](img/5/logo_listen.png)
+![Listen](img/5/logo_listen.png)
 
 </div>
 
