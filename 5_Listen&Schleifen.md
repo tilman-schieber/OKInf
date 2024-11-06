@@ -858,6 +858,5 @@ Hier zwei Ideen:
 Was ist die größte Primzahl kleiner als eine Million?
   
   [[ 999983 ]]
-  [[?]] 
 
 </div>
