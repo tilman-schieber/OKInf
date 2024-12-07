@@ -27,6 +27,9 @@ Hier finden Sie die Lösungen zu den Vertiefungsaufgaben (mit dem Symbol ✍).
 
 </div>
 
+<!-- class="context"-->
+Für den Überblick über den gesamten Kurs kommen Sie @[lialink(hier zurück zur Kursübersicht)](0_Inhalt.md).
+
 
 ## 1: Einführung in Python
 

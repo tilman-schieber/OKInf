@@ -16,6 +16,12 @@ link:     styles/main.css
 # Eine kurze Einführung in Linux
 @[asciinema2(`speed: 2, autoPlay:true, rows: 10`)](cast/demo.cast)
 
+
+<!-- class="context"-->
+Diese kurze Einführung zum Thema Linux kann unabhängig vom Rest des Kurses bearbeitet werden.
+Für den Überblick über den gesamten Kurs kommen Sie @[lialink(hier zurück zur Kursübersicht)](0_Inhalt.md).
+
+
 ## Was ist ein Betriebssystem?
 
 !["Operator" bei der NASA](img/A/operator.jpg "Quelle: [NASA](https://www.flickr.com/photos/nasacommons/9467782802)")

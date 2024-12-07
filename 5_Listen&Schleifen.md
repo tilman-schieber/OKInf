@@ -505,21 +505,24 @@ s = "Donaudampfschiffahrtsgesellschaftskapitän"
 Was ist die Ausgabe von...
 
 `s[0:5]`
+
 - [( )] `onau`
 - [(X)] `Donau`
 - [( )] `Donaud`
 
 
 `s[-3:-6:-1]`
+
 - [(X)] `tip`
 - [( )] `pit`
 - [( )] `uan`
 
 
-`s[-7::-1]`
-- [( )]  'nätipak'
-- [(X)]  'kapitän'
-- [( )]  'stfahcs'
+`s[-7::3]`
+
+- [( )]  'nik'
+- [(X)]  'kin'
+- [( )]  'mfgca'
 
 
 </div>
