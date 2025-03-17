@@ -258,11 +258,17 @@ Frage
 
 Was passiert wenn Sie die Funktion `round` mit nur einem Argument aufrufen?
 
-- [[ ]] Sie rundet auf die nächste ganze Zahl ab.
-- [[X]] Sie rundet auf die nächste ganze Zahl auf oder ab.
-- [[ ]] Sie rundet auf die nächste ganze Zahl auf.
-- [[ ]] Es gibt einen Fehler.
-  
+- [( )] Sie rundet auf die nächste ganze Zahl ab.
+- [(X)] Sie rundet auf die nächste ganze Zahl auf oder ab.
+- [( )] Sie rundet auf die nächste ganze Zahl auf.
+- [( )] Es gibt einen Fehler.
+*************************************
+Diese Aufgabe können Sie direkt in Python ausprobieren oder einfach mit Hilfe der Python Dokumentation beantworten:
+[round() (Python 3 Dokumentation)](https://docs.python.org/3/library/functions.html#round)
+
+Python rundet immer auf den nächsten Ganzzahlwert. Ist der Wert genau in der Mitte, wird auf die nächste gerade Zahl gerundet. `round(1.5)` und `round(2.5)` sind also beide `2`.
+*************************************
+
 
 </div>
 
